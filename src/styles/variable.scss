@@ -1,0 +1,77 @@
+@mixin flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexHorCenter {
+  display: flex;
+  justify-content: center;
+}
+@mixin flexVerCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin textCenter {
+  text-align: center;
+}
+
+@mixin widthHeight_24 {
+  width: 24px;
+  height: 24px;
+}
+
+@mixin widthHeight_100 {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin font_strong {
+  font-weight: 600;
+}
+
+@mixin main_right_both {
+  margin-top: 15px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  overflow-y: auto;
+}
+
+$color_dark_gray: #171717;
+$color_light_gray: #d3d3d3;
+$color_background: #fafafa;
+$bg-gray: #fafafa;
+
+$border-light-gray: #ededed;
+
+$color-light-gray: #b1b1b1;
+$color-gray: #a2a2a2;
+$color-black: #262626;
+$color-light-blue: #c4e1fb;
+$color-blue: #39618b;
+
+$btn-blue: #5bb2ff;
+
+$white: #fff;
+
+$border-gray: $border-light-gray 1px solid;
+
+$padding_small: 14px;
+$icon_small: 24px;
