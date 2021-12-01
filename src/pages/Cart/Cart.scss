@@ -1,0 +1,24 @@
+.Cart {
+  .homeRoot {
+    font-size: 13px;
+    color: #bcbec0;
+    margin-right: 6px;
+  }
+
+  .shoppingRoot {
+    font-size: 13px;
+  }
+
+  .shoppingBag {
+    padding-top: 30px;
+    margin-left: 128.5px;
+    margin-right: 128.5px;
+    .title {
+      font-size: 31px;
+    }
+
+    .productTitle {
+      margin-top: 100px;
+    }
+  }
+}
