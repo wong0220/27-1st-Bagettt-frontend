@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+
+.Login {
+  .Login-box {
+    width: 501px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 550px;
+
+    .tittle {
+      padding-top: 50px;
+      margin-bottom: 50px;
+
+      .tittleLogin {
+        float: none;
+        font-size: 31px;
+        color: #000;
+        font-weight: normal;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+    .MemberShip {
+      display: flex;
+      padding-bottom: 50px;
+      justify-content: center;
+      width: 450px;
+      text-align: center;
+
+      .memberLogin {
+        border-right: 1px solid #bdbdbd;
+        padding-top: 20px;
+        font-size: 15px;
+        width: 450px;
+        justify-content: center;
+
+        border-top: 1px solid;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .NomemberLogin {
+        padding-top: 20px;
+        font-size: 15px;
+        width: 450px;
+        border-top: 1px solid #bdbdbd;
+        color: #9f9b9b;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .Signup {
+      .inputemailid {
+        font-size: 13px;
+        padding-bottom: 13px;
+        font-family: 'Noto Sans KR';
+      }
+      .inputpassword {
+        font-size: 13px;
+        padding-bottom: 13px;
+        padding-top: 10px;
+        font-family: 'Noto Sans KR';
+      }
+      .inputId {
+        width: 450px;
+        height: 40px;
+        display: block;
+        border: 1px solid #e0e0e0;
+      }
+
+      .inputPw {
+        width: 450px;
+        height: 40px;
+        display: block;
+        border: 1px solid #e0e0e0;
+      }
+    }
+    .loginbotton {
+      padding-top: 30px;
+
+      .btn {
+        width: 450px;
+        height: 48px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+      }
+      .btn:disabled {
+        background-color: burlywood;
+      }
+    }
+    .save {
+      display: flex;
+      padding-top: 20px;
+      .saveid {
+        margin-right: 200px;
+        font-size: 13px;
+        font-family: 'Noto Serif KR';
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      .find {
+        padding-bottom: 50px;
+        .forgetlogin {
+          display: flex;
+          font-size: 13px;
+          .findid {
+            padding-right: 10px;
+            border-right: 1px solid #c4c4c4;
+            cursor: pointer;
+          }
+        }
+        .findpw {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+    .usesnslogin {
+      padding-bottom: 50px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .loginsns {
+        margin-left: 25px;
+        margin-top: 10px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .icons {
+        .fab {
+          padding-right: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .createid {
+      .createlogin {
+        border-top: 1px solid #bdbdbd;
+        padding-top: 30px;
+      }
+      .createuser {
+        padding-bottom: 10px;
+        font-weight: 600;
+      }
+      .givecoupon {
+        padding-top: 13px;
+        padding-bottom: 20px;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      .createuserbtn {
+        width: 450px;
+        height: 45px;
+        background-color: white;
+        border: 1px solid black;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.UNLogin {
+  .unLogin-box {
+    width: 501px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 550px;
+
+    .tittle {
+      padding-top: 50px;
+      margin-bottom: 50px;
+
+      .tittleLogin {
+        float: none;
+        font-size: 31px;
+        color: #000;
+        font-weight: normal;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+    .MemberShip {
+      display: flex;
+      padding-bottom: 50px;
+      justify-content: center;
+      width: 450px;
+      text-align: center;
+      .memberLogin {
+        border-right: 1px solid #bdbdbd;
+        padding-top: 20px;
+        font-size: 15px;
+        width: 450px;
+        justify-content: center;
+
+        border-top: 1px solid #bdbdbd;
+        font-weight: bold;
+        cursor: pointer;
+        color: #9f9b9b;
+      }
+      .NomemberLogin {
+        padding-top: 20px;
+        font-size: 15px;
+        width: 450px;
+        border-top: 1px solid;
+
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .Signup {
+      .inputemailid {
+        font-size: 13px;
+        padding-bottom: 13px;
+        font-family: 'Noto Sans KR';
+      }
+      .inputpassword {
+        font-size: 13px;
+        padding-bottom: 13px;
+        padding-top: 10px;
+        font-family: 'Noto Sans KR';
+      }
+      .inputId {
+        width: 450px;
+        height: 40px;
+        display: block;
+        border: 1px solid #e0e0e0;
+      }
+
+      .inputPw {
+        width: 450px;
+        height: 40px;
+        display: block;
+        border: 1px solid #e0e0e0;
+      }
+    }
+    .loginbotton {
+      padding-top: 30px;
+
+      .btn {
+        width: 450px;
+        height: 48px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    .createid {
+      width: 450px;
+      .createlogin {
+        border-top: 1px solid #bdbdbd;
+        padding-top: 30px;
+      }
+      .createuser {
+        padding-bottom: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .givecoupon {
+        padding-top: 13px;
+        padding-bottom: 20px;
+        font-size: 14px;
+        font-weight: 100;
+      }
+    }
+  }
+}

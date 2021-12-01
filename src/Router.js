@@ -1,14 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
+import Createid from './pages/Createid/Createid';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function Router() {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/Login">
-        <Login />
-      </Route>
-    </Routes>
-  </BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Createid" element={<Createid />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default Router;
