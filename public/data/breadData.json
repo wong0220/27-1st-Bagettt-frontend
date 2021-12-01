@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "brand": "paris Baguette",
+    "price": "20000원",
+    "price2": "55500원"
+  },
+  {
+    "id": 2,
+    "src": "https://images.unsplash.com/photo-1537734796389-e1fc293cf856?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+    "brand": "bakery",
+    "price": "10000원",
+    "price2": "15500원"
+  },
+  {
+    "id": 3,
+    "src": "https://images.unsplash.com/photo-1588861472194-6883d8b5e552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80",
+    "brand": "뚜레쥬르",
+    "price": "20350원",
+    "price2": "59100원"
+  },
+  {
+    "id": 4,
+    "src": "https://images.unsplash.com/photo-1599819055803-717bba43890f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "brand": "원소연 베이커리",
+    "price": "21230000원",
+    "price2": "5675300원"
+  },
+  {
+    "id": 5,
+    "src": "https://images.unsplash.com/photo-1533782654613-826a072dd6f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+    "brand": "강인웅 베이커리",
+    "price": "7000원",
+    "price2": "24500원"
+  },
+  {
+    "id": 6,
+    "src": "https://images.unsplash.com/photo-1618411640018-972400a01458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "brand": "김재호 빵집",
+    "price": "201000원",
+    "price2": "551500원"
+  },
+  {
+    "id": 7,
+    "src": "https://images.unsplash.com/photo-1586657263857-346c4b712ff5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80",
+    "brand": "이재문 베이커리",
+    "price": "63000원",
+    "price2": "92500원"
+  },
+  {
+    "id": 8,
+    "src": "https://images.unsplash.com/photo-1612240498936-65f5101365d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "brand": "김은혜 베이커리",
+    "price": "110000원",
+    "price2": "22800원"
+  },
+  {
+    "id": 9,
+    "src": "https://images.unsplash.com/photo-1473447547337-5770a453122d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+    "brand": "황성재 빵",
+    "price": "17000원",
+    "price2": "92500원"
+  },
+  {
+    "id": 10,
+    "src": "https://images.unsplash.com/photo-1609889132708-e31330e6c7a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80",
+    "brand": "위코드 베이커리",
+    "price": "13000원",
+    "price2": "51350원"
+  },
+  {
+    "id": 11,
+    "src": "https://images.unsplash.com/photo-1592144162379-8bb163062961?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "brand": "류재은 베이커리",
+    "price": "22000원",
+    "price2": "35500원"
+  }
+]

@@ -1,0 +1,35 @@
+.breadList {
+  width: 100%;
+
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4) {
+    .breadImage {
+      border-top: 1px solid black;
+    }
+  }
+
+  .breadImage {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    width: 254px;
+    height: 279px;
+  }
+
+  .shortSubscribe {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-size: 12px;
+    color: #4c4d4e;
+  }
+
+  .longSubscribe {
+    width: 254px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    color: #4c4d4e;
+  }
+}
