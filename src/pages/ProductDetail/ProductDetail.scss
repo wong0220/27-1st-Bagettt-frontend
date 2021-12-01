@@ -1,0 +1,17 @@
+body {
+  height: 1000vh;
+}
+
+.container {
+  display: flex;
+  padding: 0 50px;
+}
+
+.productDetailViewWrapper {
+  width: calc(100% - 500px);
+  padding-right: 50px;
+
+  .productImage {
+    width: 100%;
+  }
+}

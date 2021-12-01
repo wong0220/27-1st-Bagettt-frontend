@@ -1,0 +1,117 @@
+.productContentInfoWrapper {
+  position: fixed;
+  width: 500px;
+  right: 50px;
+  border-left: 1px solid #000;
+  height: 1000px;
+  background-color: #fff;
+
+  .cartPutWrapper {
+    margin-top: 50px;
+    margin-left: 24px;
+
+    .productName {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .productInfo {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .productPriceWrapper {
+      display: flex;
+      margin: 25px 0;
+
+      .productPriceText {
+        width: 100px;
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      .productPrice {
+        font-size: 24px;
+      }
+    }
+    .deliveryWrapper {
+      display: flex;
+      margin: 25px 0;
+
+      .deliveryText {
+        width: 100px;
+        font-size: 17px;
+        // font-weight: bold;
+      }
+    }
+
+    .dayOption {
+      display: flex;
+      margin: 25px 0;
+      padding-bottom: 100px;
+      border-bottom: 1px solid #f2f2f2;
+
+      .selectBox {
+        margin-left: 10px;
+        width: 100px;
+      }
+    }
+
+    .orderWrapper {
+      .orderNow {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .productCountWrapper {
+        margin: 25px 0;
+
+        .productCountInput {
+          width: 50px;
+        }
+      }
+
+      .orderCountWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0;
+
+        .orderCountText {
+          width: 100px;
+          font-size: 17px;
+        }
+      }
+
+      .orderPriceWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0;
+
+        .orderPriceText {
+          font-size: 17px;
+          font-weight: bold;
+          width: 100px;
+        }
+
+        .orderPrice {
+          font-size: 24px;
+        }
+      }
+      .btnOrder {
+        margin-bottom: 10px;
+        border: none;
+        width: 100%;
+        height: 45px;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .btnShoppingBag {
+        border: 1px solid #000;
+        background-color: #fff;
+        width: 100%;
+        height: 45px;
+      }
+    }
+  }
+}

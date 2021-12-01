@@ -1,0 +1,11 @@
+.productTab {
+  display: flex;
+  justify-content: space-around;
+
+  .tabList {
+    padding-top: 16px;
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid #000;
+  }
+}
