@@ -79,10 +79,10 @@ function Login() {
             </div>
             <div className="save">
               <input type="checkbox" className="check-box" />
-              <span className="saveid">아이디저장</span>
+              <span className="saveid">아이디 저장</span>
               <div className="find">
                 <ul className="forgetlogin">
-                  <li className="findid">아이디찾기</li>
+                  <li className="findid">아이디 찾기</li>
                   <li className="findpw">비밀번호 찾기</li>
                 </ul>
               </div>

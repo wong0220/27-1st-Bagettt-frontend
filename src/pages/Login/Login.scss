@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 550px;
+    margin-left: 600px;
 
     .title {
       padding-top: 50px;
@@ -87,6 +87,8 @@
         background-color: black;
         color: white;
         font-weight: bold;
+        outline: none;
+        border: 1px solid black;
       }
     }
     .save {
@@ -95,7 +97,7 @@
       .saveid {
         margin-right: 200px;
         font-size: 13px;
-        font-family: 'Noto Serif KR';
+        font-family: 'Noto Sans KR';
         margin-left: 5px;
         cursor: pointer;
       }
@@ -108,11 +110,13 @@
             padding-right: 10px;
             border-right: 1px solid #c4c4c4;
             cursor: pointer;
+            font-family: 'Noto Sans KR';
           }
         }
         .findpw {
           margin-left: 10px;
           cursor: pointer;
+          font-family: 'Noto Sans KR';
         }
       }
     }
@@ -127,6 +131,7 @@
         margin-top: 10px;
         font-weight: bold;
         cursor: pointer;
+        font-family: 'Noto Sans KR';
       }
       .icons {
         .fab {
@@ -143,12 +148,14 @@
       .createuser {
         padding-bottom: 10px;
         font-weight: 600;
+        font-family: 'Noto Sans KR';
       }
       .givecoupon {
         padding-top: 13px;
         padding-bottom: 20px;
         font-size: 14px;
         font-weight: 100;
+        font-family: 'Noto Sans KR';
       }
       .createuserbtn {
         width: 450px;
@@ -167,7 +174,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 550px;
+    margin-left: 600px;
 
     .tittle {
       padding-top: 50px;
@@ -247,6 +254,8 @@
         background-color: black;
         color: white;
         font-weight: bold;
+        outline: none;
+        border: 1px solid black;
       }
     }
     .createid {

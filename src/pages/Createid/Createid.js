@@ -4,7 +4,7 @@ import './Createid.scss';
 function Createid() {
   const [idInput, setidInput] = useState('');
   const [pwInput, setpwInput] = useState('');
-  const [agianpwInput, setagianpwInput] = useState('');
+  const [nameInput, setnameInput] = useState('');
   const [phonenumberInput, setphonenumberInput] = useState('');
   const [addressInput, setaddressInput] = useState('');
 
@@ -14,8 +14,8 @@ function Createid() {
   const handlepwInput = e => {
     setpwInput(e.target.value);
   };
-  const handleagianpwInput = e => {
-    setagianpwInput(e.target.value);
+  const handlenameInput = e => {
+    setnameInput(e.target.value);
   };
   const handlephonenumberInput = e => {
     setphonenumberInput(e.target.value);
@@ -51,17 +51,16 @@ function Createid() {
               id="pw"
               placeholder="대소문자영어 + 숫자 + 특수문자 조합 필수 입력 8자 이상"
             />
-            <input
-              className="inputpw2"
-              type="password"
-              onChange={handleagianpwInput}
-              value={agianpwInput}
-              id="pw"
-              placeholder="비밀번호 확인"
-            />
+
             <div className="inputName">
               <span className="Name">이름 *</span>
-              <input className="inputName" type="text" id="name" />
+              <input
+                className="inputName"
+                type="text"
+                id="name"
+                onChange={handlenameInput}
+                value={nameInput}
+              />
             </div>
             <div className="inputPhonenumber">
               <span className="Phonenumber">휴대폰번호 *</span>
