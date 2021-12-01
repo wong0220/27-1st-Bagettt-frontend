@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Createid.scss';
 
 function Createid() {
+  const [idInput, setidInput] = useState('');
+  const [pwInput, setpwInput] = useState('');
+  const [agianpwInput, setagianpwInput] = useState('');
+  const [phonenumberInput, setphonenumberInput] = useState('');
+  const [addressInput, setaddressInput] = useState('');
+
+  const handleidInput = e => {
+    setidInput(e.target.value);
+  };
+  const handlepwInput = e => {
+    setpwInput(e.target.value);
+  };
+  const handleagianpwInput = e => {
+    setagianpwInput(e.target.value);
+  };
+  const handlephonenumberInput = e => {
+    setphonenumberInput(e.target.value);
+  };
+  const handleaddressInput = e => {
+    setaddressInput(e.target.value);
+  };
+
   return (
     <div>
       <div className="Createid">
@@ -11,12 +33,20 @@ function Createid() {
           </div>
           <div className="inputEmailid">
             <span className="IDemail">이메일 아이디 *</span>
-            <input className="inputid" type="text,number,email" id="id" />
+            <input
+              className="inputid"
+              type="text,number,email"
+              id="id"
+              onChange={handleidInput}
+              value={idInput}
+            />
           </div>
           <div className="inputPassword">
             <span className="Password">비밀번호 *</span>
             <input
               className="inputpw"
+              onChange={handlepwInput}
+              value={pwInput}
               type="password"
               id="pw"
               placeholder="대소문자영어 + 숫자 + 특수문자 조합 필수 입력 8자 이상"
@@ -24,6 +54,8 @@ function Createid() {
             <input
               className="inputpw2"
               type="password"
+              onChange={handleagianpwInput}
+              value={agianpwInput}
               id="pw"
               placeholder="비밀번호 확인"
             />
@@ -35,36 +67,28 @@ function Createid() {
               <span className="Phonenumber">휴대폰번호 *</span>
               <input
                 className="Phone"
+                onChange={handlephonenumberInput}
                 type="text"
+                value={phonenumberInput}
                 id="Phonenumber"
                 placeholder="-생략"
               />
             </div>
-            <div className="inputAdress">
-              <p className="Adress">주소 *</p>
+            <div className="inputAddress">
+              <p className="Address">주소 *</p>
             </div>
-            <div className="buttonadress">
-              <input className="homeAdress" type="text" id="Adress" />
-              <button type="button" className="adressbutton">
-                우편번호검색
-              </button>
-            </div>
-            <div className="moreAdress">
-              <input className="detailAdress" type="text" id="detailAdress" />
+            <div className="buttonaddress">
               <input
-                className="realdetailAdress"
+                className="homeAddress"
+                onChange={handleaddressInput}
+                value={addressInput}
                 type="text"
-                id="realdetailAdress"
+                id="Address"
               />
             </div>
+
             <div className="submitbutton">
-              <button
-                type="submit"
-                className="btn"
-                onClick={function () {
-                  alert('힝!  속았지~~??(찡긋)');
-                }}
-              >
+              <button type="submit" className="btn">
                 회원가입
               </button>
             </div>

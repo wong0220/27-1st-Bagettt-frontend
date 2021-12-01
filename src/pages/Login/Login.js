@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
   const [Member, setMember] = useState(true);
+
   const [idInput, setIdInput] = useState('');
   const [PWInput, setPassWordInput] = useState('');
+
+  const [numInput, setNumInput] = useState('');
+  const [nameInput, setNameInput] = useState('');
+
+  const handleNameInput = e => {
+    setNameInput(e.target.value);
+  };
+
+  const handleNumInput = e => {
+    setNumInput(e.target.value);
+  };
 
   const handleIdInput = e => {
     setIdInput(e.target.value);
@@ -27,8 +39,8 @@ function Login() {
       {Member ? (
         <div className="Login">
           <div className="Login-box">
-            <div className="tittle">
-              <h className="tittleLogin">LOGIN</h>
+            <div className="title">
+              <h className="titleLogin">LOGIN</h>
             </div>
             <ul className="MemberShip">
               <li className="memberLogin">회원 로그인</li>
@@ -78,9 +90,9 @@ function Login() {
             <div className="usesnslogin">
               <p className="loginsns">SNS 로그인</p>
               <div className="icons">
-                <i className="fab fa-facebook fa-2x"></i>
-                <i className="fab fa-google fa-2x"></i>
-                <i className="fab fa-line fa-2x"></i>
+                <i className="fab fa-facebook fa-2x" />
+                <i className="fab fa-google fa-2x" />
+                <i className="fab fa-line fa-2x" />
               </div>
             </div>
             <div className="createid">
@@ -91,7 +103,7 @@ function Login() {
                 회원으로 가입하시면 10% 할인쿠폰을 드립니다.
               </p>
               <button type="submit" className="createuserbtn">
-                회원가입
+                <Link to="/createid">회원가입</Link>
               </button>
             </div>
           </div>
@@ -110,11 +122,23 @@ function Login() {
             </ul>
             <div className="Signup">
               <p className="inputemailid">주문번호</p>
-              <input className="inputId" type="text,number,email" id="id" />
+              <input
+                className="inputNum"
+                onChange={handleNumInput}
+                type="text,number"
+                id="id"
+                value={numInput}
+              />
               <p className="inputpassword">이름</p>
-              <input className="inputPw" type="text" id="pw" />
+              <input
+                className="inputName"
+                onChange={handleNameInput}
+                type="text"
+                id="pw"
+                value={nameInput}
+              />
             </div>
-            <div className="loginbotton">
+            <div className="loginbutton">
               <button type="submit" className="btn">
                 주문조회
               </button>

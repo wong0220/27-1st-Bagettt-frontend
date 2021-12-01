@@ -9,11 +9,11 @@
     align-items: center;
     margin-left: 550px;
 
-    .tittle {
+    .title {
       padding-top: 50px;
       margin-bottom: 50px;
 
-      .tittleLogin {
+      .titleLogin {
         float: none;
         font-size: 31px;
         color: #000;
@@ -87,9 +87,6 @@
         background-color: black;
         color: white;
         font-weight: bold;
-      }
-      .btn:disabled {
-        background-color: burlywood;
       }
     }
     .save {
@@ -226,21 +223,21 @@
         padding-top: 10px;
         font-family: 'Noto Sans KR';
       }
-      .inputId {
+      .inputNum {
         width: 450px;
         height: 40px;
         display: block;
         border: 1px solid #e0e0e0;
       }
 
-      .inputPw {
+      .inputName {
         width: 450px;
         height: 40px;
         display: block;
         border: 1px solid #e0e0e0;
       }
     }
-    .loginbotton {
+    .loginbutton {
       padding-top: 30px;
 
       .btn {
