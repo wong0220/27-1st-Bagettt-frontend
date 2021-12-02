@@ -1,17 +1,13 @@
-body {
-  height: 1000vh;
-}
-
 .ProductDetail {
   display: flex;
   padding: 0 50px;
-}
 
-.wrapper {
-  width: calc(100% - 500px);
-  padding-right: 50px;
+  .wrapper {
+    width: calc(100% - 500px);
+    padding-right: 50px;
 
-  .productImage {
-    width: 100%;
+    .productImage {
+      width: 100%;
+    }
   }
 }

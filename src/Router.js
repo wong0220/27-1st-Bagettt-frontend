@@ -9,7 +9,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/Login" element={<Login />} />
-        <Route path="/ProductDetail" element={<ProductDetail />} />
+        <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/list-page" element={<ListPage />} />
       </Routes>
     </BrowserRouter>

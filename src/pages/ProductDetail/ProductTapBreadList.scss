@@ -1,7 +1,8 @@
+@import 'src/styles/variable.scss';
+
 .ProductTapBreadList {
   .container {
-    display: flex;
-    align-items: center;
+    @include flexVerCenter;
     margin-top: 100px;
 
     .breadImage {

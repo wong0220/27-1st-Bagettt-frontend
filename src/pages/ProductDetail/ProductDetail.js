@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductContentInfo from './ProductContentInfo';
 import ProductTap from './ProductTap';
+import ProductContentInfo from './ProductContentInfo';
 import './ProductDetail.scss';
 
 function ProductDetail() {

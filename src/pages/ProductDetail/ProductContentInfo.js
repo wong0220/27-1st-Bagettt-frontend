@@ -68,9 +68,6 @@ function ProductContentInfo() {
           <button type="button" className="subscription">
             구독 하기
           </button>
-          {/* <button type="button" className="btnShoppingBag">
-            SHOPPING BAG
-          </button> */}
         </div>
       </div>
     </div>
