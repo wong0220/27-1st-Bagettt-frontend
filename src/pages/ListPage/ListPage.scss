@@ -1,0 +1,26 @@
+.ListPage {
+  padding-left: 48px;
+  padding-right: 48px;
+
+  .homeRoot {
+    font-size: 13px;
+    color: #bcbec0;
+  }
+
+  .sign {
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 13px;
+    color: #bcbec0;
+  }
+
+  .subscribeRoot {
+    font-size: 13px;
+  }
+
+  .breadContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
