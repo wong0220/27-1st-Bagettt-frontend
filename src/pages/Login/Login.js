@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
-  const [Member, setMember] = useState(true);
+  const navigate = useNavigate();
+
+  const [member, setMember] = useState(true);
 
   const [idInput, setIdInput] = useState('');
-  const [PWInput, setPassWordInput] = useState('');
+  const [pWInput, setPassWordInput] = useState('');
 
-  const [numInput, setNumInput] = useState('');
+  const [numInput, setNumberInput] = useState('');
   const [nameInput, setNameInput] = useState('');
 
   const handleNameInput = e => {
     setNameInput(e.target.value);
   };
 
-  const handleNumInput = e => {
-    setNumInput(e.target.value);
+  const handleNumberInput = e => {
+    setNumberInput(e.target.value);
   };
 
   const handleIdInput = e => {
@@ -30,111 +33,103 @@ function Login() {
   function onClick() {
     setMember(false);
   }
-  function ChangeUser() {
+
+  function changeUser() {
     setMember(true);
   }
 
+  const goToMain = () => {
+    if (idInput.includes('@', '.') && pWInput.length > 7) navigate('/main');
+    else {
+      alert('등록되지 않은 회원입니다 회원가입을 먼저해주세요');
+    }
+  };
+
   return (
     <div>
-      {Member ? (
-        <div className="Login">
-          <div className="Login-box">
+      {member ? (
+        <div className="login">
+          <div className="loginBox">
             <div className="title">
-              <h className="titleLogin">LOGIN</h>
+              <p className="titleLogin">LOGIN</p>
             </div>
-            <ul className="MemberShip">
-              <li className="memberLogin">회원 로그인</li>
-              <li className="NomemberLogin" onClick={onClick}>
+            <ul className="memberShip">
+              <li className="loginMember">회원 로그인</li>
+              <li className="searchOrder" onClick={onClick}>
                 비회원 주문조회
               </li>
             </ul>
-            <div className="Signup">
-              <p className="inputemailid">이메일 아이디</p>
-              <input
-                className="inputId"
-                onChange={handleIdInput}
-                type="text,number,email"
-                id="id"
-              />
-              <p className="inputpassword">비밀번호</p>
+            <div className="signUp">
+              <p className="inputEmailid">이메일 아이디</p>
+              <input className="inputId" onChange={handleIdInput} type="text" />
+              <p className="inputPassword">비밀번호</p>
               <input
                 className="inputPw"
                 onChange={handlePWInput}
                 type="password"
-                id="pw"
               />
             </div>
-            <div className="loginbotton">
-              {idInput.includes('@') &&
-              idInput.includes('.') &&
-              PWInput.length >= 8 ? (
-                <button type="submit" className="btn" disabled={false}>
-                  로그인
-                </button>
-              ) : (
-                <button type="submit" className="btn" disabled={true}>
-                  로그인
-                </button>
-              )}
+            <div className="loginButton">
+              <button type="submit" className="btn" onClick={goToMain}>
+                로그인
+              </button>
             </div>
-            <div className="save">
-              <input type="checkbox" className="check-box" />
-              <span className="saveid">아이디 저장</span>
+            <div className="saveAccount">
+              <input type="checkbox" className="checkboxId" />
+              <span className="saveId">아이디 저장</span>
               <div className="find">
-                <ul className="forgetlogin">
-                  <li className="findid">아이디 찾기</li>
-                  <li className="findpw">비밀번호 찾기</li>
+                <ul className="forgetLogin">
+                  <li className="findId">아이디 찾기</li>
+                  <li className="findPw">비밀번호 찾기</li>
                 </ul>
               </div>
             </div>
-            <div className="usesnslogin">
-              <p className="loginsns">SNS 로그인</p>
+            <div className="iconsnsLogin">
+              <p className="loginSns">SNS 로그인</p>
               <div className="icons">
                 <i className="fab fa-facebook fa-2x" />
                 <i className="fab fa-google fa-2x" />
                 <i className="fab fa-line fa-2x" />
               </div>
             </div>
-            <div className="createid">
-              <div className="createlogin">
-                <h className="createuser">회원가입</h>
+            <div className="createId">
+              <div className="createLogin">
+                <p className="createUser">회원가입</p>
               </div>
-              <p className="givecoupon">
+              <p className="giveCoupon">
                 회원으로 가입하시면 10% 할인쿠폰을 드립니다.
               </p>
-              <button type="submit" className="createuserbtn">
+              <button type="submit" className="createUserbtn">
                 <Link to="/createid">회원가입</Link>
               </button>
             </div>
           </div>
         </div>
       ) : (
-        <div className="UNLogin">
-          <div className="unLogin-box">
-            <div className="tittle">
-              <h className="tittleLogin">LOGIN</h>
+        <div className="unLogin">
+          <div className="unLoginbox">
+            <div className="title">
+              <h className="titleLogin">LOGIN</h>
             </div>
-            <ul className="MemberShip">
-              <li className="memberLogin" onClick={ChangeUser}>
+            <ul className="memberShip">
+              <li className="memberLogin" onClick={changeUser}>
                 회원 로그인
               </li>
-              <li className="NomemberLogin">비회원 주문조회</li>
+              <li className="nomemberSearchOrder">비회원 주문조회</li>
             </ul>
-            <div className="Signup">
-              <p className="inputemailid">주문번호</p>
+            <div className="signUp">
+              <p className="inputEmailid">주문번호</p>
               <input
-                className="inputNum"
-                onChange={handleNumInput}
-                type="text,number"
-                id="id"
+                className="inputNumber"
+                onChange={handleNumberInput}
+                type="text"
                 value={numInput}
               />
-              <p className="inputpassword">이름</p>
+              <p className="inputPassword">이름</p>
               <input
                 className="inputName"
                 onChange={handleNameInput}
                 type="text"
-                id="pw"
                 value={nameInput}
               />
             </div>
@@ -143,11 +138,11 @@ function Login() {
                 주문조회
               </button>
             </div>
-            <div className="createid">
-              <div className="createlogin">
-                <h className="createuser">주문번호 문의</h>
+            <div className="createId">
+              <div className="createLogin">
+                <h className="createUser">주문번호 문의</h>
               </div>
-              <p className="givecoupon">
+              <p className="giveCoupon">
                 주문번호를 잊으셨나요? 고객센터(999-9000)로 문의해 주세요.
               </p>
             </div>

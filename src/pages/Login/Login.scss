@@ -1,138 +1,143 @@
+@import '../../styles/variable.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
 
-.Login {
-  .Login-box {
-    width: 501px;
+.login {
+  .loginBox {
     display: flex;
     flex-direction: column;
+    margin-left: 100px;
     align-items: center;
-    margin-left: 600px;
 
     .title {
       padding-top: 50px;
       margin-bottom: 50px;
 
       .titleLogin {
-        float: none;
-        font-size: 31px;
         color: #000;
-        font-weight: normal;
-        line-height: 1;
-        margin: 0;
+        font-size: 31px;
       }
     }
-    .MemberShip {
+
+    .memberShip {
       display: flex;
-      padding-bottom: 50px;
       justify-content: center;
       width: 450px;
+      padding-bottom: 50px;
       text-align: center;
 
-      .memberLogin {
-        border-right: 1px solid #bdbdbd;
-        padding-top: 20px;
-        font-size: 15px;
-        width: 450px;
+      .loginMember {
         justify-content: center;
-
+        width: 450px;
+        padding-top: 20px;
+        border-right: $borderline;
         border-top: 1px solid;
+        font-size: 15px;
         font-weight: bold;
         cursor: pointer;
       }
-      .NomemberLogin {
-        padding-top: 20px;
-        font-size: 15px;
+
+      .searchOrder {
         width: 450px;
-        border-top: 1px solid #bdbdbd;
+        padding-top: 20px;
+        border-top: $borderline;
         color: #9f9b9b;
+        font-size: 15px;
         font-weight: bold;
         cursor: pointer;
       }
     }
 
-    .Signup {
-      .inputemailid {
-        font-size: 13px;
+    .signUp {
+      .inputEmailid {
         padding-bottom: 13px;
+        font-size: 13px;
         font-family: 'Noto Sans KR';
       }
-      .inputpassword {
+
+      .inputPassword {
+        padding: 10px 0px 13px 0px;
         font-size: 13px;
-        padding-bottom: 13px;
-        padding-top: 10px;
         font-family: 'Noto Sans KR';
       }
+
       .inputId {
+        display: block;
         width: 450px;
         height: 40px;
-        display: block;
-        border: 1px solid #e0e0e0;
+        border: $borderline;
       }
 
       .inputPw {
+        display: block;
         width: 450px;
         height: 40px;
-        display: block;
-        border: 1px solid #e0e0e0;
+        border: $borderline;
       }
     }
-    .loginbotton {
+    .loginButton {
       padding-top: 30px;
 
       .btn {
         width: 450px;
         height: 48px;
-        cursor: pointer;
+        border: 1px solid black;
         background-color: black;
         color: white;
         font-weight: bold;
         outline: none;
-        border: 1px solid black;
+        cursor: pointer;
       }
     }
-    .save {
+
+    .saveAccount {
       display: flex;
       padding-top: 20px;
-      .saveid {
+
+      .saveId {
+        margin-left: 5px;
         margin-right: 200px;
         font-size: 13px;
         font-family: 'Noto Sans KR';
-        margin-left: 5px;
         cursor: pointer;
       }
+
       .find {
         padding-bottom: 50px;
-        .forgetlogin {
+
+        .forgetLogin {
           display: flex;
           font-size: 13px;
-          .findid {
+
+          .findId {
             padding-right: 10px;
-            border-right: 1px solid #c4c4c4;
-            cursor: pointer;
+            border-right: $borderline;
             font-family: 'Noto Sans KR';
+            cursor: pointer;
           }
-        }
-        .findpw {
-          margin-left: 10px;
-          cursor: pointer;
-          font-family: 'Noto Sans KR';
+
+          .findPw {
+            margin-left: 10px;
+            font-family: 'Noto Sans KR';
+            cursor: pointer;
+          }
         }
       }
     }
-    .usesnslogin {
-      padding-bottom: 50px;
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
 
-      .loginsns {
-        margin-left: 25px;
-        margin-top: 10px;
+    .iconsnsLogin {
+      display: flex;
+      justify-content: space-between;
+      width: 501px;
+      padding-bottom: 50px;
+
+      .loginSns {
+        margin: 10px 0px 0px 25px;
         font-weight: bold;
-        cursor: pointer;
         font-family: 'Noto Sans KR';
+        cursor: pointer;
       }
+
       .icons {
         .fab {
           padding-right: 20px;
@@ -140,138 +145,144 @@
         }
       }
     }
-    .createid {
-      .createlogin {
-        border-top: 1px solid #bdbdbd;
+
+    .createId {
+      .createLogin {
         padding-top: 30px;
+        border-top: $borderline;
       }
-      .createuser {
-        padding-bottom: 10px;
+
+      .createUser {
         font-weight: 600;
+        padding-bottom: 10px;
         font-family: 'Noto Sans KR';
       }
-      .givecoupon {
-        padding-top: 13px;
-        padding-bottom: 20px;
+
+      .giveCoupon {
+        padding: 13px 0px 20px 0px;
         font-size: 14px;
         font-weight: 100;
         font-family: 'Noto Sans KR';
       }
-      .createuserbtn {
+
+      .createUserbtn {
         width: 450px;
         height: 45px;
         background-color: white;
         border: 1px solid black;
-        cursor: pointer;
         font-weight: bold;
+        cursor: pointer;
       }
     }
   }
 }
-.UNLogin {
-  .unLogin-box {
-    width: 501px;
+
+.unLogin {
+  .unLoginbox {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 501px;
     margin-left: 600px;
+    align-items: center;
 
-    .tittle {
+    .title {
       padding-top: 50px;
       margin-bottom: 50px;
 
-      .tittleLogin {
-        float: none;
-        font-size: 31px;
+      .titleLogin {
         color: #000;
+        font-size: 31px;
         font-weight: normal;
-        line-height: 1;
-        margin: 0;
       }
     }
-    .MemberShip {
+
+    .memberShip {
       display: flex;
-      padding-bottom: 50px;
       justify-content: center;
       width: 450px;
+      padding-bottom: 50px;
       text-align: center;
-      .memberLogin {
-        border-right: 1px solid #bdbdbd;
-        padding-top: 20px;
-        font-size: 15px;
-        width: 450px;
-        justify-content: center;
 
-        border-top: 1px solid #bdbdbd;
+      .memberLogin {
+        justify-content: center;
+        width: 450px;
+        padding-top: 20px;
+        border-right: $borderline;
+        border-top: $borderline;
+        color: #9f9b9b;
+        font-size: 15px;
         font-weight: bold;
         cursor: pointer;
-        color: #9f9b9b;
       }
-      .NomemberLogin {
-        padding-top: 20px;
-        font-size: 15px;
-        width: 450px;
-        border-top: 1px solid;
 
+      .nomemberSearchOrder {
+        width: 450px;
+        padding-top: 20px;
+        border-top: 1px solid;
+        font-size: 15px;
         font-weight: bold;
         cursor: pointer;
       }
     }
 
-    .Signup {
-      .inputemailid {
-        font-size: 13px;
+    .signUp {
+      .inputEmailid {
         padding-bottom: 13px;
         font-family: 'Noto Sans KR';
-      }
-      .inputpassword {
         font-size: 13px;
-        padding-bottom: 13px;
-        padding-top: 10px;
+      }
+
+      .inputPassword {
+        padding: 10px 0px 13px 0px;
+        font-size: 13px;
         font-family: 'Noto Sans KR';
       }
-      .inputNum {
+
+      .inputNumber {
+        display: block;
         width: 450px;
         height: 40px;
-        display: block;
-        border: 1px solid #e0e0e0;
+        border: $borderline;
       }
 
       .inputName {
+        display: block;
         width: 450px;
         height: 40px;
-        display: block;
-        border: 1px solid #e0e0e0;
+        border: $borderline;
       }
     }
+
     .loginbutton {
       padding-top: 30px;
 
       .btn {
         width: 450px;
         height: 48px;
-        cursor: pointer;
+        border: 1px solid black;
         background-color: black;
         color: white;
         font-weight: bold;
         outline: none;
-        border: 1px solid black;
+        cursor: pointer;
       }
     }
-    .createid {
+
+    .createId {
       width: 450px;
-      .createlogin {
-        border-top: 1px solid #bdbdbd;
+      .createLogin {
         padding-top: 30px;
+        border-top: $borderline;
       }
-      .createuser {
+
+      .createUser {
         padding-bottom: 10px;
         font-weight: 600;
         cursor: pointer;
       }
-      .givecoupon {
-        padding-top: 13px;
-        padding-bottom: 20px;
+
+      .giveCoupon {
+        padding: 13px 0px 20px 0px;
         font-size: 14px;
         font-weight: 100;
       }
