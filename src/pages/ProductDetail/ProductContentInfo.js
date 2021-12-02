@@ -11,9 +11,9 @@ function ProductContentInfo() {
           <div className="productPriceText">구독가</div>
           <div className="productPrice">월 65,000원</div>
         </div>
-        <div className="deliveryWrapper">
-          <div className="deliveryText">배송비</div>
-          <div className="deliveryPrice">
+        <div className="shippingWrapper">
+          <div className="shippingText">배송비</div>
+          <div className="shippingPrice">
             3,000원 (30,000원 이상 구매 시 무료)
           </div>
         </div>
