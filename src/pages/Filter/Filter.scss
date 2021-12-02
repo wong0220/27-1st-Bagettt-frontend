@@ -1,0 +1,70 @@
+.filterContainer {
+  margin-top: 25px;
+  position: relative;
+
+  .title {
+    width: 254px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+    font-size: 31px;
+  }
+
+  .filter {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .sortPrice {
+    font-size: 13px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .buttonWrapper {
+    position: absolute;
+    bottom: 60px;
+
+    .resetButton {
+      width: 117px;
+      height: 46px;
+      margin-right: 10px;
+      border: 1px solid black;
+      background-color: white;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .filterButton {
+      width: 117px;
+      height: 46px;
+      margin-right: 10px;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .anonymouse {
+    position: absolute;
+    width: 254px;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 1px solid black;
+  }
+}
