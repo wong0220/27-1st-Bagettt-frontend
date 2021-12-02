@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login/Login';
+import Nav from './pages/Login/Nav/Nav';
+
 function Router() {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/Login">
-        <Login />
-      </Route>
-    </Routes>
-  </BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Nav" element={<Nav />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default Router;

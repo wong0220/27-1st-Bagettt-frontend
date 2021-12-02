@@ -1,0 +1,28 @@
+.Nav {
+  display: flex;
+  border: 1px solid;
+  .NavPhoto {
+    .brandphoto {
+      width: 100px;
+    }
+  }
+  .NavList {
+    .Brandstory {
+    }
+  }
+  .NavOtherlist {
+    .otherlist {
+      display: flex;
+      .event {
+      }
+      .brand {
+      }
+      .subscribe {
+      }
+      .Review {
+      }
+      .CustomerCenter {
+      }
+    }
+  }
+}
