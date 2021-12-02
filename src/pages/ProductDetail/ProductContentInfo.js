@@ -65,12 +65,12 @@ function ProductContentInfo() {
             <div className="orderPriceText">총 상품 금액</div>
             <div className="orderPrice">130,000원</div>
           </div>
-          <button type="button" className="btnOrder">
-            ORDER NOW
+          <button type="button" className="subscription">
+            구독 하기
           </button>
-          <button type="button" className="btnShoppingBag">
+          {/* <button type="button" className="btnShoppingBag">
             SHOPPING BAG
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

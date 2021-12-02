@@ -25,7 +25,7 @@ function ProductTap() {
     <div>
       <ul className="productTab">
         <li className="productInfo tabList">
-          <div className="colorChange" onClick={tapProductInfo} id="1">
+          <div onClick={tapProductInfo} id="1">
             상품정보
           </div>
         </li>

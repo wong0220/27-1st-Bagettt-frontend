@@ -2,12 +2,12 @@ body {
   height: 1000vh;
 }
 
-.container {
+.ProductDetail {
   display: flex;
   padding: 0 50px;
 }
 
-.productDetailViewWrapper {
+.wrapper {
   width: calc(100% - 500px);
   padding-right: 50px;
 
