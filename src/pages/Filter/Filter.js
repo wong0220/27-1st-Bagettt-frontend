@@ -1,5 +1,8 @@
 import './Filter.scss';
 
+const SORT_LOWER = 'lower';
+const SORT_HIGHER = 'higher';
+
 function Filter({
   openProduct,
   checkSortPrice,
@@ -17,24 +20,24 @@ function Filter({
       {isOpenSortMenu && (
         <div>
           <div className="lowerPriceWrapper">
-            <label htmlFor="lower" className="higherPrice">
+            <label htmlFor={SORT_LOWER} className="sortPrice">
               <input
-                checked={sortPrice === 'lower'}
+                checked={sortPrice === SORT_LOWER}
                 type="radio"
-                name="lower"
-                id="lower"
+                name={SORT_LOWER}
+                id={SORT_LOWER}
                 onChange={checkSortPrice}
               />
               낮은 가격 순
             </label>
           </div>
           <div className="higherPriceWrapper">
-            <label htmlFor="higher" className="higherPrice">
+            <label htmlFor={SORT_HIGHER} className="sortPrice">
               <input
-                checked={sortPrice === 'higher'}
+                checked={sortPrice === SORT_HIGHER}
                 type="radio"
-                name="higher"
-                id="higher"
+                name={SORT_HIGHER}
+                id={SORT_HIGHER}
                 onChange={checkSortPrice}
               />
               높은 가격 순
