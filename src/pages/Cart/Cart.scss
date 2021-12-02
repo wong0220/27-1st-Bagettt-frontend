@@ -10,15 +10,21 @@
   }
 
   .shoppingBag {
-    padding-top: 30px;
-    margin-left: 128.5px;
-    margin-right: 128.5px;
+    padding: 30px 128.5px 0 128.5px;
+
     .title {
       font-size: 31px;
     }
 
     .productTitle {
       margin-top: 100px;
+      padding-bottom: 15px;
+    }
+
+    .orderContainer {
+      height: 160px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
     }
   }
 }
