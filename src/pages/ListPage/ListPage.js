@@ -4,49 +4,40 @@ import Filter from '../Filter/Filter';
 import './ListPage.scss';
 
 function ListPage() {
-  const [bread, setBread] = useState([]);
-  const [sortProduction, setSortProduction] = useState(false);
-  const [higherPrice, setHigherPrice] = useState(false);
-  const [lowerPrice, setLowerPrice] = useState(false);
+  const [breadList, setBreadList] = useState([]);
+  const [isOpenSortMenu, setisOpenSortMenu] = useState(false);
+  const [sortPrice, setSortPrice] = useState('');
 
   function openProduct() {
-    sortProduction ? setSortProduction(false) : setSortProduction(true);
+    setisOpenSortMenu(!isOpenSortMenu);
   }
 
-  function checkHigherPrice() {
-    setHigherPrice(true);
-    setLowerPrice(false);
-  }
-
-  function checkLowerPrice() {
-    setLowerPrice(true);
-    setHigherPrice(false);
+  function checkSortPrice(event) {
+    setSortPrice(event.target.name);
   }
 
   function sort() {
-    if (higherPrice === true) {
-      setBread(prev =>
+    if (sortPrice === 'higher') {
+      setBreadList(prev =>
         [...prev].sort((a, b) => parseInt(b.price) - parseInt(a.price))
       );
-    }
-    if (lowerPrice === true) {
-      setBread(prev =>
+    } else {
+      setBreadList(prev =>
         [...prev].sort((a, b) => parseInt(a.price) - parseInt(b.price))
       );
     }
   }
 
   function reset() {
-    setHigherPrice(false);
-    setLowerPrice(false);
-    setBread(prev => [...prev].sort((a, b) => a.id - b.id));
+    setSortPrice('');
+    setBreadList(prev => [...prev].sort((a, b) => a.id - b.id));
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/breadData.json')
+    fetch('/data/breadData.json')
       .then(res => res.json())
       .then(json => {
-        setBread(json);
+        setBreadList(json);
       });
   }, []);
 
@@ -60,16 +51,14 @@ function ListPage() {
       <ul className="breadContainer">
         <Filter
           openProduct={openProduct}
-          checkHigherPrice={checkHigherPrice}
-          checkLowerPrice={checkLowerPrice}
+          checkSortPrice={checkSortPrice}
           sort={sort}
           reset={reset}
-          sortProduction={sortProduction}
-          higherPrice={higherPrice}
-          lowerPrice={lowerPrice}
+          isOpenSortMenu={isOpenSortMenu}
+          sortPrice={sortPrice}
         />
 
-        {bread.map(bread => {
+        {breadList.map(bread => {
           return <BreadList key={bread.id} bread={bread} />;
         })}
       </ul>

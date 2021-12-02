@@ -12,7 +12,7 @@ function BreadList({ bread }) {
       </div>
       <div className="longSubscribe">
         <span>장기구독 </span>
-        <span>{bread.price2} </span>{' '}
+        <span>{bread.price2} </span>
       </div>
     </li>
   );

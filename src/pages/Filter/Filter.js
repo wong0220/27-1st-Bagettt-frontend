@@ -2,30 +2,28 @@ import './Filter.scss';
 
 function Filter({
   openProduct,
-  checkHigherPrice,
-  checkLowerPrice,
-  sortProduction,
-  lowerPrice,
-  higherPrice,
+  checkSortPrice,
+  isOpenSortMenu,
+  sortPrice,
   sort,
   reset,
 }) {
   return (
-    <div className="FilterContainer">
+    <div className="filterContainer">
       <h1 className="title">빵 구독</h1>
       <div className="filter" onClick={openProduct}>
         상품정렬순
       </div>
-      {sortProduction ? (
+      {isOpenSortMenu && (
         <div>
           <div className="lowerPriceWrapper">
-            <label htmlFor="lower" className="lowerPrice">
+            <label htmlFor="lower" className="higherPrice">
               <input
-                checked={lowerPrice}
+                checked={sortPrice === 'lower'}
                 type="radio"
                 name="lower"
                 id="lower"
-                onChange={checkLowerPrice}
+                onChange={checkSortPrice}
               />
               낮은 가격 순
             </label>
@@ -33,17 +31,17 @@ function Filter({
           <div className="higherPriceWrapper">
             <label htmlFor="higher" className="higherPrice">
               <input
-                checked={higherPrice}
+                checked={sortPrice === 'higher'}
                 type="radio"
                 name="higher"
                 id="higher"
-                onChange={checkHigherPrice}
+                onChange={checkSortPrice}
               />
               높은 가격 순
             </label>
           </div>
         </div>
-      ) : null}
+      )}
       <div className="buttonWrapper">
         <button className="resetButton" onClick={reset}>
           초기화
