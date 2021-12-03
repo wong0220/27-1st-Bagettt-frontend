@@ -45,7 +45,7 @@ function ListPage() {
     <div className="ListPage">
       <div>
         <span className="homeRoot">HOME</span>
-        <span className="sign">></span>
+        <span className="sign" />
         <span className="subscribeRoot"> 빵구독</span>
       </div>
       <ul className="breadContainer">
