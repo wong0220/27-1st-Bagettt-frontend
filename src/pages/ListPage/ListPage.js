@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import BreadList from '../BreadList/BreadList';
-import Filter from '../Filter/Filter';
+import BreadList from '../ListPage/BreadList/BreadList';
+import Filter from '../ListPage/Filter/Filter';
 import './ListPage.scss';
 
 function ListPage() {
