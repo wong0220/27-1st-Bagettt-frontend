@@ -1,27 +1,41 @@
-.Nav {
+.nav {
   display: flex;
   border: 1px solid;
-  .NavPhoto {
-    .brandphoto {
+  .navPhoto {
+    .brandPhoto {
       width: 100px;
     }
   }
-  .NavList {
-    .Brandstory {
+  .navList {
+    .brandStory {
+      margin-right: 20px;
+      font-size: 20px;
     }
   }
-  .NavOtherlist {
-    .otherlist {
+  .navList {
+    display: flex;
+    .list {
       display: flex;
+      align-items: center;
+      justify-content: center;
       .event {
+        font-size: 20px;
+        padding-right: 20px;
       }
       .brand {
+        font-size: 20px;
+        padding-right: 20px;
       }
-      .subscribe {
+      .subScribe {
+        font-size: 20px;
+        padding-right: 20px;
       }
-      .Review {
+      .review {
+        font-size: 20px;
+        padding-right: 20px;
       }
-      .CustomerCenter {
+      .customerCenter {
+        font-size: 20px;
       }
     }
   }
