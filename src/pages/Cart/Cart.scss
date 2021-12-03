@@ -22,9 +22,14 @@
     }
 
     .orderContainer {
-      height: 160px;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+    }
+
+    .orderButtonWrapper {
+      display: flex;
+      justify-content: center;
+      padding-top: 100px;
     }
   }
 }
