@@ -14,13 +14,18 @@ function Nav() {
         </div>
         <div className="navList">
           <ul className="list">
-            <li className="brandStory">BaGeTTT Story</li>
-            <li className="event">Event</li>
-            <li className="brand">입점 브랜드</li>
-            <li className="subScribe">구독</li>
-            <li className="review">리뷰</li>
-            <li className="customerCenter">고객센터</li>
+            <li className="brandStory">BaGETTT Story</li>
+            <li className="subScribe">SUBSCRIBE</li>
+            <li className="event">EVENT</li>
+            <li className="brand">BRAND</li>
+            <li className="review">REVIEW</li>
+            <li className="customerCenter">CUSTOMER CENTER</li>
           </ul>
+        </div>
+        <div className="icons">
+          <i className="fas fa-search fa-2x" />
+          <i className="fas fa-user fa-2x" />
+          <i className="fas fa-shopping-bag fa-2x" />
         </div>
       </nav>
     </div>

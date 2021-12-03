@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  .navPhoto {
+    .brandPhoto {
+      width: 300px;
+      height: 100px;
+    }
+  }
+  .navList {
+    display: flex;
+
+    .list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 300px;
+
+      .brandStory {
+        margin-right: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: $font-family;
+      }
+
+      .subScribe {
+        font-size: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+        font-family: $font-family;
+      }
+
+      .event {
+        font-size: 20px;
+        padding-right: 20px;
+        font-family: $font-family;
+      }
+
+      .brand {
+        font-size: 20px;
+        padding-right: 20px;
+        font-family: $font-family;
+      }
+
+      .review {
+        font-size: 20px;
+        padding-right: 20px;
+        font-family: $font-family;
+      }
+
+      .customerCenter {
+        font-size: 20px;
+        font-family: $font-family;
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+
+    .fas {
+      margin: 10px;
+    }
+  }
+}
