@@ -7,8 +7,7 @@
     "brand": "오월의 종",
     "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
     "calorie": "200kcal",
-    "price": "20000원",
-    "price2": "55500원"
+    "price": 20000
   },
   {
     "id": 2,

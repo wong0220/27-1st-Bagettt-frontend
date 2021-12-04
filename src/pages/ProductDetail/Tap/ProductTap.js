@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ProductInfoTap from './ProductInfoTap';
-import ShippingInfoTap from './ShippingInfoTap';
-import UserGuideTap from './UserGuideTap';
+import ProductInfoTap from './DetailView/ProductInfoTap';
+import ShippingInfoTap from './ShoppingInfo/ShippingInfoTap';
+import UserGuideTap from './UserGuide/UserGuideTap';
 import './ProductTap.scss';
 
 function ProductTap() {
@@ -20,6 +20,7 @@ function ProductTap() {
       return <UserGuideTap />;
     }
   }
+
   return (
     <div>
       <ul className="productTab">

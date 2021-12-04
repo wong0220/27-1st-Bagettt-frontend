@@ -1,13 +1,10 @@
 .ProductDetail {
   display: flex;
+  width: 65%;
   padding: 0 50px;
 
-  .wrapper {
-    width: calc(100% - 500px);
-    padding-right: 50px;
-
-    .productImage {
-      width: 100%;
-    }
+  .productImage {
+    width: 100%;
+    padding: 50px 0;
   }
 }
