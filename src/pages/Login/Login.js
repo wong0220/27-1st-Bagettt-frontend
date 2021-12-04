@@ -7,30 +7,25 @@ function Login() {
   const navigate = useNavigate();
 
   const [member, setMember] = useState(true);
+  const [inputs, setInputs] = useState({
+    idInput: '',
+    pwInput: '',
+    numberInput: '',
+    nameInput: '',
+  });
 
-  const [idInput, setIdInput] = useState('');
-  const [pWInput, setPassWordInput] = useState('');
-
-  const [numInput, setNumberInput] = useState('');
-  const [nameInput, setNameInput] = useState('');
-
-  const handleNameInput = e => {
-    setNameInput(e.target.value);
+  const { idInput, pwInput, numberInput, nameInput } = inputs;
+  const handleInputs = event => {
+    const { name, value } = event.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
   };
 
-  const handleNumberInput = e => {
-    setNumberInput(e.target.value);
-  };
+  const validation = idInput.includes('@', '.') && pwInput.length > 7;
 
-  const handleIdInput = e => {
-    setIdInput(e.target.value);
-  };
-
-  const handlePWInput = e => {
-    setPassWordInput(e.target.value);
-  };
-
-  function onClick() {
+  function onClickbutton() {
     setMember(false);
   }
 
@@ -39,7 +34,7 @@ function Login() {
   }
 
   const goToMain = () => {
-    if (idInput.includes('@', '.') && pWInput.length > 7) navigate('/main');
+    if (validation) navigate('/main');
     else {
       alert('등록되지 않은 회원입니다 회원가입을 먼저해주세요');
     }
@@ -55,22 +50,30 @@ function Login() {
             </div>
             <ul className="memberShip">
               <li className="loginMember">회원 로그인</li>
-              <li className="searchOrder" onClick={onClick}>
+              <li className="searchOrder" onClick={onClickbutton}>
                 비회원 주문조회
               </li>
             </ul>
             <div className="signUp">
               <p className="inputEmailid">이메일 아이디</p>
-              <input className="inputId" onChange={handleIdInput} type="text" />
+              <input
+                className="inputId"
+                onChange={handleInputs}
+                type="text"
+                name="idInput"
+                value={idInput}
+              />
               <p className="inputPassword">비밀번호</p>
               <input
                 className="inputPw"
-                onChange={handlePWInput}
+                onChange={handleInputs}
                 type="password"
+                name="pwInput"
+                value={pwInput}
               />
             </div>
             <div className="loginButton">
-              <button type="submit" className="btn" onClick={goToMain}>
+              <button className="btn" onClick={goToMain}>
                 로그인
               </button>
             </div>
@@ -93,21 +96,19 @@ function Login() {
               </div>
             </div>
             <div className="createId">
-              <div className="createLogin">
-                <p className="createUser">회원가입</p>
-              </div>
+              <div className="createLogin">회원가입</div>
               <p className="giveCoupon">
                 회원으로 가입하시면 10% 할인쿠폰을 드립니다.
               </p>
-              <button type="submit" className="createUserbtn">
+              <button className="createUserbtn">
                 <Link to="/createid">회원가입</Link>
               </button>
             </div>
           </div>
         </div>
       ) : (
-        <div className="unLogin">
-          <div className="unLoginbox">
+        <div className="nonMemberLogin">
+          <div className="nonMemberLoginbox">
             <div className="title">
               <h className="titleLogin">LOGIN</h>
             </div>
@@ -121,22 +122,22 @@ function Login() {
               <p className="inputEmailid">주문번호</p>
               <input
                 className="inputNumber"
-                onChange={handleNumberInput}
+                onChange={handleInputs}
                 type="text"
-                value={numInput}
+                name="numberInput"
+                value={numberInput}
               />
               <p className="inputPassword">이름</p>
               <input
                 className="inputName"
-                onChange={handleNameInput}
+                onChange={handleInputs}
                 type="text"
+                name="nameInput"
                 value={nameInput}
               />
             </div>
             <div className="loginbutton">
-              <button type="submit" className="btn">
-                주문조회
-              </button>
+              <button className="btn">주문조회</button>
             </div>
             <div className="createId">
               <div className="createLogin">

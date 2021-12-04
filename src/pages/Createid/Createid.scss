@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
 
-.createAccount {
-  .createid {
+.createId {
+  .createBox {
     display: flex;
     justify-content: center;
     margin-left: 100px;
 
     .createAccount {
       .create {
-        .createtitle {
+        .createTitle {
           margin-top: 150px;
           font-size: 31px;
           text-align: center;
@@ -31,8 +32,7 @@
         }
 
         .inputId {
-          height: 45px;
-          width: 500px;
+          @include inputWidthHeigh50045;
           border: 1.5px solid #e0e0e0;
         }
       }
@@ -49,8 +49,7 @@
         }
 
         .inputPw {
-          height: 45px;
-          width: 500px;
+          @include inputWidthHeigh50045;
           border: 1.5px solid #e0e0e0;
         }
       }
@@ -59,7 +58,7 @@
         display: flex;
         flex-direction: column;
 
-        .name {
+        .userName {
           margin-bottom: 15px;
           padding-top: 15px;
           font-family: 'Noto Sans KR';
@@ -67,8 +66,7 @@
         }
 
         .inputName {
-          height: 45px;
-          width: 500px;
+          @include inputWidthHeigh50045;
           border: 1.5px solid #e0e0e0;
         }
       }
@@ -76,15 +74,14 @@
       .inputPhoneNumber {
         padding-top: 15px;
 
-        .phoneNumber {
+        .userPhoneNumber {
           font-size: 13px;
           font-family: 'Noto Sans KR';
         }
 
         .phone {
           display: flex;
-          height: 45px;
-          width: 500px;
+          @include inputWidthHeigh50045;
           margin-top: 10px;
           border: 1.5px solid #e0e0e0;
         }
@@ -103,8 +100,7 @@
 
       .buttonAddress {
         .homeAddress {
-          height: 45px;
-          width: 500px;
+          @include inputWidthHeigh50045;
           margin-top: 10px;
           border: 1.5px solid #e0e0e0;
         }
@@ -112,8 +108,7 @@
 
       .submitButton {
         .btn {
-          width: 500px;
-          height: 45px;
+          @include inputWidthHeigh50045;
           margin-top: 20px;
           color: white;
           background-color: black;

@@ -1,13 +1,13 @@
-@import '../../styles/variable.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
 
 .login {
   .loginBox {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
     align-items: center;
+    margin-left: 100px;
 
     .title {
       padding-top: 50px;
@@ -63,18 +63,17 @@
 
       .inputId {
         display: block;
-        width: 450px;
-        height: 40px;
+        @include inputWidthHeigh45040;
         border: $borderline;
       }
 
       .inputPw {
         display: block;
-        width: 450px;
-        height: 40px;
+        @include inputWidthHeigh45040;
         border: $borderline;
       }
     }
+
     .loginButton {
       padding-top: 30px;
 
@@ -177,13 +176,13 @@
   }
 }
 
-.unLogin {
-  .unLoginbox {
+.nonMemberLogin {
+  .nonMemberLoginbox {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 501px;
     margin-left: 600px;
-    align-items: center;
 
     .title {
       padding-top: 50px;
@@ -192,7 +191,6 @@
       .titleLogin {
         color: #000;
         font-size: 31px;
-        font-weight: normal;
       }
     }
 
@@ -240,15 +238,13 @@
 
       .inputNumber {
         display: block;
-        width: 450px;
-        height: 40px;
+        @include inputWidthHeigh45040;
         border: $borderline;
       }
 
       .inputName {
         display: block;
-        width: 450px;
-        height: 40px;
+        @include inputWidthHeigh45040;
         border: $borderline;
       }
     }
@@ -270,6 +266,7 @@
 
     .createId {
       width: 450px;
+
       .createLogin {
         padding-top: 30px;
         border-top: $borderline;

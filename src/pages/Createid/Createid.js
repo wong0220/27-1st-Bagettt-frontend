@@ -1,72 +1,71 @@
 import React, { useState } from 'react';
 import './Createid.scss';
 
-function Createid() {
-  const [idInput, setidInput] = useState('');
-  const [pwInput, setpwInput] = useState('');
-  const [nameInput, setnameInput] = useState('');
-  const [phonenumberInput, setphonenumberInput] = useState('');
-  const [addressInput, setaddressInput] = useState('');
+function CreateId() {
+  const [input, setInput] = useState({
+    idInput: '',
+    pwInput: '',
+    nameInput: '',
+    phonenumberInput: '',
+    addressInput: '',
+  });
 
-  const handleidInput = e => {
-    setidInput(e.target.value);
-  };
-  const handlepwInput = e => {
-    setpwInput(e.target.value);
-  };
-  const handlenameInput = e => {
-    setnameInput(e.target.value);
-  };
-  const handlephonenumberInput = e => {
-    setphonenumberInput(e.target.value);
-  };
-  const handleaddressInput = e => {
-    setaddressInput(e.target.value);
+  const { idInput, pwInput, nameInput, phonenumberInput, addressInput } = input;
+
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInput({
+      ...input,
+      [name]: value,
+    });
   };
 
   return (
-    <div className="createAccount">
-      <div className="createid">
+    <div className="createId">
+      <div className="createBox">
         <div className="createAccount">
           <div className="create">
-            <p className="createtitle">회원가입</p>
+            <p className="createTitle">회원가입</p>
           </div>
           <div className="inputEmailid">
             <span className="idEmail">이메일 아이디 *</span>
             <input
               className="inputId"
-              type="text"
-              onChange={handleidInput}
+              name="idInput"
               value={idInput}
+              type="text"
+              onChange={handleInput}
             />
           </div>
           <div className="inputPassword">
             <span className="passWord">비밀번호 *</span>
             <input
               className="inputPw"
-              onChange={handlepwInput}
+              onChange={handleInput}
+              name="pwInput"
               value={pwInput}
               type="password"
               placeholder="대소문자영어 + 숫자 + 특수문자 조합 필수 입력 8자 이상"
             />
           </div>
           <div className="inputName">
-            <span className="name">이름 *</span>
+            <span className="userName">이름 *</span>
             <input
               className="inputName"
-              type="text"
-              id="name"
-              onChange={handlenameInput}
+              name="nameInput"
               value={nameInput}
+              type="text"
+              onChange={handleInput}
             />
           </div>
           <div className="inputPhoneNumber">
-            <span className="phoneNumber">휴대폰번호 *</span>
+            <span className="userPhoneNumber">휴대폰번호 *</span>
             <input
               className="phone"
-              onChange={handlephonenumberInput}
-              type="text"
+              onChange={handleInput}
+              name="phonenumberInput"
               value={phonenumberInput}
+              type="text"
               placeholder="-생략"
             />
           </div>
@@ -76,20 +75,19 @@ function Createid() {
           <div className="buttonAddress">
             <input
               className="homeAddress"
-              onChange={handleaddressInput}
+              name="addressInput"
               value={addressInput}
+              onChange={handleInput}
               type="text"
             />
           </div>
 
           <div className="submitButton">
-            <button type="submit" className="btn">
-              회원가입
-            </button>
+            <button className="btn">회원가입</button>
           </div>
         </div>
       </div>
     </div>
   );
 }
-export default Createid;
+export default CreateId;

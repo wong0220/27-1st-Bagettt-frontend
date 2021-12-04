@@ -53,6 +53,14 @@
   background-color: white;
   overflow-y: auto;
 }
+@mixin inputWidthHeigh45040 {
+  width: 450px;
+  height: 40px;
+}
+@mixin inputWidthHeigh50045 {
+  width: 500px;
+  height: 45px;
+}
 
 $color_dark_gray: #171717;
 $color_light_gray: #d3d3d3;
