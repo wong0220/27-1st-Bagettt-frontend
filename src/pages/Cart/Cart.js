@@ -7,11 +7,35 @@ import OrderButton from './OrderButton/OrderButton';
 
 function Cart() {
   const [selectedBread, setSelectedBread] = useState([]);
+  const [checkList, setCheckList] = useState([]);
+  const [numberOfBread, setNumberOfBread] = useState(0);
+
+  const changeSingleBox = (checked, id) => {
+    if (checked) {
+      setCheckList([...checkList, id]);
+    } else {
+      setCheckList(checkList.filter(el => el !== id));
+    }
+  };
+
+  const changeAllBox = checked => {
+    if (checked) {
+      const allCheckBox = [];
+
+      selectedBread.forEach(el => allCheckBox.push(el.id));
+      setCheckList(allCheckBox);
+    } else {
+      setCheckList([]);
+    }
+  };
 
   useEffect(() => {
     fetch('/data/breadCart.json')
       .then(res => res.json())
-      .then(json => setSelectedBread(json));
+      .then(json => {
+        setSelectedBread(json);
+        setNumberOfBread(json.length);
+      });
   }, []);
 
   return (
@@ -28,11 +52,18 @@ function Cart() {
             <h1 className="title">SHOPPING BAG</h1>
             <h2 className="title productTitle">쇼핑백 상품</h2>
             <div className="orderContainer">
-              <OrderInformation />
+              <OrderInformation
+                changeAllBox={changeAllBox}
+                checkList={checkList}
+                numberOfBread={numberOfBread}
+              />
               {selectedBread.map(selectedBread => (
                 <OrderProducts
                   selectedBread={selectedBread}
                   key={selectedBread.id}
+                  changeSingleBox={changeSingleBox}
+                  data={selectedBread}
+                  checkList={checkList}
                 />
               ))}
             </div>

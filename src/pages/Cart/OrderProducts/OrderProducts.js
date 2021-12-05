@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OrderProducts.scss';
 
-function OrderProducts({ selectedBread, isChecked }) {
+function OrderProducts({ selectedBread, changeSingleBox, data, checkList }) {
   const [quantity, setQuantity] = useState(selectedBread.number);
   const perPrice = parseInt(selectedBread.order_price) / selectedBread.number;
   function quantityPlus() {
@@ -17,7 +17,11 @@ function OrderProducts({ selectedBread, isChecked }) {
 
   return (
     <div className="orderProductList">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        onChange={event => changeSingleBox(event.target.checked, data.id)}
+        checked={checkList.includes(data.id) ? true : false}
+      />
       <h5>{selectedBread.order_type}</h5>
       <div className="imageWrapper">
         <img src={selectedBread.src} alt="bread" className="breadImage" />

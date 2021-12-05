@@ -1,10 +1,14 @@
 import React from 'react';
 import './OrderInformation.scss';
 
-function OrderInformation({ isChecked, entireCheck }) {
+function OrderInformation({ changeAllBox, checkList, numberOfBread }) {
   return (
     <div className="orderInformation">
-      <input type="checkbox" checked={isChecked} onClick={entireCheck} />
+      <input
+        type="checkbox"
+        onChange={event => changeAllBox(event.target.checked)}
+        checked={checkList.length === numberOfBread ? true : false}
+      />
       <h5>주문유형</h5>
       <h5>상품정보</h5>
       <h5>수량</h5>
