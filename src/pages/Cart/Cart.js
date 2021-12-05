@@ -8,12 +8,16 @@ import OrderButton from './OrderButton/OrderButton';
 function Cart() {
   const [selectedBread, setSelectedBread] = useState([]);
   const [checkList, setCheckList] = useState([]);
+  const [totalPrice, setToalPrice] = useState({});
+  const [price, setPrice] = useState({});
 
-  const changeSingleBox = (checked, id) => {
+  const changeSingleBox = (checked, id, prices) => {
     if (checked) {
       setCheckList([...checkList, id]);
+      setPrice({ ...price, [id]: prices });
     } else {
       setCheckList(checkList.filter(el => el !== id));
+      setPrice({ ...price, [id]: 0 });
     }
   };
 
@@ -23,19 +27,31 @@ function Cart() {
 
       selectedBread.forEach(el => allCheckBox.push(el.id));
       setCheckList(allCheckBox);
+      setPrice({ ...totalPrice });
     } else {
       setCheckList([]);
+      setPrice({});
     }
   };
+
+  function setPriceList(prices, id) {
+    setToalPrice({ ...totalPrice, [id]: prices });
+    if (checkList.includes(id)) {
+      setPrice({ ...price, [id]: prices });
+    }
+  }
 
   useEffect(() => {
     fetch('/data/breadCart.json')
       .then(res => res.json())
       .then(json => {
         setSelectedBread(json);
+        json.forEach(el => (totalPrice[el.id] = parseInt(el.order_price)));
       });
   }, []);
 
+  console.log(totalPrice);
+  // console.log(price);
   return (
     <div>
       {selectedBread.length && (
@@ -62,10 +78,11 @@ function Cart() {
                   changeSingleBox={changeSingleBox}
                   data={selectedBread}
                   checkList={checkList}
+                  setPriceList={setPriceList}
                 />
               ))}
             </div>
-            <OrderPrice selectedBread={selectedBread} />
+            <OrderPrice price={price} />
             <div className="orderButtonWrapper">
               <OrderButton content="쇼핑계속하기" name="whiteButton" />
               <OrderButton content="선택 상품 주문" name="whiteButton" />
