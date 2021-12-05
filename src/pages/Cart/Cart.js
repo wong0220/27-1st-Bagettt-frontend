@@ -8,7 +8,6 @@ import OrderButton from './OrderButton/OrderButton';
 function Cart() {
   const [selectedBread, setSelectedBread] = useState([]);
   const [checkList, setCheckList] = useState([]);
-  const [numberOfBread, setNumberOfBread] = useState(0);
 
   const changeSingleBox = (checked, id) => {
     if (checked) {
@@ -34,7 +33,6 @@ function Cart() {
       .then(res => res.json())
       .then(json => {
         setSelectedBread(json);
-        setNumberOfBread(json.length);
       });
   }, []);
 
@@ -55,7 +53,7 @@ function Cart() {
               <OrderInformation
                 changeAllBox={changeAllBox}
                 checkList={checkList}
-                numberOfBread={numberOfBread}
+                selectedBread={selectedBread}
               />
               {selectedBread.map(selectedBread => (
                 <OrderProducts
