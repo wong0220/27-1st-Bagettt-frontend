@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import BreadList from '../BreadList/BreadList';
-import Filter from '../Filter/Filter';
+import BreadList from '../ListPage/BreadList/BreadList';
+import Filter from '../ListPage/Filter/Filter';
 import './ListPage.scss';
 
 function ListPage() {
   const [breadList, setBreadList] = useState([]);
   const [isOpenSortMenu, setisOpenSortMenu] = useState(false);
   const [sortPrice, setSortPrice] = useState('');
-
   function openProduct() {
     setisOpenSortMenu(!isOpenSortMenu);
   }
@@ -32,12 +31,11 @@ function ListPage() {
     setSortPrice('');
     setBreadList(prev => [...prev].sort((a, b) => a.id - b.id));
   }
-
   useEffect(() => {
-    fetch('/data/breadData.json')
+    fetch('http://10.58.0.72:8000/packages/list')
       .then(res => res.json())
       .then(json => {
-        setBreadList(json);
+        setBreadList(json.PACKAGES_LIST);
       });
   }, []);
 
