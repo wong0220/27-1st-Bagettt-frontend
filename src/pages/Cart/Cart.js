@@ -34,23 +34,25 @@ function Cart() {
     }
   };
 
-  function setPriceList(prices, id) {
+  const setPriceList = (prices, id) => {
     setToalPrice({ ...totalPrice, [id]: prices });
     if (checkList.includes(id)) {
       setPrice({ ...price, [id]: prices });
     }
-  }
+  };
 
   useEffect(() => {
     fetch('/data/breadCart.json')
       .then(res => res.json())
       .then(json => {
         setSelectedBread(json);
-        json.forEach(el => (totalPrice[el.id] = parseInt(el.order_price)));
+        const temp = {};
+        json.forEach(el => (temp[el.id] = parseInt(el.order_price)));
+        setToalPrice({ ...temp });
       });
   }, []);
 
-  console.log(totalPrice);
+  // console.log(totalPrice);
   // console.log(price);
   return (
     <div>
