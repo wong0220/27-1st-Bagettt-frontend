@@ -1,52 +1,50 @@
 [
   {
-    "id": 1,
-    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "name": "1무화과 호밀빵",
-    "description": "천연효모를 사용하여 담백하고 무화과의 향이 잘 묻어나는 건강빵",
-    "brand": "오월의 종",
-    "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
-    "calorie": "200kcal",
-    "price": 20000
-  },
-  {
-    "id": 2,
-    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "name": "2무화과 호밀빵",
-    "description": "천연효모를 사용하여 담백하고 무화과의 향이 잘 묻어나는 건강빵",
-    "brand": "오월의 종",
-    "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
-    "calorie": "200kcal",
-    "price": 20000
-  },
-  {
-    "id": 3,
-    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "name": "3무화과 호밀빵",
-    "description": "천연효모를 사용하여 담백하고 무화과의 향이 잘 묻어나는 건강빵",
-    "brand": "오월의 종",
-    "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
-    "calorie": "200kcal",
-    "price": 20000
-  },
-  {
-    "id": 4,
-    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "name": "4무화과 호밀빵",
-    "description": "천연효모를 사용하여 담백하고 무화과의 향이 잘 묻어나는 건강빵",
-    "brand": "오월의 종",
-    "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
-    "calorie": "200kcal",
-    "price": 20000
-  },
-  {
-    "id": 5,
-    "src": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "name": "5무화과 호밀빵",
-    "description": "천연효모를 사용하여 담백하고 무화과의 향이 잘 묻어나는 건강빵",
-    "brand": "오월의 종",
-    "nutrition": "나트륨: 340mg | 당류:15g | 포화지방:6g",
-    "calorie": "200kcal",
-    "price": 20000
+    "result": [
+      {
+        "package_description": "빵으로 비타민을 채울 수 있다구요? 네! 됩니다! \"VITAMIN BOMB!\"",
+        "package_id": 1,
+        "package_name": "VITAMIN BOMB",
+        "package_thumbnail": "https://gaussian37.github.io/assets/img/python/django/django.png",
+        "price": "23000.00",
+        "product_details": [
+          {
+            "brand_name": "오월의 종",
+            "image": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            "kcal": 200,
+            "name": "무화과 호밀빵",
+            "nutrition": "트륨: 340mg 당류: 15g 포화지방 : 6g 당류: 15g 포화지방 : 6g"
+          },
+          {
+            "brand_name": "밀도",
+            "image": "https://images.unsplash.com/photo-1588861472194-6883d8b5e552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80",
+            "kcal": 420,
+            "name": "장단콩 인절미",
+            "nutrition": " 나트륨: 1520mg 당류: 50g 포화지방 : 12g"
+          },
+          {
+            "brand_name": "아티장베이커스",
+            "image": "https://images.unsplash.com/photo-1599819055803-717bba43890f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            "kcal": 350,
+            "name": "명란바게트",
+            "nutrition": " 나트륨: 1720mg 당류: 38g 포화지방 : 8g"
+          },
+          {
+            "brand_name": "오월의 종",
+            "image": "https://images.unsplash.com/photo-1537734796389-e1fc293cf856?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+            "kcal": 300,
+            "name": "크렌베리 바게트",
+            "nutrition": "나트륨: 800mg 당류: 25g 포화지방 : 8g"
+          },
+          {
+            "brand_name": "아우어",
+            "image": "https://images.unsplash.com/photo-1588861472194-6883d8b5e552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80",
+            "kcal": 420,
+            "name": "장단콩 인절미",
+            "nutrition": " 나트륨: 1520mg 당류: 50g 포화지방 : 12g"
+          }
+        ]
+      }
+    ]
   }
 ]

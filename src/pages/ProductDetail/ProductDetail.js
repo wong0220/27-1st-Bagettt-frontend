@@ -5,7 +5,7 @@ import ProductContentInfo from './ContentInfo/ProductContentInfo';
 import './ProductDetail.scss';
 
 function ProductDetail() {
-  const [detailContents, setDetailContents] = useState([]);
+  const [detailContents, setDetailContents] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
@@ -13,25 +13,24 @@ function ProductDetail() {
       .then(res => res.json())
       .then(result => {
         setDetailContents(result);
-        // console.log(result);
       });
   }, []);
 
-  console.log(detailContents);
+  // console.log(detailContents);
 
   return (
     <div>
-      {detailContents && (
+      {detailContents[0]?.result && (
         <div className="ProductDetail">
           <div>
             <img
-              src={detailContents.src}
+              src={detailContents[0].result[0].product_details[0].image}
               alt="상품이미지"
               className="productImage"
             />
-            <ProductTap />
+            <ProductTap detailContents={detailContents[0].result[0]} />
           </div>
-          <ProductContentInfo detailContents={detailContents} />
+          <ProductContentInfo detailContents={detailContents[0].result[0]} />
         </div>
       )}
     </div>

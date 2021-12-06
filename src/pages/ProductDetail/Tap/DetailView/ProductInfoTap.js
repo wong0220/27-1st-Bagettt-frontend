@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ProductTapBreadList from './ProductTapBreadList';
 
-function ProductInfoTap() {
-  const [breadList, setBreadList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/ProductDetailBreadData.json')
-      .then(res => res.json())
-      .then(json => {
-        setBreadList(json);
-      });
-  }, []);
-
+function ProductInfoTap({ detailContents }) {
   return (
     <div className="productList">
-      {breadList.map(bread => {
-        return <ProductTapBreadList key={bread.id} bread={bread} />;
+      {detailContents.product_details.map((product, idx) => {
+        return <ProductTapBreadList key={idx} detailContents={product} />;
       })}
     </div>
   );
