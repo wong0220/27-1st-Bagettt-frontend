@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Counter from './Counter/Counter';
 import SubscriptionModal from '../Modal/SubscriptionModal';
 import './ProductContentInfo.scss';
 
-function ProductContentInfo() {
+function ProductContentInfo({ detailContents }) {
   const [number, setNumber] = useState(1);
-  const [breadList, setBreadList] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   const increaseNumber = () => {
@@ -17,26 +16,21 @@ function ProductContentInfo() {
       setNumber(number - 1);
     }
   };
-
-  useEffect(() => {
-    fetch('/data/ProductDetailBreadData.json')
-      .then(res => res.json())
-      .then(json => {
-        setBreadList(json);
-      });
-  }, []);
+  console.log(detailContents);
 
   return (
     <div>
-      {breadList.length && (
+      {detailContents && (
         <div className="productContentInfoWrapper">
           <div className="cartPutWrapper">
-            <div className="productName">{breadList[0].name}</div>
-            <div className="productInfo">{breadList[0].brand}</div>
+            <div className="productName">{detailContents.package_name}</div>
+            <div className="productInfo">
+              {detailContents.packgae_description}
+            </div>
             <div className="productPriceWrapper">
               <div className="productPriceText">구독가</div>
               <div className="productPrice">
-                월 {Number(breadList[0].price).toLocaleString()}
+                월 {Number(detailContents.price).toLocaleString()}
               </div>
             </div>
             <div className="shippingWrapper">
@@ -46,19 +40,19 @@ function ProductContentInfo() {
             <div className="dayOption">
               <div>수령요일 선택</div>
               <select className="selectBox">
-                <option key="mon" value="banana">
+                <option value="1" key="mon">
                   월요일
                 </option>
-                <option key="tue" value="apple">
+                <option value="2" key="tue">
                   화요일
                 </option>
-                <option key="wed" value="orange">
+                <option value="3" key="wed">
                   수요일
                 </option>
-                <option key="thu" value="orange">
+                <option value="4" key="thu">
                   목요일
                 </option>
-                <option key="fri" value="orange">
+                <option value="5" key="fri">
                   금요일
                 </option>
               </select>
@@ -81,7 +75,7 @@ function ProductContentInfo() {
               <div className="orderPriceWrapper">
                 <div className="orderPriceText">총 상품 금액</div>
                 <div className="orderPrice">
-                  {Number(breadList[0].price * number).toLocaleString()}원
+                  {Number(detailContents.price * number).toLocaleString()}원
                 </div>
               </div>
               <button
@@ -91,6 +85,7 @@ function ProductContentInfo() {
               >
                 구독 하기
               </button>
+
               {showModal ? <SubscriptionModal /> : null}
             </div>
           </div>

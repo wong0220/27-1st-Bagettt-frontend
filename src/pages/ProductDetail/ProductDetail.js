@@ -5,30 +5,33 @@ import ProductContentInfo from './ContentInfo/ProductContentInfo';
 import './ProductDetail.scss';
 
 function ProductDetail() {
-  const [breadList, setBreadList] = useState([]);
+  const [detailContents, setDetailContents] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    fetch('/data/ProductDetailBreadData.json')
+    fetch('http://10.58.0.72:8000/packages/details/1')
       .then(res => res.json())
-      .then(json => {
-        setBreadList(json);
+      .then(result => {
+        setDetailContents(result);
+        // console.log(result);
       });
   }, []);
 
+  console.log(detailContents);
+
   return (
     <div>
-      {breadList.length && (
+      {detailContents && (
         <div className="ProductDetail">
           <div>
             <img
-              src={breadList[0].src}
+              src={detailContents.src}
               alt="상품이미지"
               className="productImage"
             />
             <ProductTap />
           </div>
-          <ProductContentInfo />
+          <ProductContentInfo detailContents={detailContents} />
         </div>
       )}
     </div>

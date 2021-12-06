@@ -4,7 +4,7 @@ import ShippingInfoTap from './ShoppingInfo/ShippingInfoTap';
 import UserGuideTap from './UserGuide/UserGuideTap';
 import './ProductTap.scss';
 
-function ProductTap() {
+function ProductTap({ detailContents }) {
   const [tapOpen, setTapOpen] = useState('1');
 
   function tapProductInfo(e) {
@@ -13,7 +13,7 @@ function ProductTap() {
 
   function productTapOpen() {
     if (tapOpen === '1') {
-      return <ProductInfoTap />;
+      return <ProductInfoTap detailContents={detailContents} />;
     } else if (tapOpen === '2') {
       return <ShippingInfoTap />;
     } else if (tapOpen === '3') {
