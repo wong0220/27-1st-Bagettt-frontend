@@ -7,6 +7,7 @@ function OrderProducts({
   data,
   checkList,
   setPriceList,
+  deletePer,
 }) {
   const [quantity, setQuantity] = useState(selectedBread.number);
   const perPrice = parseInt(selectedBread.order_price) / selectedBread.number;
@@ -56,9 +57,10 @@ function OrderProducts({
       <h5>{price.toLocaleString()}원</h5>
       <div className="buttonWrapper">
         <button className="button">결제하기</button>
-        <button className="button">삭제</button>
+        <button className="button" onClick={() => deletePer(data.id)}>
+          삭제
+        </button>
       </div>
-      {/* {temp(price, data.id)} */}
     </div>
   );
 }

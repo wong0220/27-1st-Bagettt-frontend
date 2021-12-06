@@ -1,7 +1,7 @@
 import React from 'react';
 import './OrderPrice.scss';
 
-function OrderPrice({ price }) {
+function OrderPrice({ price, deleteSelected, deleteAll }) {
   const temp = Object.values(price);
   let result = 0;
   temp.forEach(el => (result += el));
@@ -9,8 +9,12 @@ function OrderPrice({ price }) {
   return (
     <div className="toatalContainer">
       <div>
-        <button className="button">선택상품 삭제</button>
-        <button className="button">전체상품 삭제</button>
+        <button className="button" onClick={deleteSelected}>
+          선택상품 삭제
+        </button>
+        <button className="button" onClick={deleteAll}>
+          전체상품 삭제
+        </button>
       </div>
       <div className="priceWrapper">
         <div className="priceBox">

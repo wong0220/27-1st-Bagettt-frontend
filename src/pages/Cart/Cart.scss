@@ -24,6 +24,12 @@
     .orderContainer {
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+
+      .emptyCart {
+        padding: 60px 0;
+        text-align: center;
+        color: #828282;
+      }
     }
 
     .orderButtonWrapper {

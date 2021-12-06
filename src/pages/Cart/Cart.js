@@ -41,6 +41,46 @@ function Cart() {
     }
   };
 
+  const deleteSelected = () => {
+    if (checkList.length === 0) {
+      alert('상품을 선택해주세요');
+    } else {
+      setSelectedBread(selectedBread.filter(el => !checkList.includes(el.id)));
+
+      setPrice({});
+
+      const temp = { ...totalPrice };
+      checkList.forEach(el => delete temp[el]);
+      setToalPrice({ ...temp });
+
+      setCheckList([]);
+    }
+  };
+
+  const deletePer = identifier => {
+    if (checkList.includes(identifier)) {
+      setSelectedBread(selectedBread.filter(el => identifier !== el.id));
+
+      const temp = { ...price };
+      delete temp[identifier];
+      setPrice({ ...temp });
+
+      const temp2 = { ...totalPrice };
+      delete temp2[identifier];
+      setToalPrice({ ...temp2 });
+
+      setCheckList(checkList.filter(el => el !== identifier));
+    } else {
+      alert('항목을 선택해주세요');
+    }
+  };
+
+  const deleteAll = () => {
+    setSelectedBread([]);
+    setPrice({});
+    setToalPrice({});
+  };
+
   useEffect(() => {
     fetch('/data/breadCart.json')
       .then(res => res.json())
@@ -55,44 +95,50 @@ function Cart() {
   // console.log(totalPrice);
   // console.log(price);
   return (
-    <div>
-      {selectedBread.length && (
-        <div className="Cart">
-          <div>
-            <span className="homeRoot">HOME</span>
-            <span className="homeRoot">></span>
-            <span className="shoppingRoot">SHOPPING BAG</span>
-          </div>
+    <div className="Cart">
+      <div>
+        <span className="homeRoot">HOME</span>
+        <span className="homeRoot">></span>
+        <span className="shoppingRoot">SHOPPING BAG</span>
+      </div>
 
-          <div className="shoppingBag">
-            <h1 className="title">SHOPPING BAG</h1>
-            <h2 className="title productTitle">쇼핑백 상품</h2>
-            <div className="orderContainer">
-              <OrderInformation
-                changeAllBox={changeAllBox}
-                checkList={checkList}
+      <div className="shoppingBag">
+        <h1 className="title">SHOPPING BAG</h1>
+        <h2 className="title productTitle">쇼핑백 상품</h2>
+        <div className="orderContainer">
+          <OrderInformation
+            changeAllBox={changeAllBox}
+            checkList={checkList}
+            selectedBread={selectedBread}
+          />
+
+          {selectedBread.length > 0 ? (
+            selectedBread.map(selectedBread => (
+              <OrderProducts
                 selectedBread={selectedBread}
+                key={selectedBread.id}
+                changeSingleBox={changeSingleBox}
+                data={selectedBread}
+                checkList={checkList}
+                setPriceList={setPriceList}
+                deletePer={deletePer}
               />
-              {selectedBread.map(selectedBread => (
-                <OrderProducts
-                  selectedBread={selectedBread}
-                  key={selectedBread.id}
-                  changeSingleBox={changeSingleBox}
-                  data={selectedBread}
-                  checkList={checkList}
-                  setPriceList={setPriceList}
-                />
-              ))}
-            </div>
-            <OrderPrice price={price} />
-            <div className="orderButtonWrapper">
-              <OrderButton content="쇼핑계속하기" name="whiteButton" />
-              <OrderButton content="선택 상품 주문" name="whiteButton" />
-              <OrderButton content="전체 상품 주문" name="blackButton" />
-            </div>
-          </div>
+            ))
+          ) : (
+            <div className="emptyCart">장바구니가 비어있습니다</div>
+          )}
         </div>
-      )}
+        <OrderPrice
+          price={price}
+          deleteSelected={deleteSelected}
+          deleteAll={deleteAll}
+        />
+        <div className="orderButtonWrapper">
+          <OrderButton content="쇼핑계속하기" name="whiteButton" />
+          <OrderButton content="선택 상품 주문" name="whiteButton" />
+          <OrderButton content="전체 상품 주문" name="blackButton" />
+        </div>
+      </div>
     </div>
   );
 }
