@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Createid.scss';
 
 function CreateId() {
+  const navigate = useNavigate();
+
   const [input, setInput] = useState({
     idInput: '',
     pwInput: '',
@@ -20,6 +23,42 @@ function CreateId() {
     });
   };
 
+  const email =
+    /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  const passWord =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!#%*?&])[A-Za-z\d@$!#%*?&]{8,}$/;
+
+  const emailValueCheck = email.test(idInput);
+  const passwordValueCheck = passWord.test(pwInput);
+
+  const isUserValid = emailValueCheck && passwordValueCheck;
+
+  const goToList = () => {
+    if (isUserValid) {
+      fetch('http://10.58.2.30:8000/users/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: idInput,
+          password: pwInput,
+          name: nameInput,
+          address: addressInput,
+          phone_number: phonenumberInput,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message === 'SUCCESS') {
+            alert('회원가입을 축하합니다!');
+            navigate('/login');
+          } else {
+            alert('회원가입 형식에 맞지 않습니다 다시한번 확인해주세요!');
+          }
+        });
+    } else {
+      alert('회원가입 형식에 맞지 않습니다 다시한번 확인해주세요!');
+    }
+  };
+
   return (
     <div className="createId">
       <div className="createBox">
@@ -35,6 +74,7 @@ function CreateId() {
               value={idInput}
               type="text"
               onChange={handleInput}
+              placeholder="이메일 필수 입력"
             />
           </div>
           <div className="inputPassword">
@@ -83,11 +123,14 @@ function CreateId() {
           </div>
 
           <div className="submitButton">
-            <button className="btn">회원가입</button>
+            <button className="btn" onClick={goToList}>
+              회원가입
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default CreateId;

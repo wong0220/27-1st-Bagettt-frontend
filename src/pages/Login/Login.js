@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
@@ -15,6 +14,7 @@ function Login() {
   });
 
   const { idInput, pwInput, numberInput, nameInput } = inputs;
+
   const handleInputs = event => {
     const { name, value } = event.target;
     setInputs({
@@ -22,8 +22,6 @@ function Login() {
       [name]: value,
     });
   };
-
-  const validation = idInput.includes('@', '.') && pwInput.length > 7;
 
   function onClickbutton() {
     setMember(false);
@@ -33,9 +31,33 @@ function Login() {
     setMember(true);
   }
 
-  const goToMain = () => {
-    if (validation) navigate('/main');
-    else {
+  const email =
+    /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  const passWord =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const emailValueCheck = email.test(idInput);
+  const passwordValueCheck = passWord.test(pwInput);
+
+  const isUserValid = emailValueCheck && passwordValueCheck;
+
+  const goToList = () => {
+    if (isUserValid) {
+      fetch('http://10.58.2.30:8000/users/signin', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: idInput,
+          password: pwInput,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message === 'SUCCESS') {
+            navigate('/list-page');
+          } else {
+            alert('등록되지 않은 회원입니다 회원가입을 먼저해주세요');
+          }
+        });
+    } else {
       alert('등록되지 않은 회원입니다 회원가입을 먼저해주세요');
     }
   };
@@ -63,6 +85,7 @@ function Login() {
                 name="idInput"
                 value={idInput}
               />
+
               <p className="inputPassword">비밀번호</p>
               <input
                 className="inputPw"
@@ -73,7 +96,7 @@ function Login() {
               />
             </div>
             <div className="loginButton">
-              <button className="btn" onClick={goToMain}>
+              <button className="btn" onClick={goToList}>
                 로그인
               </button>
             </div>
