@@ -1,5 +1,6 @@
 .breadList {
   width: 100%;
+  position: relative;
 
   &:nth-child(2),
   &:nth-child(3),
@@ -17,16 +18,23 @@
   }
 
   .shortSubscribe {
+    width: 254px;
     margin: 30px 0 10px 0;
+    padding-bottom: 25px;
     font-size: 12px;
     color: #4c4d4e;
+
+    .month {
+      margin-left: 2px;
+      font-weight: 500;
+    }
   }
 
-  .longSubscribe {
+  .anonymouse {
+    position: absolute;
     width: 254px;
-    padding-bottom: 25px;
+    height: 1px;
+    bottom: 0;
     border-bottom: 1px solid black;
-    font-size: 12px;
-    color: #4c4d4e;
   }
 }

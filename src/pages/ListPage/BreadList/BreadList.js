@@ -7,13 +7,13 @@ function BreadList({ bread }) {
       <img src={bread.image} alt="bread" className="breadImage" />
       <h5>{bread.name}</h5>
       <div className="shortSubscribe">
-        <span>단기구독 </span>
-        <span>{Number(bread.price)}원 </span>
+        <span>구독가 </span>
+        <span>
+          {Number(bread.price).toLocaleString()}원
+          <span className="month">/월</span>
+        </span>
       </div>
-      <div className="longSubscribe">
-        <span>장기구독 </span>
-        <span>{bread.price2} </span>
-      </div>
+      <div className="anonymouse" />
     </li>
   );
 }
