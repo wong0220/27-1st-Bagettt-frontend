@@ -42,7 +42,7 @@ function Login() {
 
   const goToList = () => {
     if (isUserValid) {
-      fetch('http://10.58.2.30:8000/users/signin', {
+      fetch('http://10.58.5.9:8000/users/signin', {
         method: 'POST',
         body: JSON.stringify({
           email: idInput,
@@ -52,9 +52,10 @@ function Login() {
         .then(response => response.json())
         .then(result => {
           if (result.message === 'SUCCESS') {
+            sessionStorage.setItem('token', result.token);
             navigate('/list-page');
           } else {
-            alert('등록되지 않은 회원입니다 회원가입을 먼저해주세요');
+            alert('이메일과 비밀번호가 틀렸습니다. 다시 한번 확인해주세요!');
           }
         });
     } else {
@@ -66,6 +67,10 @@ function Login() {
     <div>
       {member ? (
         <div className="login">
+          <div className="explainPage">
+            <p className="paGe">Home&nbsp; &gt;</p>
+            <p className="loginCreateid">&nbsp;로그인 / 회원가입 </p>
+          </div>
           <div className="loginBox">
             <div className="title">
               <p className="titleLogin">LOGIN</p>
@@ -131,6 +136,10 @@ function Login() {
         </div>
       ) : (
         <div className="nonMemberLogin">
+          <div className="nonMemberExplainPage">
+            <p className="nonMemberPage">Home&nbsp;&gt;</p>
+            <p className="nonMemberLoginCreateid">&nbsp;로그인 / 회원가입 </p>
+          </div>
           <div className="nonMemberLoginbox">
             <div className="title">
               <h className="titleLogin">LOGIN</h>
