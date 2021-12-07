@@ -9,12 +9,13 @@ function ProductDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch('http://10.58.0.72:8000/packages/details/1')
+    fetch(`http://10.58.0.72:8000/packages/details/${id}`)
       .then(res => res.json())
       .then(result => {
         setDetailContents(result);
       });
   }, []);
+
   return (
     <div>
       {detailContents.result && (

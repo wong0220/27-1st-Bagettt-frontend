@@ -19,7 +19,7 @@ function ProductContentInfo({ detailContents }) {
   };
 
   const handleSubscribe = () => {
-    fetch('http://10.58.0.72:8000/shops/cart/', {
+    fetch('http://10.58.0.72:8000/shops/cart', {
       method: 'POST',
       body: JSON.stringify({
         quantity: number,
@@ -29,7 +29,7 @@ function ProductContentInfo({ detailContents }) {
       }),
       headers: {
         Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.aQCo7JbQxkxPhtWLvV79AAzcaGHbyPgGbu7NLwE6-Ho',
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
       },
     })
       .then(res => res.json())
@@ -39,7 +39,6 @@ function ProductContentInfo({ detailContents }) {
           : alert('장바구니 담기 실패');
       });
   };
-
   return (
     <div>
       <div className="productContentInfoWrapper">
@@ -66,19 +65,19 @@ function ProductContentInfo({ detailContents }) {
                 setShoppingOption(e.target.value);
               }}
             >
-              <option value="1" key="mon">
+              <option value="월" key="mon">
                 월요일
               </option>
-              <option value="2" key="tue">
+              <option value="화" key="tue">
                 화요일
               </option>
-              <option value="3" key="wed">
+              <option value="수" key="wed">
                 수요일
               </option>
-              <option value="4" key="thu">
+              <option value="목" key="thu">
                 목요일
               </option>
-              <option value="5" key="fri">
+              <option value="금" key="fri">
                 금요일
               </option>
             </select>

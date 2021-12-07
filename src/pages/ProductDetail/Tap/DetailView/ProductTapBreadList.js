@@ -2,7 +2,6 @@ import React from 'react';
 import './ProductTapBreadList.scss';
 
 function ProductTapBreadList({ detailContents }) {
-  console.log(detailContents);
   return (
     <div className="ProductTapBreadList">
       <div className="container">
