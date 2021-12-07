@@ -9,12 +9,16 @@ function ProductContentInfo({ detailContents }) {
   const [shoppingOption, setShoppingOption] = useState('월');
 
   const increaseNumber = () => {
-    setNumber(number + 1);
+    setNumber(number => {
+      return number + 1;
+    });
   };
 
   const decreaseNumber = () => {
     if (number > 1) {
-      setNumber(number - 1);
+      setNumber(number => {
+        return number - 1;
+      });
     }
   };
 
