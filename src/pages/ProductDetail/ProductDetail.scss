@@ -1,7 +1,9 @@
 .ProductDetail {
   display: flex;
+  justify-content: center;
   width: 65%;
   padding: 0 50px;
+  padding-bottom: 100px;
 
   .productImage {
     width: 100%;
