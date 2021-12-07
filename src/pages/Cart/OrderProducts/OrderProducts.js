@@ -16,6 +16,16 @@ function OrderProducts({
   function quantityPlus() {
     setQuantities(quantities + 1);
     setPriceList(perPrice * (quantities + 1), data.id);
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        cart_id: data.id,
+        quantity: quantities + 1,
+      }),
+      headers: {
+        Authorization: '',
+      },
+    });
   }
   function quantityMinus() {
     if (quantities > 1) {
