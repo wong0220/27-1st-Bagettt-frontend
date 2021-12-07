@@ -81,17 +81,34 @@ function Cart() {
     setToalPrice({});
   };
 
+  // useEffect(() => {
+  //   fetch('/data/breadCart.json')
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       setSelectedBread(json);
+  //       const temp = {};
+  //       json.forEach(el => (temp[el.id] = parseInt(el.order_price)));
+  //       setToalPrice({ ...temp });
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('/data/breadCart.json')
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.aQCo7JbQxkxPhtWLvV79AAzcaGHbyPgGbu7NLwE6-Ho',
+      },
+    })
       .then(res => res.json())
-      .then(json => {
-        setSelectedBread(json);
+      .then(res => {
+        setSelectedBread(res.result[0].cart);
         const temp = {};
-        json.forEach(el => (temp[el.id] = parseInt(el.order_price)));
+        res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
         setToalPrice({ ...temp });
       });
   }, []);
 
+  // console.log(totalPrice);
   // console.log(totalPrice);
   // console.log(price);
   return (
