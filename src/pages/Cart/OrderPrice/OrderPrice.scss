@@ -1,0 +1,32 @@
+.toatalContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+
+  .button {
+    width: 101px;
+    height: 28px;
+    margin-right: 10px;
+    color: #828282;
+    background-color: white;
+    border: 1px solid #828282;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .priceWrapper {
+    display: flex;
+    justify-content: center;
+
+    .priceBox {
+      margin: 0 20px 0 20px;
+
+      .price {
+        margin-top: 10px;
+      }
+    }
+  }
+}
