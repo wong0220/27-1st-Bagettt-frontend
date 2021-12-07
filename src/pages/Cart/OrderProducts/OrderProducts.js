@@ -9,18 +9,18 @@ function OrderProducts({
   setPriceList,
   deletePer,
 }) {
-  const [quantity, setQuantity] = useState(selectedBread.number);
-  const perPrice = parseInt(selectedBread.order_price) / selectedBread.number;
-  const price = perPrice * quantity;
+  const [quantities, setQuantities] = useState(selectedBread.quantity);
+  const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
+  const price = perPrice * quantities;
 
   function quantityPlus() {
-    setQuantity(quantity + 1);
-    setPriceList(perPrice * (quantity + 1), data.id);
+    setQuantities(quantities + 1);
+    setPriceList(perPrice * (quantities + 1), data.id);
   }
   function quantityMinus() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-      setPriceList(perPrice * (quantity - 1), data.id);
+    if (quantities > 1) {
+      setQuantities(quantities - 1);
+      setPriceList(perPrice * (quantities - 1), data.id);
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
@@ -37,9 +37,21 @@ function OrderProducts({
       />
       <h5>{selectedBread.order_type}</h5>
       <div className="imageWrapper">
-        <img src={selectedBread.src} alt="bread" className="breadImage" />
+        <img src={selectedBread.image} alt="bread" className="breadImage" />
         <div className="optionWrapper">
-          <span className="dayOption">{selectedBread.option}</span>
+          <span className="dayOption">
+            {selectedBread.option === 1 ? (
+              <div>월요일</div>
+            ) : selectedBread.option === 2 ? (
+              <div>화요일</div>
+            ) : selectedBread.option === 3 ? (
+              <div> 수요일 </div>
+            ) : selectedBread.option === 4 ? (
+              <div>목요일 </div>
+            ) : (
+              <div>금요일</div>
+            )}
+          </span>
           <button className="changeOption">옵션변경</button>
         </div>
       </div>
@@ -47,7 +59,7 @@ function OrderProducts({
         <button className="quantityButton" onClick={quantityMinus}>
           -
         </button>
-        <h5>{quantity}</h5>
+        <h5>{quantities}</h5>
         <button className="quantityButton" onClick={quantityPlus}>
           +
         </button>
