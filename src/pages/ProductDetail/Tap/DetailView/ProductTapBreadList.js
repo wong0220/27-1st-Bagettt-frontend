@@ -2,18 +2,21 @@ import React from 'react';
 import './ProductTapBreadList.scss';
 
 function ProductTapBreadList({ detailContents }) {
+  console.log(detailContents);
   return (
-    <div>
-      <div className="ProductTapBreadList">
-        <div className="container">
-          <img src={detailContents.image} alt="bread" className="breadImage" />
-          <div className="wrapper">
-            <h2 className="breadName">{detailContents.bread_name}</h2>
-            <p className="description">{detailContents.name}</p>
-            <div className="brandName">{detailContents.name}</div>
-            <div className="calorie">{detailContents.kcal}</div>
-            <div className="nutrition">{detailContents.nutrition}</div>
+    <div className="ProductTapBreadList">
+      <div className="container">
+        <img src={detailContents.image} alt="bread" className="breadImage" />
+        <div className="breadListWrapper">
+          <div className="brandName">
+            <span className="brand">BRAND</span> {detailContents.brand_name}
           </div>
+          <h2 className="breadName">{detailContents.name}</h2>
+          <div className="kcal">
+            {detailContents.kcal}
+            <span>kcal</span>
+          </div>
+          <div className="nutrition">{detailContents.nutrition}</div>
         </div>
       </div>
     </div>
