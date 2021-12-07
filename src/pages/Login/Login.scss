@@ -3,6 +3,20 @@
 @import '../../styles/variable.scss';
 
 .login {
+  .explainPage {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+
+    .paGe {
+      color: rgb(185, 185, 181);
+    }
+
+    .loginCreateid {
+      font-weight: 600;
+    }
+  }
+
   .loginBox {
     display: flex;
     flex-direction: column;
@@ -177,6 +191,20 @@
 }
 
 .nonMemberLogin {
+  .nonMemberExplainPage {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+
+    .nonMemberPage {
+      color: rgb(185, 185, 181);
+    }
+
+    .nonMemberLoginCreateid {
+      font-weight: 600;
+    }
+  }
+
   .nonMemberLoginbox {
     display: flex;
     flex-direction: column;

@@ -35,7 +35,7 @@ function CreateId() {
 
   const goToList = () => {
     if (isUserValid) {
-      fetch('http://10.58.2.30:8000/users/signup', {
+      fetch('http://10.58.5.9:8000/users/signup', {
         method: 'POST',
         body: JSON.stringify({
           email: idInput,
@@ -58,7 +58,7 @@ function CreateId() {
       alert('회원가입 형식에 맞지 않습니다 다시한번 확인해주세요!');
     }
   };
-
+  sessionStorage.setItem('token', '1233');
   return (
     <div className="createId">
       <div className="createBox">
