@@ -20,11 +20,12 @@ function OrderProducts({
     fetch('http://10.58.0.72:8000/shops/cart', {
       method: 'PATCH',
       body: JSON.stringify({
-        cart_id: data.id,
+        id: data.id,
         quantity: quantities + 1,
       }),
       headers: {
-        Authorization: '',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
       },
     });
   }
@@ -35,6 +36,17 @@ function OrderProducts({
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: data.id,
+        quantity: quantities - 1,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   }
 
   if (selectedBread.option === 1) {
@@ -62,8 +74,9 @@ function OrderProducts({
       <div className="imageWrapper">
         <img src={selectedBread.image} alt="bread" className="breadImage" />
         <div className="optionWrapper">
+          <div className="packageName">{selectedBread.name}</div>
           <span className="dayOption">
-            <div>{day}</div>
+            <div>{selectedBread.option}요일</div>
           </span>
           <button className="changeOption">옵션변경</button>
         </div>
