@@ -11,12 +11,8 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
         <Route path="/nav" element={<Nav />} />
-        <Route path="/Cart" element={<Cart />} />
-=======
         <Route path="/cart" element={<Cart />} />
->>>>>>> master
         <Route path="/login" element={<Login />} />
         <Route path="/createid" element={<Createid />} />
         <Route path="/list-page" element={<ListPage />} />
