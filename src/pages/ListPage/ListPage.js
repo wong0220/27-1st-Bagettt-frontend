@@ -6,60 +6,101 @@ import './ListPage.scss';
 function ListPage() {
   const [breadList, setBreadList] = useState([]);
   const [isOpenSortMenu, setisOpenSortMenu] = useState(false);
+  const [isOpenBrands, setIsOpenBrands] = useState(false);
   const [sortPrice, setSortPrice] = useState('');
+  const [brandList, setBrandList] = useState([]);
+
   function openProduct() {
     setisOpenSortMenu(!isOpenSortMenu);
+
+    !isOpenSortMenu && setIsOpenBrands(false);
   }
+
+  const openBrands = () => {
+    setIsOpenBrands(!isOpenBrands);
+
+    !isOpenBrands && setisOpenSortMenu(false);
+  };
 
   function checkSortPrice(event) {
     setSortPrice(event.target.name);
   }
 
   function sort() {
-    if (sortPrice === 'higher') {
-      setBreadList(prev =>
-        [...prev].sort((a, b) => parseInt(b.price) - parseInt(a.price))
-      );
-    } else {
-      setBreadList(prev =>
-        [...prev].sort((a, b) => parseInt(a.price) - parseInt(b.price))
-      );
+    const brandSort = brandList.map(el => `brand=${el}`).join('&');
+    let priceSort = '';
+
+    if (sortPrice !== '') {
+      priceSort = `&order=${sortPrice}`;
     }
+
+    const allSort = brandSort.concat(priceSort);
+
+    fetch(`http://10.58.0.120:8000/packages/list?${allSort}`)
+      .then(res => res.json())
+      .then(json => {
+        setBreadList(json.result);
+      });
   }
 
   function reset() {
     setSortPrice('');
-    setBreadList(prev => [...prev].sort((a, b) => a.id - b.id));
-  }
-  useEffect(() => {
-    fetch('http://10.58.0.72:8000/packages/list')
+    setBrandList([]);
+    setisOpenSortMenu(false);
+    setIsOpenBrands(false);
+
+    fetch('http://10.58.0.120:8000/packages/list')
       .then(res => res.json())
       .then(json => {
-        setBreadList(json.PACKAGES_LIST);
+        setBreadList(json.result);
+      });
+  }
+
+  const selectBrand = event => {
+    if (event.target.checked) {
+      setBrandList(prev => [...prev, event.target.name]);
+    } else {
+      setBrandList(prev => prev.filter(el => el !== event.target.name));
+    }
+  };
+
+  useEffect(() => {
+    fetch('http://10.58.0.120:8000/packages/list')
+      .then(res => res.json())
+      .then(json => {
+        setBreadList(json.result);
       });
   }, []);
 
   return (
-    <div className="ListPage">
-      <div>
-        <span className="homeRoot">HOME</span>
-        <span className="sign" />
-        <span className="subscribeRoot"> 빵구독</span>
-      </div>
-      <ul className="breadContainer">
-        <Filter
-          openProduct={openProduct}
-          checkSortPrice={checkSortPrice}
-          sort={sort}
-          reset={reset}
-          isOpenSortMenu={isOpenSortMenu}
-          sortPrice={sortPrice}
-        />
+    <div>
+      {breadList.length && (
+        <div className="ListPage">
+          <div>
+            <span className="homeRoot">HOME</span>
+            <span className="sign" />
+            <span className="subscribeRoot"> 빵구독</span>
+          </div>
+          <ul className="breadContainer">
+            <Filter
+              openProduct={openProduct}
+              checkSortPrice={checkSortPrice}
+              sort={sort}
+              reset={reset}
+              isOpenSortMenu={isOpenSortMenu}
+              sortPrice={sortPrice}
+              openBrands={openBrands}
+              isOpenBrands={isOpenBrands}
+              selectBrand={selectBrand}
+              brandList={brandList}
+            />
 
-        {breadList.map(bread => {
-          return <BreadList key={bread.id} bread={bread} />;
-        })}
-      </ul>
+            {breadList.map(bread => {
+              return <BreadList key={bread.id} bread={bread} />;
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

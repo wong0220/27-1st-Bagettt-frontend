@@ -6,15 +6,19 @@ import './ProductContentInfo.scss';
 function ProductContentInfo({ detailContents }) {
   const [number, setNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  const [shoppingOption, setShoppingOption] = useState('');
+  const [shoppingOption, setShoppingOption] = useState('월');
 
   const increaseNumber = () => {
-    setNumber(number + 1);
+    setNumber(number => {
+      return number + 1;
+    });
   };
 
   const decreaseNumber = () => {
     if (number > 1) {
-      setNumber(number - 1);
+      setNumber(number => {
+        return number - 1;
+      });
     }
   };
 
@@ -23,7 +27,7 @@ function ProductContentInfo({ detailContents }) {
       method: 'POST',
       body: JSON.stringify({
         quantity: number,
-        price: parseFloat(detailContents.price * number).toFixed(2),
+        price: parseFloat(detailContents.price * number),
         package_id: detailContents.package_id,
         shipping_option: shoppingOption,
       }),
@@ -39,6 +43,7 @@ function ProductContentInfo({ detailContents }) {
           : alert('장바구니 담기 실패');
       });
   };
+
   return (
     <div>
       <div className="productContentInfoWrapper">

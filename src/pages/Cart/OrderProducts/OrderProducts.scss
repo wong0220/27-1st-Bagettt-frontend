@@ -21,8 +21,12 @@
       align-items: flex-start;
       padding-left: 20px;
 
+      .packageName {
+        font-weight: 700;
+      }
+
       .dayOption {
-        margin-bottom: 20px;
+        margin: 8px 0 15px 0;
       }
 
       .changeOption {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Cart.scss';
 import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
+import './Cart.scss';
 
 function Cart() {
   const [selectedBread, setSelectedBread] = useState([]);
@@ -48,13 +48,23 @@ function Cart() {
       setSelectedBread(selectedBread.filter(el => !checkList.includes(el.id)));
 
       setPrice({});
-
       const temp = { ...totalPrice };
       checkList.forEach(el => delete temp[el]);
       setToalPrice({ ...temp });
 
       setCheckList([]);
     }
+
+    fetch('http://10.58.0.120:8000/shops/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id: checkList,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   };
 
   const deletePer = identifier => {
@@ -76,24 +86,41 @@ function Cart() {
   };
 
   const deleteAll = () => {
+    const tempBreadList = [];
+    selectedBread.forEach(el => tempBreadList.push(el.id));
+
+    fetch('http://10.58.0.120:8000/shops/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id: tempBreadList,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
+
     setSelectedBread([]);
     setPrice({});
     setToalPrice({});
   };
 
   useEffect(() => {
-    fetch('/data/breadCart.json')
+    fetch('http://10.58.0.120:8000/shops/cart', {
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    })
       .then(res => res.json())
-      .then(json => {
-        setSelectedBread(json);
+      .then(res => {
+        setSelectedBread(res.result[0].cart);
         const temp = {};
-        json.forEach(el => (temp[el.id] = parseInt(el.order_price)));
+        res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
         setToalPrice({ ...temp });
       });
   }, []);
 
-  // console.log(totalPrice);
-  // console.log(price);
   return (
     <div className="Cart">
       <div>

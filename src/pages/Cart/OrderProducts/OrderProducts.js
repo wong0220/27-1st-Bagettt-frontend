@@ -9,21 +9,43 @@ function OrderProducts({
   setPriceList,
   deletePer,
 }) {
-  const [quantity, setQuantity] = useState(selectedBread.number);
-  const perPrice = parseInt(selectedBread.order_price) / selectedBread.number;
-  const price = perPrice * quantity;
+  const [quantities, setQuantities] = useState(selectedBread.quantity);
+  const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
+  const price = perPrice * quantities;
 
   function quantityPlus() {
-    setQuantity(quantity + 1);
-    setPriceList(perPrice * (quantity + 1), data.id);
+    setQuantities(quantities + 1);
+    setPriceList(perPrice * (quantities + 1), data.id);
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: data.id,
+        quantity: quantities + 1,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   }
   function quantityMinus() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-      setPriceList(perPrice * (quantity - 1), data.id);
+    if (quantities > 1) {
+      setQuantities(quantities - 1);
+      setPriceList(perPrice * (quantities - 1), data.id);
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: data.id,
+        quantity: quantities - 1,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   }
 
   return (
@@ -37,9 +59,12 @@ function OrderProducts({
       />
       <h5>{selectedBread.order_type}</h5>
       <div className="imageWrapper">
-        <img src={selectedBread.src} alt="bread" className="breadImage" />
+        <img src={selectedBread.image} alt="bread" className="breadImage" />
         <div className="optionWrapper">
-          <span className="dayOption">{selectedBread.option}</span>
+          <div className="packageName">{selectedBread.name}</div>
+          <span className="dayOption">
+            <div>{selectedBread.option}요일</div>
+          </span>
           <button className="changeOption">옵션변경</button>
         </div>
       </div>
@@ -47,7 +72,7 @@ function OrderProducts({
         <button className="quantityButton" onClick={quantityMinus}>
           -
         </button>
-        <h5>{quantity}</h5>
+        <h5>{quantities}</h5>
         <button className="quantityButton" onClick={quantityPlus}>
           +
         </button>
