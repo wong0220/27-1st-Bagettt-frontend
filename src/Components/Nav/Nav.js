@@ -10,7 +10,7 @@ function Nav() {
           <Link to="/main">
             <img
               className="brandPhoto"
-              src="image\baGETTT_logo.png"
+              src="/image/baGETTT_logo.png"
               alt="brandPhoto"
             />
           </Link>

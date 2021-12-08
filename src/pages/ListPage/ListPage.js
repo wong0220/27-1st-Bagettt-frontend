@@ -66,7 +66,7 @@ function ListPage() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.0.120:8000/packages')
+    fetch('http://10.58.5.9:8000/packages')
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);

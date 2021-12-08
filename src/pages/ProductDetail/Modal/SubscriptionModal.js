@@ -15,7 +15,7 @@ function SubscriptionModal() {
             <Link to="/list-page">
               <button className="modalBtn shoppingBtn">쇼핑 계속하기</button>
             </Link>
-            <Link to="/list-page">
+            <Link to="/cart">
               <button className="modalBtn cartBtn">장바구니로 이동</button>
             </Link>
           </div>

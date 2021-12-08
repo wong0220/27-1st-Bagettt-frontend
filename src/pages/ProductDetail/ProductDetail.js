@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Nav from '../../Components/Nav/Nav';
 import ProductTap from './Tap/ProductTap';
 import ProductContentInfo from './ContentInfo/ProductContentInfo';
 import './ProductDetail.scss';
@@ -18,6 +19,7 @@ function ProductDetail() {
 
   return (
     <div>
+      <Nav />
       {detailContents.result && (
         <div>
           <div className="ProductDetail">

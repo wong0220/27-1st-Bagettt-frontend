@@ -1,6 +1,7 @@
 .Order {
-  width: 100%;
+  // width: 100%;
   padding: 0 120px;
+  font-size: 16px;
 
   .titleWrapper {
     display: flex;
@@ -11,12 +12,13 @@
     border-bottom: 1px solid #000;
     font-weight: 500;
 
-    .title {
+    .orderTitle {
       font-size: 34px;
     }
 
     .titleLine {
       display: flex;
+      font-size: 16px;
 
       .titleGray {
         color: #bcbec0;
@@ -41,12 +43,17 @@
         padding-bottom: 80px;
         border-bottom: 1px solid #000;
 
-        .container {
+        .orderInfoContainer {
           display: flex;
 
-          .infoTitle {
+          .orderInfoTitle {
+            font-size: 16px;
             width: 200px;
             color: #4c4d4e;
+          }
+
+          .infoContents {
+            font-size: 16px;
           }
         }
       }
@@ -54,13 +61,13 @@
       .orderListWrapper {
         padding: 30px 0;
 
-        .title {
+        .orderListTitle {
           font-size: 22px;
           font-weight: 500;
           padding: 30px 0;
         }
 
-        .container {
+        .orderContainer {
           position: relative;
 
           .typeTitle {
@@ -71,11 +78,17 @@
 
             .type {
               width: 100px;
+              font-size: 16px;
+            }
+
+            .productInfo {
+              font-size: 16px;
             }
 
             .price {
               position: absolute;
               left: 80%;
+              font-size: 16px;
             }
           }
         }
@@ -84,8 +97,9 @@
       .shippingInfoWrapper {
         padding-bottom: 100px;
         border-top: 1px solid #000;
+        font-size: 16px;
 
-        .title {
+        .shippingTitle {
           font-size: 22px;
           font-weight: 500;
           padding: 30px 0;
@@ -95,12 +109,18 @@
           line-height: 1.5;
           padding-bottom: 80px;
           border-bottom: 1px solid #000;
-          .userInfo {
+
+          .shippingUserInfo {
             display: flex;
 
             .infoTitle {
               width: 200px;
               color: #4c4d4e;
+              font-size: 16px;
+            }
+
+            .infoContents {
+              font-size: 16px;
             }
           }
         }
@@ -116,22 +136,31 @@
     .orderTotalPrice {
       display: flex;
       justify-content: space-between;
-      font-size: 22px;
       font-weight: bold;
       padding-bottom: 30px;
+
+      .totalPriceTitle {
+        font-size: 20px;
+      }
+
+      .totalPrice {
+        font-size: 20px;
+      }
     }
 
     .orderPriceWrapper {
       padding: 18px;
       background-color: #fafafa;
 
-      .container {
+      .orderPriceContainer {
+        font-size: 16px;
         display: flex;
         justify-content: space-between;
         line-height: 1.8;
 
         .title {
           color: #4c4d4e;
+          font-size: 16px;
         }
       }
     }

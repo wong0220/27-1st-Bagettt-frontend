@@ -1,10 +1,11 @@
 import React from 'react';
+
 import './ProductTapBreadList.scss';
 
 function ProductTapBreadList({ detailContents }) {
   return (
     <div className="ProductTapBreadList">
-      <div className="container">
+      <div className="productTapContainer">
         <img src={detailContents.image} alt="bread" className="breadImage" />
         <div className="breadListWrapper">
           <div className="brandName">
