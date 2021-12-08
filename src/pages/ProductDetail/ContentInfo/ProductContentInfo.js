@@ -19,7 +19,7 @@ function ProductContentInfo({ detailContents }) {
   };
 
   const handleSubscribe = () => {
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch('http://10.58.0.120:8000/shops/cart', {
       method: 'POST',
       body: JSON.stringify({
         quantity: number,
