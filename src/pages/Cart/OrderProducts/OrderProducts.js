@@ -12,6 +12,7 @@ function OrderProducts({
   const [quantities, setQuantities] = useState(selectedBread.quantity);
   const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
   const price = perPrice * quantities;
+  let day = '';
 
   function quantityPlus() {
     setQuantities(quantities + 1);
@@ -36,6 +37,18 @@ function OrderProducts({
     }
   }
 
+  if (selectedBread.option === 1) {
+    day = '월요일';
+  } else if (selectedBread.option === 2) {
+    day = '화요일';
+  } else if (selectedBread.option === 3) {
+    day = '수요일';
+  } else if (selectedBread.option === 4) {
+    day = '목요일';
+  } else {
+    day = '금요일';
+  }
+
   return (
     <div className="orderProductList">
       <input
@@ -50,17 +63,7 @@ function OrderProducts({
         <img src={selectedBread.image} alt="bread" className="breadImage" />
         <div className="optionWrapper">
           <span className="dayOption">
-            {selectedBread.option === 1 ? (
-              <div>월요일</div>
-            ) : selectedBread.option === 2 ? (
-              <div>화요일</div>
-            ) : selectedBread.option === 3 ? (
-              <div> 수요일 </div>
-            ) : selectedBread.option === 4 ? (
-              <div>목요일 </div>
-            ) : (
-              <div>금요일</div>
-            )}
+            <div>{day}</div>
           </span>
           <button className="changeOption">옵션변경</button>
         </div>
