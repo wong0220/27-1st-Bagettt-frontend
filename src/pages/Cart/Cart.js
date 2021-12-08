@@ -11,8 +11,7 @@ function Cart() {
   const [checkList, setCheckList] = useState([]);
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
-  const a = sessionStorage.getItem('token');
-  console.log(a);
+
   const token =
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.idJwexE8iE_-9pRikfbEJdDBVuZJVIAochSmRPvD-rM';
 
@@ -121,6 +120,7 @@ function Cart() {
   };
 
   const orderProduct = () => {
+    console.log('하이');
     fetch('http://10.58.5.9:8000/shops/order', {
       method: 'POST',
       body: JSON.stringify({
@@ -151,7 +151,7 @@ function Cart() {
     <div className="Cart">
       <Nav />
       <div className="cartWrapper">
-        <div>
+        <div className="rootWrapper">
           <span className="homeRoot">HOME</span>
           <span className="homeRoot">></span>
           <span className="shoppingRoot">SHOPPING BAG</span>
@@ -190,11 +190,12 @@ function Cart() {
           />
           <div className="orderButtonWrapper">
             <OrderButton content="쇼핑계속하기" name="whiteButton" />
-            <OrderButton
+            {/* <OrderButton
               content="선택 상품 주문"
               name="whiteButton"
-              onClick={orderProduct}
-            />
+              orderProduct={orderProduct}
+            /> */}
+            <button onClick={orderProduct}> 선택 주문 </button>
             <OrderButton content="전체 상품 주문" name="blackButton" />
           </div>
         </div>
