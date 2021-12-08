@@ -16,7 +16,7 @@ function Cart() {
 
   const navigate = useNavigate();
   const token =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.idJwexE8iE_-9pRikfbEJdDBVuZJVIAochSmRPvD-rM';
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.8IfSdDtAxWYjYLNMWVveulb2ch57lc5UJ8oOGJuklTM';
 
   const changeSingleBox = (checked, id, prices) => {
     if (checked) {

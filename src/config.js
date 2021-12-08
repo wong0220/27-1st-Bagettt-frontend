@@ -1,4 +1,4 @@
-const BASE_URL = 'http://10.58.5.9:8000';
+const BASE_URL = 'http://10.58.0.120:8000';
 
 export const API = {
   GET_CART_DELETE: `${BASE_URL}/shops/order`,

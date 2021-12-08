@@ -7,7 +7,7 @@ function Nav() {
     <nav className="nav">
       <div className="navHeader">
         <div className="navPhoto">
-          <Link to="/main">
+          <Link to="/">
             <img
               className="brandPhoto"
               src="image\baGETTT_logo.png"
