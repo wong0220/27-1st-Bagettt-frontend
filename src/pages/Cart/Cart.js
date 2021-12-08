@@ -48,13 +48,23 @@ function Cart() {
       setSelectedBread(selectedBread.filter(el => !checkList.includes(el.id)));
 
       setPrice({});
-
       const temp = { ...totalPrice };
       checkList.forEach(el => delete temp[el]);
       setToalPrice({ ...temp });
 
       setCheckList([]);
     }
+
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id: checkList,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   };
 
   const deletePer = identifier => {
@@ -76,6 +86,19 @@ function Cart() {
   };
 
   const deleteAll = () => {
+    const tempBreadList = [];
+    selectedBread.forEach(el => tempBreadList.push(el.id));
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id: tempBreadList,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
+
     setSelectedBread([]);
     setPrice({});
     setToalPrice({});
@@ -96,7 +119,7 @@ function Cart() {
     fetch('http://10.58.0.72:8000/shops/cart', {
       headers: {
         Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.aQCo7JbQxkxPhtWLvV79AAzcaGHbyPgGbu7NLwE6-Ho',
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
       },
     })
       .then(res => res.json())

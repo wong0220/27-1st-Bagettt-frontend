@@ -12,6 +12,19 @@ function OrderProducts({
   const [quantities, setQuantities] = useState(selectedBread.quantity);
   const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
   const price = perPrice * quantities;
+  let day = '';
+
+  if (selectedBread.option === 1) {
+    day = '월요일';
+  } else if (selectedBread.option === 2) {
+    day = '화요일';
+  } else if (selectedBread.option === 3) {
+    day = '수요일';
+  } else if (selectedBread.option === 4) {
+    day = '목요일';
+  } else {
+    day = '금요일';
+  }
 
   function quantityPlus() {
     setQuantities(quantities + 1);
@@ -19,11 +32,12 @@ function OrderProducts({
     fetch('http://10.58.0.72:8000/shops/cart', {
       method: 'PATCH',
       body: JSON.stringify({
-        cart_id: data.id,
+        id: data.id,
         quantity: quantities + 1,
       }),
       headers: {
-        Authorization: '',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
       },
     });
   }
@@ -34,6 +48,17 @@ function OrderProducts({
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
+    fetch('http://10.58.0.72:8000/shops/cart', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: data.id,
+        quantity: quantities - 1,
+      }),
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+      },
+    });
   }
 
   return (
@@ -50,17 +75,7 @@ function OrderProducts({
         <img src={selectedBread.image} alt="bread" className="breadImage" />
         <div className="optionWrapper">
           <span className="dayOption">
-            {selectedBread.option === 1 ? (
-              <div>월요일</div>
-            ) : selectedBread.option === 2 ? (
-              <div>화요일</div>
-            ) : selectedBread.option === 3 ? (
-              <div> 수요일 </div>
-            ) : selectedBread.option === 4 ? (
-              <div>목요일 </div>
-            ) : (
-              <div>금요일</div>
-            )}
+            <div>{day}</div>
           </span>
           <button className="changeOption">옵션변경</button>
         </div>
