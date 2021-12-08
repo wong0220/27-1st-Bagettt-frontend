@@ -116,7 +116,7 @@ function Cart() {
   // }, []);
 
   useEffect(() => {
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch('http://10.58.0.120:8000/shops/cart', {
       headers: {
         Authorization:
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
