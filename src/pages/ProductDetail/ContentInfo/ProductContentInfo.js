@@ -8,6 +8,9 @@ function ProductContentInfo({ detailContents }) {
   const [showModal, setShowModal] = useState(false);
   const [shoppingOption, setShoppingOption] = useState('월');
 
+  const token =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM';
+
   const increaseNumber = () => {
     setNumber(number => {
       return number + 1;
@@ -32,8 +35,7 @@ function ProductContentInfo({ detailContents }) {
         shipping_option: shoppingOption,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+        Authorization: token,
       },
     })
       .then(res => res.json())
