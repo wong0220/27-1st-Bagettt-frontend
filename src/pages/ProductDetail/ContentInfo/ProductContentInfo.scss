@@ -2,22 +2,21 @@
 
 .productContentInfoWrapper {
   position: fixed;
-  width: 500px;
+  width: 35%;
   height: 1000px;
-  right: 50px;
+  right: 0;
+  padding: 50px 50px 2000px 50px;
   background-color: #fff;
   border-left: 1px solid #000;
 
   .cartPutWrapper {
-    margin: 50px 0 0 24px;
-
     .productName {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
     }
 
     .productInfo {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 30px;
     }
 
@@ -51,6 +50,7 @@
       margin: 25px 0;
       padding-bottom: 100px;
       border-bottom: 1px solid #f2f2f2;
+      align-items: center;
 
       .selectBox {
         width: 100px;
@@ -62,14 +62,6 @@
       .orderNow {
         font-size: 20px;
         font-weight: bold;
-      }
-
-      .productCountWrapper {
-        margin: 25px 0;
-
-        .productCountInput {
-          width: 50px;
-        }
       }
 
       .orderCountWrapper {
@@ -96,7 +88,7 @@
           font-size: 24px;
         }
       }
-      .subscription {
+      .subscriptionBtn {
         width: 100%;
         height: 45px;
         margin-bottom: 10px;
@@ -104,6 +96,7 @@
         background-color: #000;
         border: none;
         font-size: 16px;
+        cursor: pointer;
       }
     }
   }
