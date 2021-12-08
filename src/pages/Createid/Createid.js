@@ -35,7 +35,7 @@ function CreateId() {
 
   const goToList = () => {
     if (isUserValid) {
-      fetch('http://10.58.2.30:8000/users/signup', {
+      fetch('http://10.58.5.9:8000/users/signup', {
         method: 'POST',
         body: JSON.stringify({
           email: idInput,
