@@ -14,7 +14,7 @@ function ProductDetail() {
       .then(result => {
         setDetailContents(result);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div>
