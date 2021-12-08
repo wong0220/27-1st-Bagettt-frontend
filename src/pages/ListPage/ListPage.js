@@ -36,7 +36,7 @@ function ListPage() {
 
     const allSort = brandSort.concat(priceSort);
 
-    fetch(`http://10.58.0.120:8000/packages/list?${allSort}`)
+    fetch(`http://10.58.0.120:8000/packages?${allSort}`)
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);
@@ -49,7 +49,7 @@ function ListPage() {
     setisOpenSortMenu(false);
     setIsOpenBrands(false);
 
-    fetch('http://10.58.0.120:8000/packages/list')
+    fetch('http://10.58.0.120:8000/packages')
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);
@@ -65,7 +65,7 @@ function ListPage() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.0.120:8000/packages/list')
+    fetch('http://10.58.0.120:8000/packages')
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);

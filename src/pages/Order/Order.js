@@ -7,12 +7,14 @@ function Order() {
   const [orderInfo, setOrderInfo] = useState([]);
 
   useEffect(() => {
-    fetch('/data/data.json')
+    fetch('http://10.58.5.9:8000/shops/order')
       .then(res => res.json())
       .then(result => {
         setOrderInfo(result);
       });
   }, []);
+
+  console.log(orderInfo);
 
   return (
     <div>
