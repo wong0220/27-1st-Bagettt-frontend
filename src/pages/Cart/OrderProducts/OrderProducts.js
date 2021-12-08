@@ -12,7 +12,6 @@ function OrderProducts({
   const [quantities, setQuantities] = useState(selectedBread.quantity);
   const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
   const price = perPrice * quantities;
-  let day = '';
 
   function quantityPlus() {
     setQuantities(quantities + 1);
@@ -47,18 +46,6 @@ function OrderProducts({
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
       },
     });
-  }
-
-  if (selectedBread.option === 1) {
-    day = '월요일';
-  } else if (selectedBread.option === 2) {
-    day = '화요일';
-  } else if (selectedBread.option === 3) {
-    day = '수요일';
-  } else if (selectedBread.option === 4) {
-    day = '목요일';
-  } else {
-    day = '금요일';
   }
 
   return (
