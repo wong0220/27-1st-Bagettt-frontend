@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
@@ -133,8 +133,26 @@ function Cart() {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
-        // naviagte('/login', { state: res });
+        naviagte('/order', { state: res });
+      });
+  };
+
+  const orderAllProduct = () => {
+    const tempBreadList = [];
+    selectedBread.forEach(el => tempBreadList.push(el.id));
+
+    fetch('http://10.58.5.9:8000/shops/order', {
+      method: 'POST',
+      body: JSON.stringify({
+        cart_id: tempBreadList,
+      }),
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
+        naviagte('/order', { state: res });
       });
   };
 
@@ -195,13 +213,21 @@ function Cart() {
             deleteAll={deleteAll}
           />
           <div className="orderButtonWrapper">
-            <OrderButton content="쇼핑계속하기" name="whiteButton" />
+            <Link to="/list-page">
+              <OrderButton content="쇼핑계속하기" name="whiteButton" />{' '}
+            </Link>
+
             <OrderButton
               content="선택 상품 주문"
               name="whiteButton"
               orderProduct={orderProduct}
             />
-            <OrderButton content="전체 상품 주문" name="blackButton" />
+
+            <OrderButton
+              content="전체 상품 주문"
+              name="blackButton"
+              orderProduct={orderAllProduct}
+            />
           </div>
         </div>
       </div>
