@@ -6,7 +6,7 @@ function UserGuideTap() {
     <div className="UserGuideTap">
       <img
         className="logo"
-        src="https://www.gettt.com/data/editor/goods/200723/Vector_220824.png"
+        src="https://i.ibb.co/VByMxVv/ba-GETTT-logo.png"
         alt="logo"
       />
       <p className="contents">
