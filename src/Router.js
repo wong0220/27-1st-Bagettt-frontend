@@ -5,6 +5,7 @@ import Cart from './pages/Cart/Cart';
 import Createid from './pages/Createid/Createid';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ListPage from './pages/ListPage/ListPage';
+import Main from './pages/Main/Main';
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
           path="/list-page/product-detail/:id"
           element={<ProductDetail />}
         />
+        <Route path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );
