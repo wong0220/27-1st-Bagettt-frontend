@@ -120,7 +120,6 @@ function Cart() {
   };
 
   const orderProduct = () => {
-    console.log('하이');
     fetch('http://10.58.5.9:8000/shops/order', {
       method: 'POST',
       body: JSON.stringify({

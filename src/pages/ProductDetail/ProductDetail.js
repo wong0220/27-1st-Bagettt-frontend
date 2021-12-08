@@ -12,7 +12,6 @@ function ProductDetail() {
     fetch(`http://10.58.0.120:8000/packages/details/${id}`)
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         setDetailContents(result);
       });
   }, [id]);
