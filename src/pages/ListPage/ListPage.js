@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BreadList from '../ListPage/BreadList/BreadList';
 import Filter from '../ListPage/Filter/Filter';
+import Nav from '../../Components/Nav/Nav';
 import './ListPage.scss';
 
 function ListPage() {
@@ -74,6 +75,7 @@ function ListPage() {
 
   return (
     <div>
+      <Nav />
       {breadList.length && (
         <div className="ListPage">
           <div>

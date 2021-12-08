@@ -8,6 +8,7 @@ function OrderProducts({
   checkList,
   setPriceList,
   deletePer,
+  orderPerProduct,
 }) {
   const [quantities, setQuantities] = useState(selectedBread.quantity);
   const perPrice = parseInt(selectedBread.price) / selectedBread.quantity;
@@ -16,7 +17,7 @@ function OrderProducts({
   function quantityPlus() {
     setQuantities(quantities + 1);
     setPriceList(perPrice * (quantities + 1), data.id);
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'PATCH',
       body: JSON.stringify({
         id: data.id,
@@ -35,7 +36,7 @@ function OrderProducts({
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'PATCH',
       body: JSON.stringify({
         id: data.id,
@@ -81,7 +82,9 @@ function OrderProducts({
       <h5>{selectedBread.delivery_price}</h5>
       <h5>{price.toLocaleString()}원</h5>
       <div className="buttonWrapper">
-        <button className="button">결제하기</button>
+        <button className="button" onClick={() => orderPerProduct(data.id)}>
+          결제하기
+        </button>
         <button className="button" onClick={() => deletePer(data.id)}>
           삭제
         </button>

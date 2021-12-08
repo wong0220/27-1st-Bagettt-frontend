@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
+
+.nav {
+  padding: 0px 30px 0px 0px;
+  z-index: 100;
+  position: fixed;
+  background-color: white;
+
+  .navHeader {
+    display: flex;
+
+    .navPhoto {
+      .brandPhoto {
+        width: 250px;
+      }
+    }
+
+    .list {
+      display: flex;
+
+      .brandStory {
+        .story {
+          padding: 28px 20px 30px 20px;
+          font-size: 20px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .subMenu {
+          width: 100%;
+          position: fixed;
+          padding-left: 115px;
+          left: 0;
+          display: none;
+          background-color: white;
+          cursor: pointer;
+        }
+
+        .otherList {
+          display: flex;
+          height: 80px;
+
+          .history {
+            padding-right: 100px;
+            font-size: 20px;
+            font-family: $font-family;
+            font-weight: bold;
+            margin-left: 185px;
+            cursor: pointer;
+          }
+
+          .subItems {
+            margin-right: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: $font-family;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .brandStory:hover .subMenu {
+        display: block;
+      }
+
+      .subScribe {
+        font-size: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+        padding-top: 30px;
+        cursor: pointer;
+      }
+
+      .titleMenu {
+        font-size: 17px;
+        padding-right: 20px;
+        font-family: $font-family;
+        padding-top: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-left: 300px;
+      .fas {
+        margin: 10px;
+      }
+    }
+  }
+}

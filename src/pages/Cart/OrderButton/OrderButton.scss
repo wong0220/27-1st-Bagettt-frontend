@@ -5,6 +5,10 @@
   border: 1px solid black;
   outline: none;
   background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .blackButton {
@@ -15,4 +19,8 @@
   outline: none;
   background-color: black;
   color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
