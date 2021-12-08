@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './BreadList.scss';
 
 function BreadList({ bread }) {
   return (
     <li className="breadList">
-      <img src={bread.image} alt="bread" className="breadImage" />
+      <Link to={`/product-detail/${bread.id}`}>
+        <img src={bread.image} alt="bread" className="breadImage" />{' '}
+      </Link>
       <h5>{bread.name}</h5>
       <div className="shortSubscribe">
         <span>구독가 </span>

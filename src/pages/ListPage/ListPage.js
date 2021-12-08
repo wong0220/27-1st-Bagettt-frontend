@@ -27,23 +27,33 @@ function ListPage() {
   }
 
   function sort() {
-    // if (sortPrice === '+price') {
-    //   setBreadList(prev =>
-    //     [...prev].sort((a, b) => parseInt(b.price) - parseInt(a.price))
-    //   );
-    // } else {
-    //   setBreadList(prev =>
-    //     [...prev].sort((a, b) => parseInt(a.price) - parseInt(b.price))
-    //   );
-    // }
-    const a = brandList.map(el => `brand=${el}`).join('&');
-    console.log(a);
+    const brandSort = brandList.map(el => `brand=${el}`).join('&');
+    let priceSort = '';
+
+    if (sortPrice !== '') {
+      priceSort = `&order=${sortPrice}`;
+    }
+
+    const allSort = brandSort.concat(priceSort);
+
+    fetch(`http://10.58.0.120:8000/packages/list?${allSort}`)
+      .then(res => res.json())
+      .then(json => {
+        setBreadList(json.result);
+      });
   }
 
   function reset() {
     setSortPrice('');
     setBrandList([]);
-    setBreadList(prev => [...prev].sort((a, b) => a.id - b.id));
+    setisOpenSortMenu(false);
+    setIsOpenBrands(false);
+
+    fetch('http://10.58.0.120:8000/packages/list')
+      .then(res => res.json())
+      .then(json => {
+        setBreadList(json.result);
+      });
   }
 
   const selectBrand = event => {
@@ -55,7 +65,7 @@ function ListPage() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.0.72:8000/packages/list')
+    fetch('http://10.58.0.120:8000/packages/list')
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);
@@ -82,6 +92,7 @@ function ListPage() {
               openBrands={openBrands}
               isOpenBrands={isOpenBrands}
               selectBrand={selectBrand}
+              brandList={brandList}
             />
 
             {breadList.map(bread => {

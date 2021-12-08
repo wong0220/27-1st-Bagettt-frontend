@@ -1,8 +1,8 @@
 import './Filter.scss';
 import BrandSort from './BrandSort/BrandSort';
 
-const SORT_LOWER = '-price';
-const SORT_HIGHER = '+price';
+const SORT_LOWER = 'price';
+const SORT_HIGHER = '-price';
 
 function Filter({
   openProduct,
@@ -14,6 +14,7 @@ function Filter({
   openBrands,
   isOpenBrands,
   selectBrand,
+  brandList,
 }) {
   return (
     <div className="filterContainer">
@@ -22,6 +23,7 @@ function Filter({
         openBrands={openBrands}
         isOpenBrands={isOpenBrands}
         selectBrand={selectBrand}
+        brandList={brandList}
       />
       <div className="filter" onClick={openProduct}>
         상품정렬순
