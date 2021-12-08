@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
@@ -12,6 +13,7 @@ function Cart() {
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
 
+  const naviagte = useNavigate();
   const token =
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.idJwexE8iE_-9pRikfbEJdDBVuZJVIAochSmRPvD-rM';
 
@@ -59,7 +61,7 @@ function Cart() {
       setCheckList([]);
     }
 
-    fetch('http://10.58.0.120:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: checkList,
@@ -74,7 +76,7 @@ function Cart() {
     if (checkList.includes(identifier)) {
       const deleteId = [];
       deleteId.push(identifier);
-      fetch('http://10.58.0.120:8000/shops/cart', {
+      fetch('http://10.58.5.9:8000/shops/cart', {
         method: 'DELETE',
         body: JSON.stringify({
           id: deleteId,
@@ -104,7 +106,7 @@ function Cart() {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
 
-    fetch('http://10.58.0.120:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: tempBreadList,
@@ -128,7 +130,12 @@ function Cart() {
       headers: {
         Authorization: token,
       },
-    });
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        // naviagte('/login', { state: res });
+      });
   };
 
   useEffect(() => {
@@ -189,12 +196,11 @@ function Cart() {
           />
           <div className="orderButtonWrapper">
             <OrderButton content="쇼핑계속하기" name="whiteButton" />
-            {/* <OrderButton
+            <OrderButton
               content="선택 상품 주문"
               name="whiteButton"
               orderProduct={orderProduct}
-            /> */}
-            <button onClick={orderProduct}> 선택 주문 </button>
+            />
             <OrderButton content="전체 상품 주문" name="blackButton" />
           </div>
         </div>
