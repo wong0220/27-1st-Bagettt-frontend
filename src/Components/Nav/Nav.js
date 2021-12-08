@@ -38,6 +38,7 @@ function Nav() {
           <li className="titleMenu">REVIEW</li>
           <li className="titleMenu">CUSTOMER CENTER</li>
         </ul>
+        <div className="anonymouse" />
         <div className="icons">
           <i className="fas fa-search fa-lg" />
           <i className="fas fa-user fa-lg" />
