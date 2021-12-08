@@ -137,6 +137,29 @@ function Cart() {
       });
   };
 
+  const orderPerProduct = identifier => {
+    if (checkList.includes(identifier)) {
+      const orderId = [];
+      orderId.push(identifier);
+
+      fetch('http://10.58.5.9:8000/shops/order', {
+        method: 'POST',
+        body: JSON.stringify({
+          cart_id: orderId,
+        }),
+        headers: {
+          Authorization: token,
+        },
+      })
+        .then(res => res.json())
+        .then(res => {
+          naviagte('/order', { state: res });
+        });
+    } else {
+      alert('항목을 선택해주세요');
+    }
+  };
+
   const orderAllProduct = () => {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
@@ -201,6 +224,7 @@ function Cart() {
                   checkList={checkList}
                   setPriceList={setPriceList}
                   deletePer={deletePer}
+                  orderPerProduct={orderPerProduct}
                 />
               ))
             ) : (
