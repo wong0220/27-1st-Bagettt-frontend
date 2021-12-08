@@ -32,7 +32,7 @@ function ListPage() {
     setBreadList(prev => [...prev].sort((a, b) => a.id - b.id));
   }
   useEffect(() => {
-    fetch('http://10.58.0.72:8000/packages/list')
+    fetch('http://10.58.0.120:8000/packages/list')
       .then(res => res.json())
       .then(json => {
         setBreadList(json.PACKAGES_LIST);
@@ -40,26 +40,30 @@ function ListPage() {
   }, []);
 
   return (
-    <div className="ListPage">
-      <div>
-        <span className="homeRoot">HOME</span>
-        <span className="sign" />
-        <span className="subscribeRoot"> 빵구독</span>
-      </div>
-      <ul className="breadContainer">
-        <Filter
-          openProduct={openProduct}
-          checkSortPrice={checkSortPrice}
-          sort={sort}
-          reset={reset}
-          isOpenSortMenu={isOpenSortMenu}
-          sortPrice={sortPrice}
-        />
+    <div>
+      {breadList.length && (
+        <div className="ListPage">
+          <div>
+            <span className="homeRoot">HOME</span>
+            <span className="sign" />
+            <span className="subscribeRoot"> 빵구독</span>
+          </div>
+          <ul className="breadContainer">
+            <Filter
+              openProduct={openProduct}
+              checkSortPrice={checkSortPrice}
+              sort={sort}
+              reset={reset}
+              isOpenSortMenu={isOpenSortMenu}
+              sortPrice={sortPrice}
+            />
 
-        {breadList.map(bread => {
-          return <BreadList key={bread.id} bread={bread} />;
-        })}
-      </ul>
+            {breadList.map(bread => {
+              return <BreadList key={bread.id} bread={bread} />;
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
