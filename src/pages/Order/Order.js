@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import OrderList from './OrderList';
 import './Order.scss';
 
 function Order() {
-  const [orderInfo, setOrderInfo] = useState([]);
+  const location = useLocation();
 
-  useEffect(() => {
-    fetch('http://10.58.5.9:8000/shops/order')
-      .then(res => res.json())
-      .then(result => {
-        setOrderInfo(result);
-      });
-  }, []);
-
-  console.log(orderInfo);
+  const { result } = location.state;
+  const { packageItem } = location.state.result.package[0];
 
   return (
     <div>
-      {orderInfo.length && (
+      {result.length && (
         <div className="Order">
           <div className="titleWrapper">
             <div className="title">ORDER COMPLETED</div>
@@ -32,29 +25,25 @@ function Order() {
           <div className="orderWrapper">
             <div className="orderContaier">
               <h2 className="orderText">
-                {orderInfo[0].user_name}님의 주문이
+                {result.user_name}님의 주문이
                 <br /> 정상적으로 접수 되었습니다.
               </h2>
               <div className="orderInfoWrapper">
                 <div className="container">
                   <div className="infoTitle">주문번호</div>
-                  <div className="infoContents">
-                    {orderInfo[0].order_number}
-                  </div>
+                  <div className="infoContents">{result.order_number}</div>
                 </div>
                 <div className="container">
                   <div className="infoTitle">주문일자</div>
-                  <div className="infoContents">{orderInfo[0].date}</div>
+                  <div className="infoContents">{result.date}</div>
                 </div>
                 <div className="container">
                   <div className="infoTitle">휴대폰번호</div>
-                  <div className="infoContents">
-                    {orderInfo[0].phone_number}
-                  </div>
+                  <div className="infoContents">{result.phone_number}</div>
                 </div>
                 <div className="container">
                   <div className="infoTitle">이메일</div>
-                  <div className="infoContents">{orderInfo[0].email}</div>
+                  <div className="infoContents">{result.email}</div>
                 </div>
               </div>
 
@@ -67,7 +56,7 @@ function Order() {
                     <div className="price">주문금액</div>
                   </div>
 
-                  {orderInfo.map((product, idx) => {
+                  {result.map((product, idx) => {
                     return <OrderList key={idx} orderInfo={product} />;
                   })}
                 </div>
@@ -78,17 +67,15 @@ function Order() {
                 <div className="shippingInfo">
                   <div className="userInfo">
                     <div className="infoTitle">수령인</div>
-                    <div className="infoContents">{orderInfo[0].user_name}</div>
+                    <div className="infoContents">{result.user_name}</div>
                   </div>
                   <div className="userInfo">
                     <div className="infoTitle">연락처</div>
-                    <div className="infoContents">
-                      {orderInfo[0].phone_number}
-                    </div>
+                    <div className="infoContents">{result.phone_number}</div>
                   </div>
                   <div className="userInfo">
                     <div className="infoTitle">주소</div>
-                    <div className="infoContents">{orderInfo[0].address}</div>
+                    <div className="infoContents">{result.address}</div>
                   </div>
                 </div>
               </div>
@@ -98,10 +85,7 @@ function Order() {
               <div className="orderTotalPrice">
                 <div className="totalPriceTitle">최종결제금액</div>
                 <div className="totalPrice">
-                  {Number(
-                    orderInfo[0].package[0].package_price
-                  ).toLocaleString()}
-                  원
+                  {Number(packageItem.package_price).toLocaleString()}원
                 </div>
               </div>
 
@@ -109,10 +93,7 @@ function Order() {
                 <div className="container">
                   <div className="title">주문상품금액</div>
                   <div>
-                    {Number(
-                      orderInfo[0].package[0].package_price
-                    ).toLocaleString()}
-                    원
+                    {Number(packageItem.package_price).toLocaleString()}원
                   </div>
                 </div>
                 <div className="container">
