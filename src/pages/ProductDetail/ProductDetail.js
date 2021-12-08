@@ -16,7 +16,6 @@ function ProductDetail() {
       });
   }, [id]);
 
-  console.log(detailContents);
   return (
     <div>
       {detailContents.result && (

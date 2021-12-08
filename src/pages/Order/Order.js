@@ -13,8 +13,6 @@ function Order() {
       });
   }, []);
 
-  console.log(orderInfo);
-
   return (
     <div>
       {orderInfo.length && (
