@@ -1,0 +1,76 @@
+.orderProductList {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 5fr 2fr 2fr 2fr 2fr 2fr;
+  text-align: center;
+  align-items: center;
+  padding: 25.5px 0 50px 0;
+  font-size: 13px;
+
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+
+    .breadImage {
+      width: 80px;
+      height: 80px;
+    }
+
+    .optionWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+
+      .dayOption {
+        margin-bottom: 20px;
+      }
+
+      .changeOption {
+        border: none;
+        outline: none;
+        background-color: white;
+        color: #828282;
+        padding: 0;
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .quantityWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .quantityButton {
+      margin: 0 5px;
+      border: 0;
+      outline: none;
+      background-color: white;
+      font-size: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      width: 106px;
+      height: 24px;
+      margin-bottom: 5px;
+      background-color: white;
+      border: 1px solid black;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

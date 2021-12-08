@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
+
+.createId {
+  .createBox {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+
+    .createAccount {
+      .create {
+        .createTitle {
+          margin-top: 150px;
+          font-size: 31px;
+          text-align: center;
+          font-weight: 600;
+          font-family: 'Noto Sans KR';
+        }
+      }
+
+      .inputEmailid {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+
+        .idEmail {
+          padding-bottom: 15px;
+          padding-top: 10px;
+          font-family: 'Noto Sans KR';
+          font-size: 13px;
+        }
+
+        .inputId {
+          @include inputWidthHeigh50045;
+          border: 1.5px solid #e0e0e0;
+        }
+      }
+
+      .inputPassword {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+
+        .passWord {
+          padding-bottom: 15px;
+          font-size: 13px;
+          font-family: 'Noto Sans KR';
+        }
+
+        .inputPw {
+          @include inputWidthHeigh50045;
+          border: 1.5px solid #e0e0e0;
+        }
+      }
+
+      .inputName {
+        display: flex;
+        flex-direction: column;
+
+        .userName {
+          margin-bottom: 15px;
+          padding-top: 15px;
+          font-family: 'Noto Sans KR';
+          font-size: 13px;
+        }
+
+        .inputName {
+          @include inputWidthHeigh50045;
+          border: 1.5px solid #e0e0e0;
+        }
+      }
+
+      .inputPhoneNumber {
+        padding-top: 15px;
+
+        .userPhoneNumber {
+          font-size: 13px;
+          font-family: 'Noto Sans KR';
+        }
+
+        .phone {
+          display: flex;
+          @include inputWidthHeigh50045;
+          margin-top: 10px;
+          border: 1.5px solid #e0e0e0;
+        }
+      }
+
+      .inputAddress {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+
+        .address {
+          font-size: 13px;
+          font-family: 'Noto Sans KR';
+        }
+      }
+
+      .buttonAddress {
+        .homeAddress {
+          @include inputWidthHeigh50045;
+          margin-top: 10px;
+          border: 1.5px solid #e0e0e0;
+        }
+      }
+
+      .submitButton {
+        .btn {
+          @include inputWidthHeigh50045;
+          margin-top: 20px;
+          color: white;
+          background-color: black;
+          border: 1px solid black;
+          font-weight: bold;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
