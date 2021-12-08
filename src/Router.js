@@ -17,10 +17,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/createid" element={<Createid />} />
         <Route path="/list-page" element={<ListPage />} />
-        <Route
-          path="/list-page/product-detail/:id"
-          element={<ProductDetail />}
-        />
+        <Route path="/product-detail/:id" element={<ProductDetail />} />
         <Route path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>

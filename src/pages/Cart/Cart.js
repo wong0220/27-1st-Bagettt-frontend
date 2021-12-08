@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
+import Nav from '../../Components/Nav/Nav';
 import './Cart.scss';
 
 function Cart() {
@@ -10,8 +12,10 @@ function Cart() {
   const [checkList, setCheckList] = useState([]);
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
+
+  const navigate = useNavigate();
   const token =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.8IfSdDtAxWYjYLNMWVveulb2ch57lc5UJ8oOGJuklTM';
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.idJwexE8iE_-9pRikfbEJdDBVuZJVIAochSmRPvD-rM';
 
   const changeSingleBox = (checked, id, prices) => {
     if (checked) {
@@ -57,7 +61,7 @@ function Cart() {
       setCheckList([]);
     }
 
-    fetch('http://10.58.0.120:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: checkList,
@@ -72,7 +76,7 @@ function Cart() {
     if (checkList.includes(identifier)) {
       const deleteId = [];
       deleteId.push(identifier);
-      fetch('http://10.58.0.120:8000/shops/cart', {
+      fetch('http://10.58.5.9:8000/shops/cart', {
         method: 'DELETE',
         body: JSON.stringify({
           id: deleteId,
@@ -102,7 +106,7 @@ function Cart() {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
 
-    fetch('http://10.58.0.120:8000/shops/cart', {
+    fetch('http://10.58.5.9:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: tempBreadList,
@@ -117,15 +121,72 @@ function Cart() {
     setToalPrice({});
   };
 
-  useEffect(() => {
-    fetch('http://10.58.0.120:8000/shops/cart', {
+  const orderProduct = () => {
+    fetch('http://10.58.5.9:8000/shops/order', {
+      method: 'POST',
+      body: JSON.stringify({
+        cart_id: checkList,
+      }),
       headers: {
         Authorization: token,
       },
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        navigate('/order', { state: res });
+      });
+  };
+
+  const orderPerProduct = identifier => {
+    if (checkList.includes(identifier)) {
+      const orderId = [];
+      orderId.push(identifier);
+
+      fetch('http://10.58.5.9:8000/shops/order', {
+        method: 'POST',
+        body: JSON.stringify({
+          cart_id: orderId,
+        }),
+        headers: {
+          Authorization: token,
+        },
+      })
+        .then(res => res.json())
+        .then(res => {
+          navigate('/order', { state: res });
+        });
+    } else {
+      alert('항목을 선택해주세요');
+    }
+  };
+
+  const orderAllProduct = () => {
+    const tempBreadList = [];
+    selectedBread.forEach(el => tempBreadList.push(el.id));
+
+    fetch('http://10.58.5.9:8000/shops/order', {
+      method: 'POST',
+      body: JSON.stringify({
+        cart_id: tempBreadList,
+      }),
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
+        navigate('/order', { state: res });
+      });
+  };
+
+  useEffect(() => {
+    fetch('http://10.58.5.9:8000/shops/cart', {
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
         setSelectedBread(res.result[0].cart);
         const temp = {};
         res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
@@ -135,47 +196,63 @@ function Cart() {
 
   return (
     <div className="Cart">
-      <div>
-        <span className="homeRoot">HOME</span>
-        <span className="homeRoot">></span>
-        <span className="shoppingRoot">SHOPPING BAG</span>
-      </div>
-
-      <div className="shoppingBag">
-        <h1 className="title">SHOPPING BAG</h1>
-        <h2 className="title productTitle">쇼핑백 상품</h2>
-        <div className="orderContainer">
-          <OrderInformation
-            changeAllBox={changeAllBox}
-            checkList={checkList}
-            selectedBread={selectedBread}
-          />
-
-          {selectedBread.length > 0 ? (
-            selectedBread.map(selectedBread => (
-              <OrderProducts
-                selectedBread={selectedBread}
-                key={selectedBread.id}
-                changeSingleBox={changeSingleBox}
-                data={selectedBread}
-                checkList={checkList}
-                setPriceList={setPriceList}
-                deletePer={deletePer}
-              />
-            ))
-          ) : (
-            <div className="emptyCart">장바구니가 비어있습니다</div>
-          )}
+      <Nav />
+      <div className="cartWrapper">
+        <div className="rootWrapper">
+          <span className="homeRoot">HOME</span>
+          <span className="homeRoot">></span>
+          <span className="shoppingRoot">SHOPPING BAG</span>
         </div>
-        <OrderPrice
-          price={price}
-          deleteSelected={deleteSelected}
-          deleteAll={deleteAll}
-        />
-        <div className="orderButtonWrapper">
-          <OrderButton content="쇼핑계속하기" name="whiteButton" />
-          <OrderButton content="선택 상품 주문" name="whiteButton" />
-          <OrderButton content="전체 상품 주문" name="blackButton" />
+
+        <div className="shoppingBag">
+          <h1 className="title">SHOPPING BAG</h1>
+          <h2 className="title productTitle">쇼핑백 상품</h2>
+          <div className="orderContainer">
+            <OrderInformation
+              changeAllBox={changeAllBox}
+              checkList={checkList}
+              selectedBread={selectedBread}
+            />
+
+            {selectedBread.length > 0 ? (
+              selectedBread.map(selectedBread => (
+                <OrderProducts
+                  selectedBread={selectedBread}
+                  key={selectedBread.id}
+                  changeSingleBox={changeSingleBox}
+                  data={selectedBread}
+                  checkList={checkList}
+                  setPriceList={setPriceList}
+                  deletePer={deletePer}
+                  orderPerProduct={orderPerProduct}
+                />
+              ))
+            ) : (
+              <div className="emptyCart">장바구니가 비어있습니다</div>
+            )}
+          </div>
+          <OrderPrice
+            price={price}
+            deleteSelected={deleteSelected}
+            deleteAll={deleteAll}
+          />
+          <div className="orderButtonWrapper">
+            <Link to="/list-page">
+              <OrderButton content="쇼핑계속하기" name="whiteButton" />{' '}
+            </Link>
+
+            <OrderButton
+              content="선택 상품 주문"
+              name="whiteButton"
+              orderProduct={orderProduct}
+            />
+
+            <OrderButton
+              content="전체 상품 주문"
+              name="blackButton"
+              orderProduct={orderAllProduct}
+            />
+          </div>
         </div>
       </div>
     </div>
