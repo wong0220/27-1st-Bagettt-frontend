@@ -55,7 +55,7 @@ function Cart() {
       setCheckList([]);
     }
 
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch('http://10.58.0.120:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: checkList,
@@ -88,7 +88,8 @@ function Cart() {
   const deleteAll = () => {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    console.log(tempBreadList);
+    fetch('http://10.58.0.120:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
         id: tempBreadList,
@@ -103,17 +104,6 @@ function Cart() {
     setPrice({});
     setToalPrice({});
   };
-
-  // useEffect(() => {
-  //   fetch('/data/breadCart.json')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       setSelectedBread(json);
-  //       const temp = {};
-  //       json.forEach(el => (temp[el.id] = parseInt(el.order_price)));
-  //       setToalPrice({ ...temp });
-  //     });
-  // }, []);
 
   useEffect(() => {
     fetch('http://10.58.0.120:8000/shops/cart', {
@@ -131,9 +121,6 @@ function Cart() {
       });
   }, []);
 
-  // console.log(totalPrice);
-  // console.log(totalPrice);
-  // console.log(price);
   return (
     <div className="Cart">
       <div>
