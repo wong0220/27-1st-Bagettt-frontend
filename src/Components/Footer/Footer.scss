@@ -1,0 +1,106 @@
+.footer {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 13px;
+
+  .footerLeft {
+    padding-top: 50px;
+    border-top: 1px solid;
+    width: 70%;
+
+    .getttCenter {
+      .customerCenter {
+        font-size: 22px;
+      }
+
+      .centerTime {
+        font-size: 13px;
+        padding: 10px 0 50px 0;
+        color: rgb(143, 140, 140);
+      }
+    }
+
+    .bagetttInfo {
+      display: flex;
+      font-weight: bold;
+      margin-bottom: 30px;
+      cursor: pointer;
+
+      .bagetttinformation {
+        margin-right: 15px;
+      }
+    }
+
+    .bagetttCompanyInfo {
+      display: flex;
+
+      .companyInfo {
+        padding-right: 18px;
+      }
+    }
+
+    .companyDetailinfo {
+      padding-top: 15px;
+
+      .orderSalesreport {
+        padding-right: 18px;
+      }
+
+      .companyemail {
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .companyDomain {
+    padding-top: 15px;
+
+    .host {
+      color: rgb(143, 140, 140);
+    }
+  }
+
+  .footerRight {
+    width: 30%;
+    padding-top: 30px;
+    padding-left: 50px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    line-height: 25px;
+
+    .rightMenu {
+      .service {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .explainService {
+        padding-top: 15px;
+        color: rgb(143, 140, 140);
+      }
+
+      .searchServicebutton {
+        padding: 7px 7px 7px 7px;
+        background-color: white;
+        border: 1px solid black;
+        margin-top: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .rightDownMenu {
+        padding-top: 15px;
+
+        .letKnow {
+          font-weight: bold;
+        }
+
+        .letToKnowCustomer {
+          padding-top: 15px;
+          color: rgb(143, 140, 140);
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Createid from './pages/Createid/Createid';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ListPage from './pages/ListPage/ListPage';
 import Main from './pages/Main/Main';
+import Footer from './Components/Footer/Footer';
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
           element={<ProductDetail />}
         />
         <Route path="/" element={<Main />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </BrowserRouter>
   );
