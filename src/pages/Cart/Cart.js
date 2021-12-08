@@ -3,6 +3,7 @@ import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
+
 import './Cart.scss';
 
 function Cart() {
