@@ -5,6 +5,7 @@ import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
 import Nav from '../../Components/Nav/Nav';
+import { API } from '../../config';
 import './Cart.scss';
 
 function Cart() {
@@ -61,7 +62,7 @@ function Cart() {
       setCheckList([]);
     }
 
-    fetch('http://10.58.5.9:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'DELETE',
       body: JSON.stringify({
         id: checkList,
@@ -76,7 +77,7 @@ function Cart() {
     if (checkList.includes(identifier)) {
       const deleteId = [];
       deleteId.push(identifier);
-      fetch('http://10.58.5.9:8000/shops/cart', {
+      fetch(API.GET_CART, {
         method: 'DELETE',
         body: JSON.stringify({
           id: deleteId,
@@ -106,7 +107,7 @@ function Cart() {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
 
-    fetch('http://10.58.5.9:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'DELETE',
       body: JSON.stringify({
         id: tempBreadList,
@@ -122,7 +123,7 @@ function Cart() {
   };
 
   const orderProduct = () => {
-    fetch('http://10.58.5.9:8000/shops/order', {
+    fetch(API.GET_CART_DELETE, {
       method: 'POST',
       body: JSON.stringify({
         cart_id: checkList,
@@ -142,7 +143,7 @@ function Cart() {
       const orderId = [];
       orderId.push(identifier);
 
-      fetch('http://10.58.5.9:8000/shops/order', {
+      fetch(API.GET_CART_DELETE, {
         method: 'POST',
         body: JSON.stringify({
           cart_id: orderId,
@@ -164,7 +165,7 @@ function Cart() {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
 
-    fetch('http://10.58.5.9:8000/shops/order', {
+    fetch(API.GET_CART_DELETE, {
       method: 'POST',
       body: JSON.stringify({
         cart_id: tempBreadList,
@@ -180,7 +181,7 @@ function Cart() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.5.9:8000/shops/cart', {
+    fetch(API.GET_CART, {
       headers: {
         Authorization: token,
       },

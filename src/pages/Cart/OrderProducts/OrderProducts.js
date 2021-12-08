@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API } from '../../../config';
 import './OrderProducts.scss';
 
 function OrderProducts({
@@ -17,7 +18,7 @@ function OrderProducts({
   function quantityPlus() {
     setQuantities(quantities + 1);
     setPriceList(perPrice * (quantities + 1), data.id);
-    fetch('http://10.58.5.9:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'PATCH',
       body: JSON.stringify({
         id: data.id,
@@ -36,7 +37,7 @@ function OrderProducts({
     } else {
       alert('최소 1개 이상 주문이 가능합니다');
     }
-    fetch('http://10.58.5.9:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'PATCH',
       body: JSON.stringify({
         id: data.id,
