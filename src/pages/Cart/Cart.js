@@ -10,6 +10,8 @@ function Cart() {
   const [checkList, setCheckList] = useState([]);
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
+  const token =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.8IfSdDtAxWYjYLNMWVveulb2ch57lc5UJ8oOGJuklTM';
 
   const changeSingleBox = (checked, id, prices) => {
     if (checked) {
@@ -61,14 +63,25 @@ function Cart() {
         id: checkList,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+        Authorization: token,
       },
     });
   };
 
   const deletePer = identifier => {
     if (checkList.includes(identifier)) {
+      const deleteId = [];
+      deleteId.push(identifier);
+      fetch('http://10.58.0.120:8000/shops/cart', {
+        method: 'DELETE',
+        body: JSON.stringify({
+          id: deleteId,
+        }),
+        headers: {
+          Authorization: token,
+        },
+      });
+
       setSelectedBread(selectedBread.filter(el => identifier !== el.id));
 
       const temp = { ...price };
@@ -95,8 +108,7 @@ function Cart() {
         id: tempBreadList,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+        Authorization: token,
       },
     });
 
@@ -108,12 +120,12 @@ function Cart() {
   useEffect(() => {
     fetch('http://10.58.0.120:8000/shops/cart', {
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+        Authorization: token,
       },
     })
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         setSelectedBread(res.result[0].cart);
         const temp = {};
         res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
