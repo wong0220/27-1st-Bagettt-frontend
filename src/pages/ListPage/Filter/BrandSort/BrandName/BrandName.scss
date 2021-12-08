@@ -1,0 +1,20 @@
+.brandName {
+  .sortBrand {
+    font-size: 13px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.lastName {
+  margin-bottom: 10px;
+  .sortBrand {
+    font-size: 13px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
