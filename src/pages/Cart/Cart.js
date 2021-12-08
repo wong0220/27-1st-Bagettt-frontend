@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Cart.scss';
 import OrderInformation from './OrderInformation/OrderInformation';
 import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
+import './Cart.scss';
 
 function Cart() {
   const [selectedBread, setSelectedBread] = useState([]);
@@ -88,7 +88,7 @@ function Cart() {
   const deleteAll = () => {
     const tempBreadList = [];
     selectedBread.forEach(el => tempBreadList.push(el.id));
-    console.log(tempBreadList);
+
     fetch('http://10.58.0.120:8000/shops/cart', {
       method: 'DELETE',
       body: JSON.stringify({
