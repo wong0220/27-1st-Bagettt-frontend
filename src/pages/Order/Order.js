@@ -1,8 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Order.scss';
 
 function Order() {
+  // const [orderInfo, setOrderInfo] = useState({});
+
+  // useEffect(() => {
+  //   fetch()
+  //     .then(res => res.json())
+  //     .then(result => {
+  //       setOrderInfo(result);
+  //     });
+  // }, []);
+
   return (
+    //조건부렌더링 !!
     <div className="Order">
       <div className="titleWrapper">
         <div className="title">ORDER COMPLETED</div>
@@ -97,8 +109,9 @@ function Order() {
               <div>무료</div>
             </div>
           </div>
-
-          <button className="shippngBtn">쇼핑 계속하기</button>
+          <Link to="/list-page">
+            <button className="shippngBtn">쇼핑 계속하기</button>
+          </Link>
         </div>
       </div>
     </div>
