@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif+KR:wght@200;300&display=swap');
+@import '../../styles/variable.scss';
+
+.login {
+  .explainPage {
+    display: flex;
+    margin: 30px 0px 0px 50px;
+
+    .paGe {
+      color: rgb(185, 185, 181);
+    }
+
+    .loginCreateid {
+      font-weight: 600;
+    }
+  }
+
+  .loginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+
+    .title {
+      padding-top: 50px;
+      margin-bottom: 50px;
+
+      .titleLogin {
+        color: #000;
+        font-size: 31px;
+      }
+    }
+
+    .memberShip {
+      display: flex;
+      justify-content: center;
+      width: 450px;
+      padding-bottom: 50px;
+      text-align: center;
+
+      .loginMember {
+        justify-content: center;
+        width: 450px;
+        padding-top: 20px;
+        border-right: $borderline;
+        border-top: 1px solid;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .searchOrder {
+        width: 450px;
+        padding-top: 20px;
+        border-top: $borderline;
+        color: #9f9b9b;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .signUp {
+      .inputEmailid {
+        padding-bottom: 13px;
+        font-size: 13px;
+        font-family: 'Noto Sans KR';
+      }
+
+      .inputPassword {
+        padding: 10px 0px 13px 0px;
+        font-size: 13px;
+        font-family: 'Noto Sans KR';
+      }
+
+      .inputId {
+        display: block;
+        @include inputWidthHeigh45040;
+        border: $borderline;
+      }
+
+      .inputPw {
+        display: block;
+        @include inputWidthHeigh45040;
+        border: $borderline;
+      }
+    }
+
+    .loginButton {
+      padding-top: 30px;
+
+      .btn {
+        width: 450px;
+        height: 48px;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    .saveAccount {
+      display: flex;
+      padding-top: 20px;
+
+      .saveId {
+        margin-left: 5px;
+        margin-right: 200px;
+        font-size: 13px;
+        font-family: 'Noto Sans KR';
+        cursor: pointer;
+      }
+
+      .find {
+        padding-bottom: 50px;
+
+        .forgetLogin {
+          display: flex;
+          font-size: 13px;
+
+          .findId {
+            padding-right: 10px;
+            border-right: $borderline;
+            font-family: 'Noto Sans KR';
+            cursor: pointer;
+          }
+
+          .findPw {
+            margin-left: 10px;
+            font-family: 'Noto Sans KR';
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .iconsnsLogin {
+      display: flex;
+      justify-content: space-between;
+      width: 501px;
+      padding-bottom: 50px;
+
+      .loginSns {
+        margin: 10px 0px 0px 25px;
+        font-weight: bold;
+        font-family: 'Noto Sans KR';
+        cursor: pointer;
+      }
+
+      .icons {
+        .fab {
+          padding-right: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .createId {
+      .createLogin {
+        padding-top: 30px;
+        border-top: $borderline;
+      }
+
+      .createUser {
+        font-weight: 600;
+        padding-bottom: 10px;
+        font-family: 'Noto Sans KR';
+      }
+
+      .giveCoupon {
+        padding: 13px 0px 20px 0px;
+        font-size: 14px;
+        font-weight: 100;
+        font-family: 'Noto Sans KR';
+      }
+
+      .createUserbtn {
+        width: 450px;
+        height: 45px;
+        background-color: white;
+        border: 1px solid black;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.nonMemberLogin {
+  .nonMemberExplainPage {
+    display: flex;
+    margin: 30px 0px 0px 50px;
+
+    .nonMemberPage {
+      color: rgb(185, 185, 181);
+    }
+
+    .nonMemberLoginCreateid {
+      font-weight: 600;
+    }
+  }
+
+  .nonMemberLoginbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 501px;
+    margin-left: 600px;
+
+    .title {
+      padding-top: 50px;
+      margin-bottom: 50px;
+
+      .titleLogin {
+        color: #000;
+        font-size: 31px;
+      }
+    }
+
+    .memberShip {
+      display: flex;
+      justify-content: center;
+      width: 450px;
+      padding-bottom: 50px;
+      text-align: center;
+
+      .memberLogin {
+        justify-content: center;
+        width: 450px;
+        padding-top: 20px;
+        border-right: $borderline;
+        border-top: $borderline;
+        color: #9f9b9b;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .nomemberSearchOrder {
+        width: 450px;
+        padding-top: 20px;
+        border-top: 1px solid;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .signUp {
+      .inputEmailid {
+        padding-bottom: 13px;
+        font-family: 'Noto Sans KR';
+        font-size: 13px;
+      }
+
+      .inputPassword {
+        padding: 10px 0px 13px 0px;
+        font-size: 13px;
+        font-family: 'Noto Sans KR';
+      }
+
+      .inputNumber {
+        display: block;
+        @include inputWidthHeigh45040;
+        border: $borderline;
+      }
+
+      .inputName {
+        display: block;
+        @include inputWidthHeigh45040;
+        border: $borderline;
+      }
+    }
+
+    .loginbutton {
+      padding-top: 30px;
+
+      .btn {
+        width: 450px;
+        height: 48px;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    .createId {
+      width: 450px;
+
+      .createLogin {
+        padding-top: 30px;
+        border-top: $borderline;
+      }
+
+      .createUser {
+        padding-bottom: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .giveCoupon {
+        padding: 13px 0px 20px 0px;
+        font-size: 14px;
+        font-weight: 100;
+      }
+    }
+  }
+}
