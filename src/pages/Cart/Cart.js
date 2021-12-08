@@ -13,7 +13,7 @@ function Cart() {
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const token =
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.idJwexE8iE_-9pRikfbEJdDBVuZJVIAochSmRPvD-rM';
 
@@ -133,7 +133,7 @@ function Cart() {
     })
       .then(res => res.json())
       .then(res => {
-        naviagte('/order', { state: res });
+        navigate('/order', { state: res });
       });
   };
 
@@ -153,7 +153,7 @@ function Cart() {
       })
         .then(res => res.json())
         .then(res => {
-          naviagte('/order', { state: res });
+          navigate('/order', { state: res });
         });
     } else {
       alert('항목을 선택해주세요');
@@ -175,7 +175,7 @@ function Cart() {
     })
       .then(res => res.json())
       .then(res => {
-        naviagte('/order', { state: res });
+        navigate('/order', { state: res });
       });
   };
 
