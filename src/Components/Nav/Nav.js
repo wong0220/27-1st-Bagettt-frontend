@@ -38,7 +38,6 @@ function Nav() {
           <li className="review">REVIEW</li>
           <li className="customerCenter">CUSTOMER CENTER</li>
         </ul>
-        <div className="blank" />
         <div className="icons">
           <i className="fas fa-search fa-lg" />
           <i className="fas fa-user fa-lg" />
