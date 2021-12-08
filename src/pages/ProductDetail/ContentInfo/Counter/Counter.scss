@@ -1,0 +1,17 @@
+.productCountWrapper {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+
+  .countNum {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
