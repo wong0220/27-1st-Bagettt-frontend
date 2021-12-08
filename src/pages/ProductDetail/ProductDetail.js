@@ -16,19 +16,22 @@ function ProductDetail() {
       });
   }, [id]);
 
+  console.log(detailContents);
   return (
     <div>
       {detailContents.result && (
-        <div className="ProductDetail">
-          <div>
-            <img
-              src={detailContents.result[0].package_thumbnail}
-              alt="상품이미지"
-              className="productImage"
-            />
-            <ProductTap detailContents={detailContents.result[0]} />
+        <div>
+          <div className="ProductDetail">
+            <div>
+              <img
+                src={detailContents.result[0].package_thumbnail}
+                alt="상품이미지"
+                className="productImage"
+              />
+              <ProductTap detailContents={detailContents.result[0]} />
+            </div>
+            <ProductContentInfo detailContents={detailContents.result[0]} />
           </div>
-          <ProductContentInfo detailContents={detailContents.result[0]} />
         </div>
       )}
     </div>

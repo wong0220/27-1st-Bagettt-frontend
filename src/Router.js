@@ -14,7 +14,7 @@ function Router() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/createid" element={<Createid />} />
-        <Route path="/product-detail" element={<ProductDetail />} />
+        <Route path="/product-detail/:id" element={<ProductDetail />} />
         <Route path="/list-page" element={<ListPage />} />
         <Route path="/order" element={<Order />} />
       </Routes>

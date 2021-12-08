@@ -5,7 +5,7 @@ import './Order.scss';
 function Order() {
   // const [orderInfo, setOrderInfo] = useState({});
 
-  // useEffect(() => {
+  // useEffect(('http://10.58.5.9:8000/order') => {
   //   fetch()
   //     .then(res => res.json())
   //     .then(result => {
