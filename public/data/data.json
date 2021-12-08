@@ -17,5 +17,24 @@
         "package_image": "https://gaussian37.github.io/assets/img/python/django/django.png"
       }
     ]
+  },
+  {
+    "user_name": "원소연",
+    "address": "서울시 강남구",
+    "phone_number": "111-1111-1111",
+    "email": "1111111111@naver.com",
+    "order_number": 123456789123456,
+    "date": "1111-11-11",
+    "option": "월요일test",
+    "total_price": "24000",
+    "total_price2": "24000",
+    "package": [
+      {
+        "package_name": "비타민밤",
+        "package_price": "24000",
+        "quantity": 10,
+        "package_image": "https://gaussian37.github.io/assets/img/python/django/django.png"
+      }
+    ]
   }
 ]

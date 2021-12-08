@@ -1,0 +1,34 @@
+.orderProductInfoWrapper {
+  display: flex;
+  align-items: center;
+  padding: 30px 0 30px 0;
+  border-bottom: 1px solid #fafafa;
+
+  .orderTitle {
+    width: 100px;
+    margin-left: 20px;
+    font-size: 12spx;
+    font-weight: 500;
+  }
+
+  .image {
+    content: '';
+    width: 65px;
+    height: 65px;
+    background-color: black;
+    margin-right: 12px;
+  }
+
+  .orderInfo {
+    line-height: 1.5;
+
+    .packageName {
+      font-weight: 500;
+    }
+  }
+
+  .price {
+    position: absolute;
+    left: 80%;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import OrderList from './OrderList';
 import './Order.scss';
 
 function Order() {
@@ -64,31 +65,9 @@ function Order() {
                     <div className="price">주문금액</div>
                   </div>
 
-                  <div className="orderProductInfoWrapper">
-                    <div className="title">구매</div>
-
-                    <img
-                      src={orderInfo[0].package[0].package_image}
-                      alt="상품이미지"
-                      className="image"
-                    />
-
-                    <div className="orderInfo">
-                      <div className="packageName">
-                        {orderInfo[0].package[0].package_name}
-                      </div>
-                      <div className="option">
-                        선택 요일 : {orderInfo[0].option}
-                      </div>
-                      <div className="quantity">
-                        수량 : {orderInfo[0].package[0].quantity}
-                      </div>
-                    </div>
-
-                    <div className="price">
-                      {orderInfo[0].package[0].package_price}원
-                    </div>
-                  </div>
+                  {orderInfo.map((product, idx) => {
+                    return <OrderList key={idx} orderInfo={product} />;
+                  })}
                 </div>
               </div>
 
@@ -117,14 +96,22 @@ function Order() {
               <div className="orderTotalPrice">
                 <div className="totalPriceTitle">최종결제금액</div>
                 <div className="totalPrice">
-                  {orderInfo[0].package[0].package_price}원
+                  {Number(
+                    orderInfo[0].package[0].package_price
+                  ).toLocaleString()}
+                  원
                 </div>
               </div>
 
               <div className="orderPriceWrapper">
                 <div className="container">
                   <div className="title">주문상품금액</div>
-                  <div>{orderInfo[0].package[0].package_price}원</div>
+                  <div>
+                    {Number(
+                      orderInfo[0].package[0].package_price
+                    ).toLocaleString()}
+                    원
+                  </div>
                 </div>
                 <div className="container">
                   <div className="title">배송비</div>
