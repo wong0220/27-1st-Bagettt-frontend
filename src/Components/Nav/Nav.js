@@ -23,9 +23,9 @@ function Nav() {
               <div className="subMenuitems">
                 <ul className="otherList">
                   <li className="history">BaGETTT's History</li>
-                  <li className="cheifPick">Cheif's Pick</li>
-                  <li className="location">BaGETTT's Location</li>
-                  <li className="magaZine">BaGETTT's Magazine</li>
+                  <li className="subItems">Cheif's Pick</li>
+                  <li className="subItems">BaGETTT's Location</li>
+                  <li className="subItems">BaGETTT's Magazine</li>
                 </ul>
               </div>
             </div>
@@ -33,10 +33,10 @@ function Nav() {
           <Link to="/list-page">
             <li className="subScribe">SUBSCRIBE</li>
           </Link>
-          <li className="event">EVENT</li>
-          <li className="brand">BRAND</li>
-          <li className="review">REVIEW</li>
-          <li className="customerCenter">CUSTOMER CENTER</li>
+          <li className="titleMenu">EVENT</li>
+          <li className="titleMenu">BRAND</li>
+          <li className="titleMenu">REVIEW</li>
+          <li className="titleMenu">CUSTOMER CENTER</li>
         </ul>
         <div className="icons">
           <i className="fas fa-search fa-lg" />

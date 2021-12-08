@@ -49,24 +49,8 @@
             cursor: pointer;
           }
 
-          .cheifPick {
+          .subItems {
             margin-right: 100px;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: $font-family;
-            cursor: pointer;
-          }
-
-          .location {
-            margin-right: 100px;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: $font-family;
-            cursor: pointer;
-          }
-
-          .magaZine {
-            margin-right: 160px;
             font-size: 20px;
             font-weight: bold;
             font-family: $font-family;
@@ -87,35 +71,11 @@
         cursor: pointer;
       }
 
-      .event {
+      .titleMenu {
         font-size: 17px;
         padding-right: 20px;
         font-family: $font-family;
         padding-top: 30px;
-        cursor: pointer;
-      }
-
-      .brand {
-        font-size: 17px;
-        padding-right: 20px;
-        font-family: $font-family;
-        padding-top: 30px;
-        cursor: pointer;
-      }
-
-      .review {
-        font-size: 17px;
-        padding-right: 20px;
-        font-family: $font-family;
-        padding-top: 30px;
-        cursor: pointer;
-      }
-
-      .customerCenter {
-        font-size: 17px;
-        font-family: $font-family;
-        padding-top: 30px;
-        list-style: none;
         cursor: pointer;
       }
     }
