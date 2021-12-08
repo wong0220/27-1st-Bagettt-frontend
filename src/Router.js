@@ -13,8 +13,11 @@ function Router() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/createid" element={<Createid />} />
-        <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/list-page" element={<ListPage />} />
+        <Route
+          path="/list-page/product-detail/:id"
+          element={<ProductDetail />}
+        />
       </Routes>
     </BrowserRouter>
   );
