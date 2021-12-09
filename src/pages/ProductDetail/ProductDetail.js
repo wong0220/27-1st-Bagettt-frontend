@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductTap from './Tap/ProductTap';
 import ProductContentInfo from './ContentInfo/ProductContentInfo';
+import { API } from '../../config';
 import './ProductDetail.scss';
 
 function ProductDetail() {
@@ -9,7 +10,7 @@ function ProductDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://10.58.0.120:8000/packages/details/${id}`)
+    fetch(`${API.GET_PRODUCT_DETAIL}${id}`)
       .then(res => res.json())
       .then(result => {
         setDetailContents(result);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Counter from './Counter/Counter';
 import SubscriptionModal from '../Modal/SubscriptionModal';
+import { API } from '../../../config';
 import './ProductContentInfo.scss';
 
 function ProductContentInfo({ detailContents }) {
@@ -23,7 +24,7 @@ function ProductContentInfo({ detailContents }) {
   };
 
   const handleSubscribe = () => {
-    fetch('http://10.58.0.72:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'POST',
       body: JSON.stringify({
         quantity: number,
