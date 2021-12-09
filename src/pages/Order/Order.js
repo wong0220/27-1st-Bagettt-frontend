@@ -11,6 +11,7 @@ function Order() {
   const { result } = location.state;
   const packageItem = location.state.result.package;
 
+  console.log(location);
   return (
     <div>
       <Nav />
@@ -91,16 +92,14 @@ function Order() {
             <div className="orderTotalPrice">
               <div className="orderTotalPriceTitle">최종결제금액</div>
               <div className="orderTotalPrice">
-                {Number(packageItem[0].package_price).toLocaleString()}원
+                {Number(result.total_price).toLocaleString()}원
               </div>
             </div>
 
             <div className="orderPriceWrapper">
               <div className="orderShippingContainer">
                 <div className="shippingTitleText">주문상품금액</div>
-                <div>
-                  {Number(packageItem[0].package_price).toLocaleString()}원
-                </div>
+                <div>{Number(result.total_price).toLocaleString()}원</div>
               </div>
               <div className="orderShippingContainer">
                 <div className="shippingTitleText">배송비</div>
