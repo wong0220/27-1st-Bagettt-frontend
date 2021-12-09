@@ -10,9 +10,6 @@ function ProductContentInfo({ detailContents }) {
   const [shoppingOption, setShoppingOption] = useState('월');
   const token = sessionStorage.getItem('token');
 
-  const token =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM';
-
   const increaseNumber = () => {
     setNumber(number => {
       return number + 1;
