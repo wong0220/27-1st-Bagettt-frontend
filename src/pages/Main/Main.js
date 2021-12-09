@@ -6,7 +6,7 @@ function Main() {
   return (
     <div>
       <Nav />
-      <div class="container">메인</div>
+      <div className="container">메인</div>
     </div>
   );
 }
