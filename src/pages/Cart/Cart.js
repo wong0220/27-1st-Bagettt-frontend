@@ -13,10 +13,9 @@ function Cart() {
   const [checkList, setCheckList] = useState([]);
   const [totalPrice, setToalPrice] = useState({});
   const [price, setPrice] = useState({});
+  const token = sessionStorage.getItem('token');
 
   const navigate = useNavigate();
-  const token =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.8IfSdDtAxWYjYLNMWVveulb2ch57lc5UJ8oOGJuklTM';
 
   const changeSingleBox = (checked, id, prices) => {
     if (checked) {

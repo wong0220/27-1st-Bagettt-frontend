@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API } from '../../config';
 import './Createid.scss';
 
 function CreateId() {
@@ -35,7 +36,7 @@ function CreateId() {
 
   const goToList = () => {
     if (isUserValid) {
-      fetch('http://10.58.5.9:8000/users/signup', {
+      fetch(API.GET_SIGNUP, {
         method: 'POST',
         body: JSON.stringify({
           email: idInput,
