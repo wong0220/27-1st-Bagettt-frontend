@@ -9,6 +9,9 @@ function ProductContentInfo({ detailContents }) {
   const [showModal, setShowModal] = useState(false);
   const [shoppingOption, setShoppingOption] = useState('월');
 
+  const token =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM';
+
   const increaseNumber = () => {
     setNumber(number => {
       return number + 1;
@@ -33,8 +36,7 @@ function ProductContentInfo({ detailContents }) {
         shipping_option: shoppingOption,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.MJCyB6QeWaaR8qr997n6l6g-zG_pYoxcJtxi3ev7ZNM',
+        Authorization: token,
       },
     })
       .then(res => res.json())
@@ -64,7 +66,7 @@ function ProductContentInfo({ detailContents }) {
             <div className="shippingPrice">무료배송</div>
           </div>
           <div className="dayOption">
-            <div>수령요일 선택</div>
+            <div className="dayOptionText">수령요일 선택</div>
             <select
               className="selectBox"
               onChange={e => {
@@ -103,7 +105,7 @@ function ProductContentInfo({ detailContents }) {
               <div className="orderCount">{number}개</div>
             </div>
 
-            <div className="orderPriceWrapper">
+            <div className="infoOrderPriceWrapper">
               <div className="orderPriceText">총 상품 금액</div>
               <div className="orderPrice">
                 {Number(detailContents.price * number).toLocaleString()}원

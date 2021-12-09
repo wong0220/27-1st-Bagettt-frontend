@@ -1,0 +1,42 @@
+.orderListProductInfoWrapper {
+  display: flex;
+  align-items: center;
+  padding: 30px 0 30px 0;
+  border-bottom: 1px solid #fafafa;
+
+  .orderProductTitle {
+    width: 100px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .orderListImage {
+    width: 65px;
+    height: 65px;
+    margin-right: 12px;
+  }
+
+  .orderListInfo {
+    line-height: 1.5;
+
+    .listPackageName {
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .listOption {
+      font-size: 16px;
+    }
+
+    .listQuantity {
+      font-size: 16px;
+    }
+  }
+
+  .listPrice {
+    position: absolute;
+    left: 80%;
+    font-size: 16px;
+  }
+}
