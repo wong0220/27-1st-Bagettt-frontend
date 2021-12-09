@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../config';
+import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 import './Createid.scss';
 
 function CreateId() {
@@ -62,6 +64,7 @@ function CreateId() {
 
   return (
     <div className="createId">
+      <Nav />
       <div className="createBox">
         <div className="createAccount">
           <div className="create">
@@ -130,6 +133,7 @@ function CreateId() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

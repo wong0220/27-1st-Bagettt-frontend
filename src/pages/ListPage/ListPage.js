@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BreadList from '../ListPage/BreadList/BreadList';
 import Filter from '../ListPage/Filter/Filter';
 import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 import { API } from '../../config';
 import './ListPage.scss';
 
@@ -104,6 +105,7 @@ function ListPage() {
           </ul>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
 import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 import { API } from '../../config';
 import './Cart.scss';
 
@@ -255,6 +256,7 @@ function Cart() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Nav from '../../Components/Nav/Nav';
 import ProductTap from './Tap/ProductTap';
 import ProductContentInfo from './ContentInfo/ProductContentInfo';
+import Footer from '../../Components/Footer/Footer';
 import { API } from '../../config';
 import './ProductDetail.scss';
 
@@ -36,6 +37,7 @@ function ProductDetail() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
