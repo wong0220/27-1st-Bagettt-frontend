@@ -193,7 +193,7 @@ function Cart() {
         res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
         setToalPrice({ ...temp });
       });
-  }, []);
+  }, [token]);
 
   return (
     <div className="Cart">

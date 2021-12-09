@@ -11,7 +11,6 @@ function Order() {
   const { result } = location.state;
   const packageItem = location.state.result.package;
 
-  console.log(location);
   return (
     <div>
       <Nav />
