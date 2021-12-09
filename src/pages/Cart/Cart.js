@@ -5,6 +5,7 @@ import OrderProducts from './OrderProducts/OrderProducts';
 import OrderPrice from './OrderPrice/OrderPrice';
 import OrderButton from './OrderButton/OrderButton';
 import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 import { API } from '../../config';
 import './Cart.scss';
 
@@ -192,7 +193,7 @@ function Cart() {
         res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
         setToalPrice({ ...temp });
       });
-  }, []);
+  }, [token]);
 
   return (
     <div className="Cart">
@@ -200,7 +201,7 @@ function Cart() {
       <div className="cartWrapper">
         <div className="rootWrapper">
           <span className="homeRoot">HOME</span>
-          <span className="homeRoot">></span>
+          <span className="homeRoot">{'>'}</span>
           <span className="shoppingRoot">SHOPPING BAG</span>
         </div>
 
@@ -255,6 +256,7 @@ function Cart() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

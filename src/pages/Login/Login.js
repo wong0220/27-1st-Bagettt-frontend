@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { API } from '../../config';
+import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 import './Login.scss';
 
 function Login() {
@@ -66,6 +68,7 @@ function Login() {
 
   return (
     <div>
+      <Nav />
       {member ? (
         <div className="login">
           <div className="explainPage">
@@ -183,6 +186,7 @@ function Login() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
