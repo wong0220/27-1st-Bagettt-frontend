@@ -7,7 +7,7 @@ function Nav() {
     <nav className="nav">
       <div className="navHeader">
         <div className="navPhoto">
-          <Link to="/main">
+          <Link to="/">
             <img
               className="brandPhoto"
               src="/image/baGETTT_logo.png"
@@ -41,7 +41,9 @@ function Nav() {
         <div className="anonymouse" />
         <div className="icons">
           <i className="fas fa-search fa-lg" />
-          <i className="fas fa-user fa-lg" />
+          <Link to="/login">
+            <i className="fas fa-user fa-lg" />
+          </Link>
           <Link to="/Cart">
             <i className="fas fa-shopping-bag fa-lg" />
           </Link>

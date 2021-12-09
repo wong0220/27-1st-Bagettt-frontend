@@ -1,34 +1,42 @@
-.orderProductInfoWrapper {
+.orderListProductInfoWrapper {
   display: flex;
   align-items: center;
   padding: 30px 0 30px 0;
   border-bottom: 1px solid #fafafa;
 
-  .orderTitle {
+  .orderProductTitle {
     width: 100px;
     margin-left: 20px;
-    font-size: 12spx;
+    font-size: 16px;
     font-weight: 500;
   }
 
-  .image {
-    content: '';
+  .orderListImage {
     width: 65px;
     height: 65px;
-    background-color: black;
     margin-right: 12px;
   }
 
-  .orderInfo {
+  .orderListInfo {
     line-height: 1.5;
 
-    .packageName {
+    .listPackageName {
       font-weight: 500;
+      font-size: 16px;
+    }
+
+    .listOption {
+      font-size: 16px;
+    }
+
+    .listQuantity {
+      font-size: 16px;
     }
   }
 
-  .price {
+  .listPrice {
     position: absolute;
     left: 80%;
+    font-size: 16px;
   }
 }

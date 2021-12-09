@@ -9,17 +9,18 @@ function Order() {
   const { result } = location.state;
   const packageItem = location.state.result.package;
 
-  console.log(result);
-  // console.log(packageItem);
-
   return (
     <div className="Order">
-      <div className="titleWrapper">
+      <div className="orderTitleWrapper">
         <div className="orderTitle">ORDER COMPLETED</div>
-        <ul className="titleLine">
-          <li className="titleCart titleGray">쇼핑백&nbsp;&gt;&nbsp;</li>
-          <li className="titleorder titleGray">주문하기&nbsp;&gt;&nbsp;</li>
-          <li className="titleorderEnd">주문완료</li>
+        <ul className="orderTitleLine">
+          <li className="orderTitleLineText titleGray">
+            쇼핑백&nbsp;&gt;&nbsp;
+          </li>
+          <li className="orderTitleLineText titleGray">
+            주문하기&nbsp;&gt;&nbsp;
+          </li>
+          <li className="orderTitleLineText orderTitleorderEnd">주문완료</li>
         </ul>
       </div>
 
@@ -32,29 +33,29 @@ function Order() {
           <div className="orderInfoWrapper">
             <div className="orderInfoContainer">
               <div className="orderInfoTitle">주문번호</div>
-              <div className="infoContents">{result.order_number}</div>
+              <div className="orderInfoContents">{result.order_number}</div>
             </div>
             <div className="orderInfoContainer">
               <div className="orderInfoTitle">주문일자</div>
-              <div className="infoContents">{result.date}</div>
+              <div className="orderInfoContents">{result.date}</div>
             </div>
             <div className="orderInfoContainer">
               <div className="orderInfoTitle">휴대폰번호</div>
-              <div className="infoContents">{result.phone_number}</div>
+              <div className="orderInfoContents">{result.phone_number}</div>
             </div>
             <div className="orderInfoContainer">
               <div className="orderInfoTitle">이메일</div>
-              <div className="infoContents">{result.email}</div>
+              <div className="orderInfoContents">{result.email}</div>
             </div>
           </div>
 
           <div className="orderListWrapper">
             <h3 className="orderListTitle">주문상품</h3>
             <div className="orderContainer">
-              <div className="typeTitle">
-                <div className="type">주문유형</div>
-                <div className="productInfo">상품정보</div>
-                <div className="price">주문금액</div>
+              <div className="orderTypeTitle">
+                <div className="orderTypeText">주문유형</div>
+                <div className="orderProductInfo">상품정보</div>
+                <div className="orderProductPrice">주문금액</div>
               </div>
 
               {packageItem.map((product, idx) => {
@@ -67,16 +68,16 @@ function Order() {
             <div className="shippingTitle">배송지 정보</div>
             <div className="shippingInfo">
               <div className="shippingUserInfo">
-                <div className="infoTitle">수령인</div>
-                <div className="infoContents">{result.user_name}</div>
+                <div className="orderInfoTitle">수령인</div>
+                <div className="orderInfoContents">{result.user_name}</div>
               </div>
               <div className="shippingUserInfo">
-                <div className="infoTitle">연락처</div>
-                <div className="infoContents">{result.phone_number}</div>
+                <div className="orderInfoTitle">연락처</div>
+                <div className="orderInfoContents">{result.phone_number}</div>
               </div>
               <div className="shippingUserInfo">
-                <div className="infoTitle">주소</div>
-                <div className="infoContents">{result.address}</div>
+                <div className="orderInfoTitle">주소</div>
+                <div className="orderInfoContents">{result.address}</div>
               </div>
             </div>
           </div>
@@ -84,26 +85,26 @@ function Order() {
 
         <div className="orderAside">
           <div className="orderTotalPrice">
-            <div className="totalPriceTitle">최종결제금액</div>
-            <div className="totalPrice">
+            <div className="orderTotalPriceTitle">최종결제금액</div>
+            <div className="orderTotalPrice">
               {Number(packageItem[0].package_price).toLocaleString()}원
             </div>
           </div>
 
           <div className="orderPriceWrapper">
-            <div className="orderPriceContainer">
-              <div className="title">주문상품금액</div>
+            <div className="orderShippingContainer">
+              <div className="shippingTitleText">주문상품금액</div>
               <div>
                 {Number(packageItem[0].package_price).toLocaleString()}원
               </div>
             </div>
-            <div className="orderPriceContainer">
-              <div className="title">배송비</div>
+            <div className="orderShippingContainer">
+              <div className="shippingTitleText">배송비</div>
               <div>무료</div>
             </div>
           </div>
           <Link to="/list-page">
-            <button className="shippngBtn">쇼핑 계속하기</button>
+            <button className="shippingBtn">쇼핑 계속하기</button>
           </Link>
         </div>
       </div>

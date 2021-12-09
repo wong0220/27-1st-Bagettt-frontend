@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BreadList from '../ListPage/BreadList/BreadList';
 import Filter from '../ListPage/Filter/Filter';
 import Nav from '../../Components/Nav/Nav';
+import { API } from '../../config';
 import './ListPage.scss';
 
 function ListPage() {
@@ -37,7 +38,7 @@ function ListPage() {
 
     const allSort = brandSort.concat(priceSort);
 
-    fetch(`http://10.58.0.120:8000/packages?${allSort}`)
+    fetch(`${API.GET_LISTPAGE}?${allSort}`)
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);
@@ -50,7 +51,7 @@ function ListPage() {
     setisOpenSortMenu(false);
     setIsOpenBrands(false);
 
-    fetch('http://10.58.0.120:8000/packages')
+    fetch(API.GET_LISTPAGE)
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);
@@ -66,7 +67,7 @@ function ListPage() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.5.9:8000/packages')
+    fetch(API.GET_LISTPAGE)
       .then(res => res.json())
       .then(json => {
         setBreadList(json.result);

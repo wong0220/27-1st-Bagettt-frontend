@@ -8,6 +8,7 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ListPage from './pages/ListPage/ListPage';
 import Order from './pages/Order/Order';
 import Main from './pages/Main/Main';
+import Footer from './Components/Footer/Footer';
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/list-page" element={<ListPage />} />
         <Route path="/order" element={<Order />} />
         <Route path="/" element={<Main />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </BrowserRouter>
   );

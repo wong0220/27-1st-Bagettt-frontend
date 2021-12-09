@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Nav from '../../Components/Nav/Nav';
 import ProductTap from './Tap/ProductTap';
 import ProductContentInfo from './ContentInfo/ProductContentInfo';
+import { API } from '../../config';
 import './ProductDetail.scss';
 
 function ProductDetail() {
@@ -10,7 +11,7 @@ function ProductDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://10.58.0.120:8000/packages/details/${id}`)
+    fetch(`${API.GET_PRODUCT_DETAIL}${id}`)
       .then(res => res.json())
       .then(result => {
         setDetailContents(result);
@@ -27,7 +28,7 @@ function ProductDetail() {
               <img
                 src={detailContents.result[0].package_thumbnail}
                 alt="상품이미지"
-                className="productImage"
+                className="productDetailImage"
               />
               <ProductTap detailContents={detailContents.result[0]} />
             </div>

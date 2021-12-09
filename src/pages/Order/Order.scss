@@ -1,9 +1,8 @@
 .Order {
-  // width: 100%;
   padding: 0 120px;
   font-size: 16px;
 
-  .titleWrapper {
+  .orderTitleWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,9 +15,12 @@
       font-size: 34px;
     }
 
-    .titleLine {
+    .orderTitleLine {
       display: flex;
-      font-size: 16px;
+
+      .orderTitleLineText {
+        font-size: 16px;
+      }
 
       .titleGray {
         color: #bcbec0;
@@ -52,7 +54,7 @@
             color: #4c4d4e;
           }
 
-          .infoContents {
+          .orderInfoContents {
             font-size: 16px;
           }
         }
@@ -70,22 +72,22 @@
         .orderContainer {
           position: relative;
 
-          .typeTitle {
+          .orderTypeTitle {
             display: flex;
             padding: 20px;
             background-color: #fafafa;
             margin-right: 30px;
 
-            .type {
+            .orderTypeText {
               width: 100px;
               font-size: 16px;
             }
 
-            .productInfo {
+            .orderProductInfo {
               font-size: 16px;
             }
 
-            .price {
+            .orderProductPrice {
               position: absolute;
               left: 80%;
               font-size: 16px;
@@ -113,13 +115,13 @@
           .shippingUserInfo {
             display: flex;
 
-            .infoTitle {
+            .orderInfoTitle {
               width: 200px;
               color: #4c4d4e;
               font-size: 16px;
             }
 
-            .infoContents {
+            .orderInfoContents {
               font-size: 16px;
             }
           }
@@ -139,11 +141,11 @@
       font-weight: bold;
       padding-bottom: 30px;
 
-      .totalPriceTitle {
+      .orderTotalPriceTitle {
         font-size: 20px;
       }
 
-      .totalPrice {
+      .orderTotalPrice {
         font-size: 20px;
       }
     }
@@ -152,20 +154,20 @@
       padding: 18px;
       background-color: #fafafa;
 
-      .orderPriceContainer {
+      .orderShippingContainer {
         font-size: 16px;
         display: flex;
         justify-content: space-between;
         line-height: 1.8;
 
-        .title {
-          color: #4c4d4e;
+        .shippingTitleText {
+          color: #a9abad;
           font-size: 16px;
         }
       }
     }
 
-    .shippngBtn {
+    .shippingBtn {
       width: 100%;
       height: 50px;
       margin-top: 20px;

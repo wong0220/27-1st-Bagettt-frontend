@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API } from '../../config';
 import './Login.scss';
 
 function Login() {
@@ -42,7 +43,7 @@ function Login() {
 
   const goToList = () => {
     if (isUserValid) {
-      fetch('http://10.58.5.9:8000/users/signin', {
+      fetch(API.GET_SIGNIN, {
         method: 'POST',
         body: JSON.stringify({
           email: idInput,

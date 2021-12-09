@@ -15,7 +15,7 @@
     text-align: center;
     z-index: 100;
 
-    .text {
+    .modalText {
       padding-bottom: 20px;
       font-size: 22px;
       line-height: 1.2;
@@ -40,7 +40,7 @@
     }
   }
 
-  .background {
+  .modalBackground {
     content: '';
     position: fixed;
     top: 0;

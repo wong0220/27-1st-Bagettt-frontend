@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Counter from './Counter/Counter';
 import SubscriptionModal from '../Modal/SubscriptionModal';
+import { API } from '../../../config';
 import './ProductContentInfo.scss';
 
 function ProductContentInfo({ detailContents }) {
@@ -26,7 +27,7 @@ function ProductContentInfo({ detailContents }) {
   };
 
   const handleSubscribe = () => {
-    fetch('http://10.58.0.120:8000/shops/cart', {
+    fetch(API.GET_CART, {
       method: 'POST',
       body: JSON.stringify({
         quantity: number,
@@ -65,7 +66,7 @@ function ProductContentInfo({ detailContents }) {
             <div className="shippingPrice">무료배송</div>
           </div>
           <div className="dayOption">
-            <div>수령요일 선택</div>
+            <div className="dayOptionText">수령요일 선택</div>
             <select
               className="selectBox"
               onChange={e => {
@@ -104,7 +105,7 @@ function ProductContentInfo({ detailContents }) {
               <div className="orderCount">{number}개</div>
             </div>
 
-            <div className="orderPriceWrapper">
+            <div className="infoOrderPriceWrapper">
               <div className="orderPriceText">총 상품 금액</div>
               <div className="orderPrice">
                 {Number(detailContents.price * number).toLocaleString()}원
