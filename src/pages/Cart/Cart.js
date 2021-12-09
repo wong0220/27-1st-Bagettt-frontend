@@ -193,7 +193,7 @@ function Cart() {
         res.result[0].cart.forEach(el => (temp[el.id] = parseInt(el.price)));
         setToalPrice({ ...temp });
       });
-  }, []);
+  }, [token]);
 
   return (
     <div className="Cart">
@@ -201,7 +201,7 @@ function Cart() {
       <div className="cartWrapper">
         <div className="rootWrapper">
           <span className="homeRoot">HOME</span>
-          <span className="homeRoot">></span>
+          <span className="homeRoot">{'>'}</span>
           <span className="shoppingRoot">SHOPPING BAG</span>
         </div>
 
