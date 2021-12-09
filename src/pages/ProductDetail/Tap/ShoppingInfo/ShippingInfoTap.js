@@ -4,7 +4,7 @@ import './ShippingInfoTap.scss';
 function ShippingInfoTap() {
   return (
     <div className="ShippingInfoTap">
-      <div className="title">기본 배송정보</div>
+      <div className="shippingInfoTitle">기본 배송정보</div>
       <ul className="contentsWrapper">
         <li>
           ㆍ구독 시 10만원 이상은 배송비가 무료입니다. (일부 제품 제외 / 각 상품

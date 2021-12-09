@@ -7,7 +7,7 @@ function SubscriptionModal() {
     <div className="modalWrapper">
       <div className="modalContainer">
         <div>
-          <p className="text">
+          <p className="modalText">
             선택하신 상품이
             <br /> 장바구니에 추가 되었습니다.
           </p>
@@ -21,7 +21,7 @@ function SubscriptionModal() {
           </div>
         </div>
       </div>
-      <span className="background" />
+      <span className="modalBackground" />
     </div>
   );
 }
