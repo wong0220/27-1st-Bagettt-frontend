@@ -49,26 +49,28 @@ https://user-images.githubusercontent.com/73282508/145710208-067d2950-f1e0-422e-
 --- 
 
 ## 사용된 기술
-
-#### FRONT_END
+---
+### 1. FRONT_END
 React
 SASS
 Prettier
 ESlint
 
-#### BACK_END
+### 2. BACK_END
 Python
 Django frame work
 
-#### COMMON
+### 3. COMMON
 Notion
 Trello
 Slack
 Git, Github
 
+## 협업 툴
 ---
-
-## 구현화면
-
+1. GitHub
+2. Notion
+3. Trello
+4. Slack
 
 
