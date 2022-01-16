@@ -31,7 +31,6 @@ GETTT(https://www.gettt.com/)는 패션, 생활용품, 가구 등을 판매하�
 - 제품 수량 증감, 삭제시 백엔드에 실시간 POST, DELETE하며 통신
 - 전체 체크박스, 부분체크 박스를 만들어 품목들 핸들링
   1. 체크된 항목 개별,부분,전체 (삭제/결제) 기능 구현
-     https://velog.io/@wong0220/TIL%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EC%B2%B4%ED%81%AC%EB%90%9C-%ED%92%88%EB%AA%A9-%EC%B4%9D%EA%B0%80%EA%B2%A9-%EC%82%AD%EC%A0%9C%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84
   2. 체크된 항목 Total Price 계산
 
 https://user-images.githubusercontent.com/73282508/145710175-68a6bedf-2189-4636-a54f-a0b347d54d03.mov
