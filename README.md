@@ -48,6 +48,10 @@ https://user-images.githubusercontent.com/73282508/145710208-067d2950-f1e0-422e-
 - (장바구니와 완료 제품 사이의 ACID 수행을 위한 transaction 사용)
 --- 
 
+## 프로젝트 구현 화면 ↓ Click ↓
+[![Video Label](https://img.youtube.com/vi/skNw_uGvvBw/0.jpg)](https://youtu.be/1S_MNySYXB8)
+
+---
 ## 사용된 기술
 ---
 ### 1. FRONT_END
