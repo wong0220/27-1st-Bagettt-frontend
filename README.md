@@ -55,20 +55,20 @@ https://user-images.githubusercontent.com/73282508/145710208-067d2950-f1e0-422e-
 ## 사용된 기술
 ---
 ### 1. FRONT_END
-React
-SASS
-Prettier
-ESlint
+- React
+- SASS
+- Prettier
+- ESlint
 
 ### 2. BACK_END
-Python
-Django frame work
+- Python
+- Django frame work
 
 ### 3. COMMON
-Notion
-Trello
-Slack
-Git, Github
+- Notion
+- Trello
+- Slack
+- Git, Github
 
 ## 협업 툴
 ---
