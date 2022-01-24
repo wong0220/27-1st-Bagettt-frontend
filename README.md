@@ -59,7 +59,7 @@ https://user-images.githubusercontent.com/73282508/145710208-067d2950-f1e0-422e-
 ---
 ### 1. FRONT_END
 - React
-- SASS
+- SCSS
 - Prettier
 - ESlint
 
